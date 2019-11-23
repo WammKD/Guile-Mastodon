@@ -21,3 +21,18 @@
 
 (define (assemble-params params)
   (string-append "?" (string-join (map (cut string-join <> "=") params) "&")))
+
+
+
+(define-record-type <mastodon-instance-application>
+  (make-masto-app domain name website redirects id secret key scopes)
+  masto-instance-app?
+  (domain    masto-app-domain    masto-app-domain-set!)
+  (name      masto-app-name      masto-app-name-set!)
+  (website   masto-app-website   masto-app-website-set!)
+  (redirects masto-app-redirects masto-app-redirects-set!)
+  (id        masto-app-id        masto-app-id-set!)
+  (secret    masto-app-secret    masto-app-secret-set!)
+  (key       masto-app-key       masto-app-key-set!)
+  (scopes    masto-app-scopes    masto-app-scopes-set!)
+  (token     masto-app-token     masto-app-token-set!))

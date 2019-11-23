@@ -61,3 +61,15 @@
                     (assoc-ref app "website")   redirects
                     (assoc-ref app "client_id") (assoc-ref app "client_secret")
                     (assoc-ref app "vapid_key") scopes)))
+
+(define* (masto-app-authorize-uri masto-app #:optional redirect)
+  (string-append (masto-app-domain masto-app) "/oauth/authorize"
+                 (assemble-params
+                   `(("scope"         ,(string-join (masto-app-scopes
+                                                      masto-app)       "%20"))
+                     ("response_type" "code")
+                     ("redirect_uri"  ,(if redirect
+                                           redirect
+                                         (car (masto-app-redirects masto-app))))
+                     ("client_id"     ,(masto-app-id     masto-app))
+                     ("client_secret" ,(masto-app-secret masto-app))))))

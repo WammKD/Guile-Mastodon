@@ -62,31 +62,35 @@
                     (assoc-ref app "client_id") (assoc-ref app "client_secret")
                     (assoc-ref app "vapid_key") scopes)))
 
-(define* (masto-app-authorize-uri masto-app #:optional redirect)
-  (string-append (masto-app-domain masto-app) "/oauth/authorize"
+
+
+
+
+(define* (masto-app-authorize-uri mastoApp #:optional redirect)
+  (string-append (masto-app-domain mastoApp) "/oauth/authorize"
                  (assemble-params
                    `(("scope"         ,(string-join (masto-app-scopes
-                                                      masto-app)       "%20"))
+                                                      mastoApp)        "%20"))
                      ("response_type" "code")
                      ("redirect_uri"  ,(if redirect
                                            redirect
-                                         (car (masto-app-redirects masto-app))))
-                     ("client_id"     ,(masto-app-id     masto-app))
-                     ("client_secret" ,(masto-app-secret masto-app))))))
+                                         (car (masto-app-redirects mastoApp))))
+                     ("client_id"     ,(masto-app-id     mastoApp))
+                     ("client_secret" ,(masto-app-secret mastoApp))))))
 
-(define* (masto-app-retrieve-token! masto-app code #:optional redirect)
+(define* (masto-app-retrieve-token! mastoApp code #:optional redirect)
   (receive (header body)
       (http-post
         (string-append
-          (masto-app-domain masto-app) "/oauth/token"
+          (masto-app-domain mastoApp) "/oauth/token"
           (assemble-params
-            `(("client_id"     ,(masto-app-id     masto-app))
-              ("client_secret" ,(masto-app-secret masto-app))
+            `(("client_id"     ,(masto-app-id     mastoApp))
+              ("client_secret" ,(masto-app-secret mastoApp))
               ("grant_type"    "authorization_code")
               ("code"          ,code)
               ("redirect_uri"  ,(if redirect
                                     redirect
-                                  (car (masto-app-redirects masto-app))))))))
+                                  (car (masto-app-redirects mastoApp))))))))
     (let ([bodySCM (json-string->scm (utf8->string body))])
       (if (assoc-ref bodySCM "error")
           (error (assoc-ref bodySCM "error_description"))

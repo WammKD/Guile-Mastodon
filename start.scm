@@ -64,11 +64,13 @@
 
 
 
-(define* (masto-app-authorize-uri mastoApp #:optional redirect)
+(define* (masto-app-authorize-uri mastoApp #:key redirect scopes)
   (string-append (masto-app-domain mastoApp) "/oauth/authorize"
                  (assemble-params
-                   `(("scope"         ,(string-join (masto-app-scopes
-                                                      mastoApp)        "%20"))
+                   `(("scope"         ,(string-join (if scopes
+                                                        scopes
+                                                      (masto-app-scopes
+                                                        mastoApp)        "%20")))
                      ("response_type" "code")
                      ("redirect_uri"  ,(if redirect
                                            redirect

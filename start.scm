@@ -18,3 +18,6 @@
 ;;             instantiate-masto-app))
 (use-modules (srfi srfi-9)  (web   client)  (json)
              (srfi srfi-26) (ice-9 receive) (rnrs bytevectors))
+
+(define (assemble-params params)
+  (string-append "?" (string-join (map (cut string-join <> "=") params) "&")))

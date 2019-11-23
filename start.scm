@@ -94,3 +94,25 @@
           (error (assoc-ref bodySCM "error_description"))
         (assoc-ref bodySCM "access_token")))))
 
+
+
+(define* (masto-app-token-via-user-cred mastoApp username
+                                        password #:optional scopes)
+  (receive (header body)
+      (http-post
+        (string-append
+          (masto-app-domain mastoApp) "/oauth/token"
+          (assemble-params
+            `(("grant_type"    "password")
+              ("username"      ,username)
+              ("password"      ,password)
+              ("client_id"     ,(masto-app-id     mastoApp))
+              ("client_secret" ,(masto-app-secret mastoApp))
+              ("scope"         ,(string-join
+                                  (if scopes scopes (masto-app-scopes mastoApp))
+                                  "%20")))))
+        #:headers `((Content-type . "application/x-www-form-urlencoded")))
+    (let ([bodySCM (json-string->scm (utf8->string body))])
+      (if (assoc-ref bodySCM "error")
+          (error (assoc-ref bodySCM "error_description"))
+        (assoc-ref bodySCM "access_token")))))

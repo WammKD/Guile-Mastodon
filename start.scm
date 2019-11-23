@@ -36,3 +36,28 @@
   (key       masto-app-key       masto-app-key-set!)
   (scopes    masto-app-scopes    masto-app-scopes-set!)
   (token     masto-app-token     masto-app-token-set!))
+
+(define* (masto-app-instantiate domain #:key website id secret key token
+                                             [name                            "Elefan"]
+                                             [redirects '("urn:ietf:wg:oauth:2.0:oob")]
+                                             [scopes                         '("read")])
+  (let ([app (if (or (not key) (not secret))
+                 (receive (header body)
+                     (http-post
+                       (string-append
+                         domain            "/api/v1/apps"
+                         (assemble-params
+                           `(("client_name"   ,name)
+                             ("redirect_uris" ,(string-join redirects "\n"))
+                             ("scopes"        ,(string-join scopes    "%20"))))
+                         (if website (string-append "&website=" website) "")))
+                   (json-string->scm (utf8->string body)))
+               `(("name"          . ,name)
+                 ("client_id"     . ,key)
+                 ("client_secret" . ,secret)
+                 ("vapid_key"     . ,key)
+                 ("website"       . ,website)))])
+    (make-masto-app domain                      (assoc-ref app "name")
+                    (assoc-ref app "website")   redirects
+                    (assoc-ref app "client_id") (assoc-ref app "client_secret")
+                    (assoc-ref app "vapid_key") scopes)))

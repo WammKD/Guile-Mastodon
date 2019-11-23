@@ -10,7 +10,6 @@
 ;;             masto-app-domain
 ;;             masto-app-key
 ;;             masto-app-secret
-;;             masto-app-token
 ;;             masto-app-name
 ;;             masto-app-redirect
 ;;             masto-app-scopes
@@ -34,10 +33,9 @@
   (id        masto-app-id        masto-app-id-set!)
   (secret    masto-app-secret    masto-app-secret-set!)
   (key       masto-app-key       masto-app-key-set!)
-  (scopes    masto-app-scopes    masto-app-scopes-set!)
-  (token     masto-app-token     masto-app-token-set!))
+  (scopes    masto-app-scopes    masto-app-scopes-set!))
 
-(define* (masto-app-instantiate domain #:key website id secret key token
+(define* (masto-app-instantiate domain #:key website id secret key
                                              [name                            "Elefan"]
                                              [redirects '("urn:ietf:wg:oauth:2.0:oob")]
                                              [scopes                         '("read")])
@@ -78,7 +76,7 @@
                      ("client_id"     ,(masto-app-id     mastoApp))
                      ("client_secret" ,(masto-app-secret mastoApp))))))
 
-(define* (masto-app-retrieve-token! mastoApp code #:optional redirect)
+(define* (masto-app-token-via-code mastoApp code #:optional redirect)
   (receive (header body)
       (http-post
         (string-append
@@ -94,5 +92,5 @@
     (let ([bodySCM (json-string->scm (utf8->string body))])
       (if (assoc-ref bodySCM "error")
           (error (assoc-ref bodySCM "error_description"))
-        (masto-app-token-set! masto-app (assoc-ref bodySCM "access_token"))))))
+        (assoc-ref bodySCM "access_token")))))
 

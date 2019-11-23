@@ -73,3 +73,22 @@
                                          (car (masto-app-redirects masto-app))))
                      ("client_id"     ,(masto-app-id     masto-app))
                      ("client_secret" ,(masto-app-secret masto-app))))))
+
+(define* (masto-app-retrieve-token! masto-app code #:optional redirect)
+  (receive (header body)
+      (http-post
+        (string-append
+          (masto-app-domain masto-app) "/oauth/token"
+          (assemble-params
+            `(("client_id"     ,(masto-app-id     masto-app))
+              ("client_secret" ,(masto-app-secret masto-app))
+              ("grant_type"    "authorization_code")
+              ("code"          ,code)
+              ("redirect_uri"  ,(if redirect
+                                    redirect
+                                  (car (masto-app-redirects masto-app))))))))
+    (let ([bodySCM (json-string->scm (utf8->string body))])
+      (if (assoc-ref bodySCM "error")
+          (error (assoc-ref bodySCM "error_description"))
+        (masto-app-token-set! masto-app (assoc-ref bodySCM "access_token"))))))
+

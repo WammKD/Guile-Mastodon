@@ -1,4 +1,5 @@
 (define-module (elefan auth)
+  #:use-module (elefan utils)
   #:use-module (ice-9 receive)
   #:use-module (json)
   #:use-module (rnrs bytevectors)
@@ -19,11 +20,6 @@
             masto-app-token-via-code
             masto-app-token-via-user-cred
             masto-app-token-via-client-cred))
-
-(define (assemble-params params)
-  (string-append/shared "?" (string-join (map (cut string-join <> "=") params) "&")))
-
-
 
 (define-record-type <mastodon-instance-application>
   (make-masto-app domain name website redirects id secret key scopes)

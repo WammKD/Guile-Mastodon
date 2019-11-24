@@ -18,9 +18,9 @@
             masto-app-website
             masto-app-instantiate
             masto-app-authorize-uri
-            masto-app-token-via-code
-            masto-app-token-via-user-cred
-            masto-app-token-via-client-cred))
+            masto-app-set-token-via-code!
+            masto-app-set-token-via-user-cred!
+            masto-app-set-token-via-client-cred!))
 
 (define-record-type <mastodon-instance-application>
   (make-masto-app domain name website redirects id secret key scopes)
@@ -64,7 +64,7 @@
 
 
 
-(define (masto-app-token-post-call app . uriParts)
+(define (masto-app-set-token-via-post-call! app . uriParts)
   (receive (header body)
       (http-post (apply string-append/shared uriParts))
     (let ([bodySCM (json-string->scm (utf8->string body))])
@@ -93,8 +93,8 @@
                      ("client_id"     ,(masto-app-id     mastoApp))
                      ("client_secret" ,(masto-app-secret mastoApp))))))
 
-(define* (masto-app-token-via-code mastoApp code #:optional redirect)
-  (masto-app-token-post-call
+(define* (masto-app-set-token-via-code! mastoApp code #:optional redirect)
+  (masto-app-set-token-via-post-call!
     mastoApp
     (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params
@@ -108,9 +108,9 @@
 
 
 
-(define* (masto-app-token-via-user-cred mastoApp username
-                                        password #:optional scopes)
-  (masto-app-token-post-call
+(define* (masto-app-set-token-via-user-cred! mastoApp username
+                                             password #:optional scopes)
+  (masto-app-set-token-via-post-call!
     mastoApp
     (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params
@@ -125,8 +125,8 @@
 
 
 
-(define* (masto-app-token-via-client-cred mastoApp #:optional scopes)
-  (masto-app-token-post-call
+(define* (masto-app-set-token-via-client-cred mastoApp #:optional scopes)
+  (masto-app-set-token-via-post-call!
     mastoApp
     (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params `(("grant_type"    "client_credentials")

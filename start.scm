@@ -118,3 +118,18 @@
       (if (assoc-ref bodySCM "error")
           (error (assoc-ref bodySCM "error_description"))
         (assoc-ref bodySCM "access_token")))))
+
+
+
+(define* (masto-app-token-via-client-cred mastoApp #:optional scopes)
+  (receive (header body)
+      (http-post (string-append/shared
+                   (masto-app-domain mastoApp) "/token"
+                   (assemble-params
+                     `(("grant_type"    "client_credentials")
+                       ("client_id"     ,(masto-app-id     mastoApp))
+                       ("client_secret" ,(masto-app-secret mastoApp))))))
+    (let ([bodySCM (json-string->scm (utf8->string body))])
+      (if (assoc-ref bodySCM "error")
+          (error (assoc-ref bodySCM "error_description"))
+        (assoc-ref bodySCM "access_token")))))

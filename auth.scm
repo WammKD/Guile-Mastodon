@@ -14,6 +14,7 @@
             masto-app-name
             masto-app-redirects
             masto-app-scopes
+            masto-app-token
             masto-app-website
             masto-app-instantiate
             masto-app-authorize-uri
@@ -31,7 +32,8 @@
   (id        masto-app-id        masto-app-id-set!)
   (secret    masto-app-secret    masto-app-secret-set!)
   (key       masto-app-key       masto-app-key-set!)
-  (scopes    masto-app-scopes    masto-app-scopes-set!))
+  (scopes    masto-app-scopes    masto-app-scopes-set!)
+  (token     masto-app-token     masto-app-token-set!))
 
 (define* (masto-app-instantiate domain #:key website id secret key
                                              [name                            "Elefan"]
@@ -62,13 +64,16 @@
 
 
 
-(define (masto-app-token-post-call . uriParts)
+(define (masto-app-token-post-call app . uriParts)
   (receive (header body)
       (http-post (apply string-append/shared uriParts))
     (let ([bodySCM (json-string->scm (utf8->string body))])
       (if (assoc-ref bodySCM "error")
           (error (assoc-ref bodySCM "error_description"))
-        (assoc-ref bodySCM "access_token")))))
+        (begin
+          (masto-app-token-set! app (assoc-ref bodySCM "access_token"))
+
+          app)))))
 
 
 
@@ -90,6 +95,7 @@
 
 (define* (masto-app-token-via-code mastoApp code #:optional redirect)
   (masto-app-token-post-call
+    mastoApp
     (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params
       `(("client_id"     ,(masto-app-id     mastoApp))
@@ -105,6 +111,7 @@
 (define* (masto-app-token-via-user-cred mastoApp username
                                         password #:optional scopes)
   (masto-app-token-post-call
+    mastoApp
     (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params
       `(("grant_type"    "password")
@@ -120,6 +127,7 @@
 
 (define* (masto-app-token-via-client-cred mastoApp #:optional scopes)
   (masto-app-token-post-call
+    mastoApp
     (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params `(("grant_type"    "client_credentials")
                        ("client_id"     ,(masto-app-id     mastoApp))

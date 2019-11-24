@@ -19,7 +19,7 @@
              (srfi srfi-26) (ice-9 receive) (rnrs bytevectors))
 
 (define (assemble-params params)
-  (string-append "?" (string-join (map (cut string-join <> "=") params) "&")))
+  (string-append/shared "?" (string-join (map (cut string-join <> "=") params) "&")))
 
 
 
@@ -42,13 +42,13 @@
   (let ([app (if (or (not key) (not secret))
                  (receive (header body)
                      (http-post
-                       (string-append
+                       (string-append/shared
                          domain            "/api/v1/apps"
                          (assemble-params
                            `(("client_name"   ,name)
                              ("redirect_uris" ,(string-join redirects "\n"))
                              ("scopes"        ,(string-join scopes    "%20"))))
-                         (if website (string-append "&website=" website) "")))
+                         (if website (string-append/shared "&website=" website) "")))
                    (json-string->scm (utf8->string body)))
                `(("name"          . ,name)
                  ("client_id"     . ,key)
@@ -81,7 +81,7 @@
 (define* (masto-app-token-via-code mastoApp code #:optional redirect)
   (receive (header body)
       (http-post
-        (string-append
+        (string-append/shared
           (masto-app-domain mastoApp) "/oauth/token"
           (assemble-params
             `(("client_id"     ,(masto-app-id     mastoApp))
@@ -102,7 +102,7 @@
                                         password #:optional scopes)
   (receive (header body)
       (http-post
-        (string-append
+        (string-append/shared
           (masto-app-domain mastoApp) "/oauth/token"
           (assemble-params
             `(("grant_type"    "password")

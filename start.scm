@@ -82,7 +82,7 @@
                    `(("scope"         ,(string-join (if scopes
                                                         scopes
                                                       (masto-app-scopes
-                                                        mastoApp)        "%20")))
+                                                        mastoApp))        "%20"))
                      ("response_type" "code")
                      ("redirect_uri"  ,(if redirect
                                            redirect

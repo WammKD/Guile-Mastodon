@@ -17,6 +17,6 @@
                                           ("locale"    ))))
         #:headers `((Authorization . ,(string-append
                                         "Bearer "
-                                        (masto-app-token-via-client-cred
+                                        (masto-app-token
                                           mastoApp)))))
     (reverse (json-string->scm (utf8->string body)))))

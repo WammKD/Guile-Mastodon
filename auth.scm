@@ -11,7 +11,7 @@
             masto-app-key
             masto-app-secret
             masto-app-name
-            masto-app-redirect
+            masto-app-redirects
             masto-app-scopes
             masto-app-website
             masto-app-instantiate

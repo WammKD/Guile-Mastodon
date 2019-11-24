@@ -64,6 +64,18 @@
 
 
 
+(define (masto-app-token-post-call . uriParts)
+  (receive (header body)
+      (http-post (apply string-append/shared uriParts))
+    (let ([bodySCM (json-string->scm (utf8->string body))])
+      (if (assoc-ref bodySCM "error")
+          (error (assoc-ref bodySCM "error_description"))
+        (assoc-ref bodySCM "access_token")))))
+
+
+
+
+
 (define* (masto-app-authorize-uri mastoApp #:key redirect scopes)
   (string-append (masto-app-domain mastoApp) "/oauth/authorize"
                  (assemble-params
@@ -79,57 +91,38 @@
                      ("client_secret" ,(masto-app-secret mastoApp))))))
 
 (define* (masto-app-token-via-code mastoApp code #:optional redirect)
-  (receive (header body)
-      (http-post
-        (string-append/shared
-          (masto-app-domain mastoApp) "/oauth/token"
-          (assemble-params
-            `(("client_id"     ,(masto-app-id     mastoApp))
-              ("client_secret" ,(masto-app-secret mastoApp))
-              ("grant_type"    "authorization_code")
-              ("code"          ,code)
-              ("redirect_uri"  ,(if redirect
-                                    redirect
-                                  (car (masto-app-redirects mastoApp))))))))
-    (let ([bodySCM (json-string->scm (utf8->string body))])
-      (if (assoc-ref bodySCM "error")
-          (error (assoc-ref bodySCM "error_description"))
-        (assoc-ref bodySCM "access_token")))))
+  (masto-app-token-post-call
+    (masto-app-domain mastoApp) "/oauth/token"
+    (assemble-params
+      `(("client_id"     ,(masto-app-id     mastoApp))
+        ("client_secret" ,(masto-app-secret mastoApp))
+        ("grant_type"    "authorization_code")
+        ("code"          ,code)
+        ("redirect_uri"  ,(if redirect
+                              redirect
+                            (car (masto-app-redirects mastoApp))))))))
 
 
 
 (define* (masto-app-token-via-user-cred mastoApp username
                                         password #:optional scopes)
-  (receive (header body)
-      (http-post
-        (string-append/shared
-          (masto-app-domain mastoApp) "/oauth/token"
-          (assemble-params
-            `(("grant_type"    "password")
-              ("username"      ,username)
-              ("password"      ,password)
-              ("client_id"     ,(masto-app-id     mastoApp))
-              ("client_secret" ,(masto-app-secret mastoApp))
-              ("scope"         ,(string-join
-                                  (if scopes scopes (masto-app-scopes mastoApp))
-                                  "%20")))))
-        #:headers `((Content-type . "application/x-www-form-urlencoded")))
-    (let ([bodySCM (json-string->scm (utf8->string body))])
-      (if (assoc-ref bodySCM "error")
-          (error (assoc-ref bodySCM "error_description"))
-        (assoc-ref bodySCM "access_token")))))
+  (masto-app-token-post-call
+    (masto-app-domain mastoApp) "/oauth/token"
+    (assemble-params
+      `(("grant_type"    "password")
+        ("username"      ,username)
+        ("password"      ,password)
+        ("client_id"     ,(masto-app-id     mastoApp))
+        ("client_secret" ,(masto-app-secret mastoApp))
+        ("scope"         ,(string-join
+                            (if scopes scopes (masto-app-scopes mastoApp))
+                            "%20"))))))
 
 
 
 (define* (masto-app-token-via-client-cred mastoApp #:optional scopes)
-  (receive (header body)
-      (http-post (string-append/shared
-                   (masto-app-domain mastoApp) "/token"
-                   (assemble-params
-                     `(("grant_type"    "client_credentials")
+  (masto-app-token-post-call
+    (masto-app-domain mastoApp) "/token"
+    (assemble-params `(("grant_type"    "client_credentials")
                        ("client_id"     ,(masto-app-id     mastoApp))
                        ("client_secret" ,(masto-app-secret mastoApp))))))
-    (let ([bodySCM (json-string->scm (utf8->string body))])
-      (if (assoc-ref bodySCM "error")
-          (error (assoc-ref bodySCM "error_description"))
-        (assoc-ref bodySCM "access_token")))))

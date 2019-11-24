@@ -122,7 +122,7 @@
 
 (define* (masto-app-token-via-client-cred mastoApp #:optional scopes)
   (masto-app-token-post-call
-    (masto-app-domain mastoApp) "/token"
+    (masto-app-domain mastoApp) "/oauth/token"
     (assemble-params `(("grant_type"    "client_credentials")
                        ("client_id"     ,(masto-app-id     mastoApp))
                        ("client_secret" ,(masto-app-secret mastoApp))))))

@@ -128,3 +128,14 @@
     (assemble-params `(("grant_type"    "client_credentials")
                        ("client_id"     ,(masto-app-id     mastoApp))
                        ("client_secret" ,(masto-app-secret mastoApp))))))
+
+
+
+
+
+(define (masto-app-verify-cred mastoApp)
+  (receive (header body)
+      (http-get (string-append/shared
+                  (masto-app-domain mastoApp)
+                  "/api/v1/apps/verify_credentials"))
+    (json-string->scm (utf8->string body))))

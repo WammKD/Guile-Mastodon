@@ -39,7 +39,7 @@
                                              [name                            "Elefan"]
                                              [redirects '("urn:ietf:wg:oauth:2.0:oob")]
                                              [scopes                         '("read")])
-  (let ([app (if (or (not key) (not secret))
+  (let ([app (if (or (not id) (not secret) (not key))
                  (receive (header body)
                      (http-post
                        (string-append/shared

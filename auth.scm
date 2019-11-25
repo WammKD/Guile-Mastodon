@@ -51,7 +51,7 @@
                          (if website (string-append/shared "&website=" website) "")))
                    (json-string->scm (utf8->string body)))
                `(("name"          . ,name)
-                 ("client_id"     . ,key)
+                 ("client_id"     . ,id)
                  ("client_secret" . ,secret)
                  ("vapid_key"     . ,key)
                  ("website"       . ,website)))])

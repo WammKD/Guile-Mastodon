@@ -6,6 +6,8 @@
   #:use-module (web uri)
   #:export(<mastodon-emoji>   masto-emoji?   masto-emoji-shortcode masto-emoji-static-url
                                              masto-emoji-url       masto-emoji-visible-in-picker
+           generate-masto-emoji
+           generate-masto-emoji-array
            <mastodon-field>   masto-field?   masto-field-name        masto-field-value
                                              masto-field-verified-at
            <mastodon-account> masto-account? masto-account-id             masto-account-username

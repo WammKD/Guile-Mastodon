@@ -19,7 +19,8 @@
             masto-app-authorize-uri
             masto-app-set-token-via-code!
             masto-app-set-token-via-user-cred!
-            masto-app-set-token-via-client-cred!))
+            masto-app-set-token-via-client-cred!
+            masto-app-verify-cred))
 
 (define-record-type <mastodon-instance-application>
   (make-masto-app domain name website redirects id secret key scopes)
@@ -124,7 +125,7 @@
 
 
 
-(define* (masto-app-set-token-via-client-cred mastoApp #:optional scopes)
+(define* (masto-app-set-token-via-client-cred! mastoApp #:optional scopes)
   (masto-app-set-token-via-post-call!
     mastoApp
     (masto-app-domain mastoApp) "/oauth/token"

@@ -4,7 +4,6 @@
   #:use-module (json)
   #:use-module (rnrs bytevectors)
   #:use-module (srfi srfi-9)
-  #:use-module (srfi srfi-26)
   #:use-module (web client)
   #:export (<mastodon-instance-application>
             masto-instance-app?

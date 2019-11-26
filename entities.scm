@@ -104,6 +104,27 @@
                         (masto-page-next-set! newPage page)
                         (masto-page-prev-set! page newPage)))])))
 
+(define (generate-masto-page-next mastoApp page)
+  (let ([nextURL     (masto-page-url-next    page)]
+        [http-type   (masto-page-http-call   page)]
+        [nextPage    (masto-page-next        page)]
+        [generate-fn (masto-page-generate-fn page)])
+    (cond
+     [nextPage      nextPage]
+     [(not nextURL) #f]
+     [else          (receive (header body)
+                        (http-type
+                          nextURL
+                          #:headers `((Authorization . ,(string-append
+                                                          "Bearer "
+                                                          (masto-app-token mastoApp)))))
+                      (let ([newPage (generate-masto-page body      header
+                                                          http-type generate-fn)])
+                        (masto-page-prev-set! newPage page)
+                        (masto-page-next-set! page newPage)))])))
+
+
+
 (define-record-type <mastodon-emoji>
   (make-masto-emoji shortcode staticURL url visibleInPicker)
   masto-emoji?

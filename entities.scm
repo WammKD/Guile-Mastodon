@@ -71,6 +71,39 @@
       http-type
       generate-fn)))
 
+(define (generate-masto-page-prev mastoApp page)
+  (let ([prevURL     (masto-page-url-prev    page)]
+        [http-type   (masto-page-http-call   page)]
+        [prevPage    (masto-page-prev        page)]
+        [generate-fn (masto-page-generate-fn page)])
+    (cond
+     [prevPage      prevPage]
+     [(not prevURL) #f]
+     [else          (receive (header body)
+                        (http-type
+                          prevURL
+                          #:headers `((Authorization . ,(string-append
+                                                          "Bearer "
+                                                          (masto-app-token mastoApp)))))
+                      (let ([newPage (if (assoc-ref (response-headers header) 'link)
+                                         (generate-masto-page
+                                           (generate-fn (json-string->scm
+                                                          (utf8->string body)))
+                                           header
+                                           http-type
+                                           generate-fn)
+                                       (make-masto-page
+                                         '()
+                                         #f
+                                         (substring
+                                           prevURL
+                                           0
+                                           (1- (string-contains prevURL "since_id")))
+                                         http-type
+                                         generate-fn))])
+                        (masto-page-next-set! newPage page)
+                        (masto-page-prev-set! page newPage)))])))
+
 (define-record-type <mastodon-emoji>
   (make-masto-emoji shortcode staticURL url visibleInPicker)
   masto-emoji?

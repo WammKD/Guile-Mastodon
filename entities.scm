@@ -34,6 +34,17 @@
                                                         masto-relationship-endorsed
             generate-masto-relationship))
 
+(define-record-type <mastodon-pagination-object>
+  (make-masto-page objectCollection prevURL nextURL http-call generate-fn)
+  masto-page?
+  (objectCollection masto-page-objects     masto-page-objects-set!)
+  (prevURL          masto-page-url-prev    masto-page-url-prev-set!)
+  (prevPage         masto-page-prev        masto-page-prev-set!)
+  (nextURL          masto-page-url-next    masto-page-url-next-set!)
+  (nextPage         masto-page-next        masto-page-next-set!)
+  (http-call        masto-page-http-call   masto-page-http-call-set!)
+  (generate-fn      masto-page-generate-fn masto-page-generate-fn-set!))
+
 (define-record-type <mastodon-emoji>
   (make-masto-emoji shortcode staticURL url visibleInPicker)
   masto-emoji?

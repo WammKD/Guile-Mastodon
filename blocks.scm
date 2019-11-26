@@ -10,14 +10,12 @@
             masto-unblock-account))
 
 (define* (masto-blocks-all mastoApp #:optional [limit 40])
-  (receive (header body)
-      (http-get
-        (string-append (masto-app-domain mastoApp) "/api/v1/blocks"
-                       "?limit="                   (number->string limit))
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (generate-masto-page body header http-get generate-masto-account-array)))
+  (generate-masto-page
+    mastoApp
+    http-get
+    (string-append (masto-app-domain mastoApp) "/api/v1/blocks"
+                   "?limit="                   (number->string limit))
+    generate-masto-account-array))
 
 (define (masto-block-account mastoApp accountID)
   (receive (header body)

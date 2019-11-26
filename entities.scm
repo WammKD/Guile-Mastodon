@@ -1,10 +1,23 @@
 (define-module (elefan entities)
+  #:use-module (elefan auth)
   #:use-module (elefan utils)
+  #:use-module (ice-9 receive)
+  #:use-module (json)
+  #:use-module (rnrs bytevectors)
   #:use-module (srfi srfi-9)
   #:use-module (srfi srfi-19)
+  #:use-module (srfi srfi-26)
   #:use-module (srfi srfi-43)
+  #:use-module (web client)
+  #:use-module (web response)
   #:use-module (web uri)
-  #:export (<mastodon-emoji>   masto-emoji?   masto-emoji-shortcode masto-emoji-static-url
+  #:export (<mastodon-pagination-object> masto-page? masto-page-objects
+                                                     masto-page-url-prev masto-page-prev
+                                                     masto-page-url-next masto-page-next
+            generate-masto-page
+            generate-masto-page-prev
+            generate-masto-page-next
+            <mastodon-emoji>   masto-emoji?   masto-emoji-shortcode masto-emoji-static-url
                                               masto-emoji-url       masto-emoji-visible-in-picker
             generate-masto-emoji
             generate-masto-emoji-array

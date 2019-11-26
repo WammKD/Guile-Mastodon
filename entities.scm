@@ -96,30 +96,18 @@
     (cond
      [prevPage      prevPage]
      [(not prevURL) #f]
-     [else          (receive (header body)
-                        (http-type
-                          prevURL
-                          #:headers `((Authorization . ,(string-append
-                                                          "Bearer "
-                                                          (masto-app-token mastoApp)))))
-                      (let ([newPage (if (assoc-ref (response-headers header) 'link)
-                                         (generate-masto-page
-                                           (generate-fn (json-string->scm
-                                                          (utf8->string body)))
-                                           header
-                                           http-type
-                                           generate-fn)
-                                       (make-masto-page
-                                         '()
-                                         #f
-                                         (substring
-                                           prevURL
-                                           0
-                                           (1- (string-contains prevURL "since_id")))
-                                         http-type
-                                         generate-fn))])
-                        (masto-page-next-set! newPage page)
-                        (masto-page-prev-set! page newPage)))])))
+     [else          (let ([newPage (generate-masto-page mastoApp http-type
+                                                        prevURL  generate-fn)])
+                      (if (and
+                            (masto-page-url-prev newPage)
+                            (masto-page-url-next newPage)
+                            (not (null? (masto-page-objects newPage))))
+                          (begin
+                            (masto-page-next-set! newPage page)
+                            (masto-page-prev-set! page newPage)
+
+                            newPage)
+                        #f))])))
 
 (define (generate-masto-page-next mastoApp page)
   (let ([nextURL     (masto-page-url-next    page)]
@@ -129,16 +117,18 @@
     (cond
      [nextPage      nextPage]
      [(not nextURL) #f]
-     [else          (receive (header body)
-                        (http-type
-                          nextURL
-                          #:headers `((Authorization . ,(string-append
-                                                          "Bearer "
-                                                          (masto-app-token mastoApp)))))
-                      (let ([newPage (generate-masto-page body      header
-                                                          http-type generate-fn)])
-                        (masto-page-prev-set! newPage page)
-                        (masto-page-next-set! page newPage)))])))
+     [else          (let ([newPage (generate-masto-page mastoApp http-type
+                                                        nextURL  generate-fn)])
+                      (if (and
+                            (masto-page-url-prev newPage)
+                            (masto-page-url-next newPage)
+                            (not (null? (masto-page-objects newPage))))
+                          (begin
+                            (masto-page-prev-set! newPage page)
+                            (masto-page-next-set! page newPage)
+
+                            newPage)
+                        #f))])))
 
 
 

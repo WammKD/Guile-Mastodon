@@ -45,6 +45,32 @@
   (http-call        masto-page-http-call   masto-page-http-call-set!)
   (generate-fn      masto-page-generate-fn masto-page-generate-fn-set!))
 
+(define (generate-masto-page jsonString pageHeader http-type generate-fn)
+  (if-let ([links (assoc-ref (response-headers pageHeader) 'link)])
+      (let ([pages (map
+                     (lambda (elem)
+                       (let ([page (reverse
+                                     (map
+                                       (lambda (e)
+                                         (if-let ([refined (cut string-contains <> "<") (string-trim e)])
+                                             (substring refined 1 (1- (string-length refined)))
+                                           (substring refined 5 (1- (string-length refined)))))
+                                       (string-split elem #\;)))])
+                         (cons (car page) (cadr page))))
+                     (map string-trim (string-split links #\,)))])
+        (make-masto-page
+          (generate-fn (json-string->scm (utf8->string jsonString)))
+          (assoc-ref pages "prev")
+          (assoc-ref pages "next")
+          http-type
+          generate-fn))
+    (make-masto-page
+      (generate-fn (json-string->scm (utf8->string jsonString)))
+      #f
+      #f
+      http-type
+      generate-fn)))
+
 (define-record-type <mastodon-emoji>
   (make-masto-emoji shortcode staticURL url visibleInPicker)
   masto-emoji?

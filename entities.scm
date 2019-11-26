@@ -4,35 +4,35 @@
   #:use-module (srfi srfi-19)
   #:use-module (srfi srfi-43)
   #:use-module (web uri)
-  #:export(<mastodon-emoji>   masto-emoji?   masto-emoji-shortcode masto-emoji-static-url
-                                             masto-emoji-url       masto-emoji-visible-in-picker
-           generate-masto-emoji
-           generate-masto-emoji-array
-           <mastodon-field>   masto-field?   masto-field-name        masto-field-value
-                                             masto-field-verified-at
-           <mastodon-account> masto-account? masto-account-id             masto-account-username
-                                             masto-account-acct           masto-account-displayName
-                                             masto-account-locked         masto-account-createdAt
-                                             masto-account-followersCount masto-account-followingCount
-                                             masto-account-statusesCount  masto-account-note
-                                             masto-account-url            masto-account-avatar
-                                             masto-account-avatarStatic   masto-account-header
-                                             masto-account-headerStatic   masto-account-emojis
-                                             masto-account-moved          masto-account-fields
-                                             masto-account-bot
-           generate-masto-account
-           generate-masto-account-array
-           <mastodon-relationship> masto-relationship? masto-relationship-id
-                                                       masto-relationship-following
-                                                       masto-relationship-followed-by
-                                                       masto-relationship-blocking
-                                                       masto-relationship-muting
-                                                       masto-relationship-muting-notifications
-                                                       masto-relationship-requested
-                                                       masto-relationship-domain-blocking
-                                                       masto-relationship-showing-reblogs     
-                                                       masto-relationship-endorsed
-           generate-masto-relationship))
+  #:export (<mastodon-emoji>   masto-emoji?   masto-emoji-shortcode masto-emoji-static-url
+                                              masto-emoji-url       masto-emoji-visible-in-picker
+            generate-masto-emoji
+            generate-masto-emoji-array
+            <mastodon-field>   masto-field?   masto-field-name        masto-field-value
+                                              masto-field-verified-at
+            <mastodon-account> masto-account? masto-account-id             masto-account-username
+                                              masto-account-acct           masto-account-displayName
+                                              masto-account-locked         masto-account-createdAt
+                                              masto-account-followersCount masto-account-followingCount
+                                              masto-account-statusesCount  masto-account-note
+                                              masto-account-url            masto-account-avatar
+                                              masto-account-avatarStatic   masto-account-header
+                                              masto-account-headerStatic   masto-account-emojis
+                                              masto-account-moved          masto-account-fields
+                                              masto-account-bot
+            generate-masto-account
+            generate-masto-account-array
+            <mastodon-relationship> masto-relationship? masto-relationship-id
+                                                        masto-relationship-following
+                                                        masto-relationship-followed-by
+                                                        masto-relationship-blocking
+                                                        masto-relationship-muting
+                                                        masto-relationship-muting-notifications
+                                                        masto-relationship-requested
+                                                        masto-relationship-domain-blocking
+                                                        masto-relationship-showing-reblogs
+                                                        masto-relationship-endorsed
+            generate-masto-relationship))
 
 (define-record-type <mastodon-emoji>
   (make-masto-emoji shortcode staticURL url visibleInPicker)

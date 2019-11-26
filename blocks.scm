@@ -17,7 +17,7 @@
         #:headers `((Authorization . ,(string-append
                                         "Bearer "
                                         (masto-app-token mastoApp)))))
-    (generate-masto-account-array (json-string->scm (utf8->string body)))))
+    (generate-masto-page body header http-get generate-masto-account-array)))
 
 (define (masto-block-account mastoApp accountID)
   (receive (header body)

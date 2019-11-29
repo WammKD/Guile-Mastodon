@@ -291,14 +291,7 @@
   (endorsed            masto-relationship-endorsed             masto-relationship-endorsed-set!))
 
 (define (generate-masto-relationship ship)
-  (make-masto-relationship
-    (assoc-ref ship "id")
-    (assoc-ref ship "following")
-    (assoc-ref ship "followed_by")
-    (assoc-ref ship "blocking")
-    (assoc-ref ship "muting")
-    (assoc-ref ship "muting_notifications")
-    (assoc-ref ship "requested")
-    (assoc-ref ship "domain_blocking")
-    (assoc-ref ship "showing_reblogs")
-    (assoc-ref ship "endorsed")))
+  (generate-masto-object make-masto-relationship ship
+    ["id"]        ["following"]       ["followed_by"]
+    ["blocking"]  ["muting"]          ["muting_notifications"]
+    ["requested"] ["domain_blocking"] ["showing_reblogs"]      ["endorsed"]))

@@ -24,15 +24,15 @@
             generate-masto-emoji-array
             <mastodon-field>   masto-field?   masto-field-name        masto-field-value
                                               masto-field-verified-at
-            <mastodon-account> masto-account? masto-account-id             masto-account-username
-                                              masto-account-acct           masto-account-displayName
-                                              masto-account-locked         masto-account-createdAt
-                                              masto-account-followersCount masto-account-followingCount
-                                              masto-account-statusesCount  masto-account-note
-                                              masto-account-url            masto-account-avatar
-                                              masto-account-avatarStatic   masto-account-header
-                                              masto-account-headerStatic   masto-account-emojis
-                                              masto-account-moved          masto-account-fields
+            <mastodon-account> masto-account? masto-account-id              masto-account-username
+                                              masto-account-acct            masto-account-display-name
+                                              masto-account-locked          masto-account-created-at
+                                              masto-account-followers-count masto-account-following-count
+                                              masto-account-statuses-count  masto-account-note
+                                              masto-account-url             masto-account-avatar
+                                              masto-account-avatar-static   masto-account-header
+                                              masto-account-header-static   masto-account-emojis
+                                              masto-account-moved           masto-account-fields
                                               masto-account-bot
             generate-masto-account
             generate-masto-account-array
@@ -169,25 +169,25 @@
                       avatarStatic   header         headerStatic
                       emojis         moved          fields        bot)
   masto-account?
-  (id             masto-account-id             masto-account-id-set!)
-  (username       masto-account-username       masto-account-username-set!)
-  (acct           masto-account-acct           masto-account-acct-set!)
-  (displayName    masto-account-displayName    masto-account-displayName-set!)
-  (locked         masto-account-locked         masto-account-locked-set!)
-  (createdAt      masto-account-createdAt      masto-account-createdAt-set!)
-  (followersCount masto-account-followersCount masto-account-followersCount-set!)
-  (followingCount masto-account-followingCount masto-account-followingCount-set!)
-  (statusesCount  masto-account-statusesCount  masto-account-statusesCount-set!)
-  (note           masto-account-note           masto-account-note-set!)
-  (url            masto-account-url            masto-account-url-set!)
-  (avatar         masto-account-avatar         masto-account-avatar-set!)
-  (avatarStatic   masto-account-avatarStatic   masto-account-avatarStatic-set!)
-  (header         masto-account-header         masto-account-header-set!)
-  (headerStatic   masto-account-headerStatic   masto-account-headerStatic-set!)
-  (emojis         masto-account-emojis         masto-account-emojis-set!)
-  (moved          masto-account-moved          masto-account-moved-set!)
-  (fields         masto-account-fields         masto-account-fields-set!)
-  (bot            masto-account-bot            masto-account-bot-set!))
+  (id             masto-account-id              masto-account-id-set!)
+  (username       masto-account-username        masto-account-username-set!)
+  (acct           masto-account-acct            masto-account-acct-set!)
+  (displayName    masto-account-display-name    masto-account-display-name-set!)
+  (locked         masto-account-locked          masto-account-locked-set!)
+  (createdAt      masto-account-created-at      masto-account-created-at-set!)
+  (followersCount masto-account-followers-count masto-account-followers-count-set!)
+  (followingCount masto-account-following-count masto-account-following-count-set!)
+  (statusesCount  masto-account-statuses-count  masto-account-statuses-count-set!)
+  (note           masto-account-note            masto-account-note-set!)
+  (url            masto-account-url             masto-account-url-set!)
+  (avatar         masto-account-avatar          masto-account-avatar-set!)
+  (avatarStatic   masto-account-avatar-static   masto-account-avatar-static-set!)
+  (header         masto-account-header          masto-account-header-set!)
+  (headerStatic   masto-account-header-static   masto-account-header-static-set!)
+  (emojis         masto-account-emojis          masto-account-emojis-set!)
+  (moved          masto-account-moved           masto-account-moved-set!)
+  (fields         masto-account-fields          masto-account-fields-set!)
+  (bot            masto-account-bot             masto-account-bot-set!))
 
 (define (generate-masto-account account)
   (make-masto-account

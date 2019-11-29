@@ -16,7 +16,7 @@
         (cnd                      ...)
         ([binding       value] . rest) then else) (if-let-helper letVersion
                                                                  ([bnd val] ... [binding value])
-                                                                 (cnd                       ...)
+                                                                 (cnd       ...           value)
                                                                  rest                            then else)]
     [(_ letVersion
         ([bnd             val]    ...)

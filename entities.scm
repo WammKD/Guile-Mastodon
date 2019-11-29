@@ -48,6 +48,32 @@
                                                         masto-relationship-endorsed
             generate-masto-relationship))
 
+(define-syntax generate-masto-object-helper
+  (syntax-rules ()
+    [(_ generate-funct alist
+        (args                     ...)
+        ()                            ) (apply generate-funct (list args ...))]
+    [(_ generate-funct alist
+        (args                     ...)
+        ([key transform-funct] . rest)) (generate-masto-object-helper generate-funct alist
+                                                                      (args ... (let ([value (assoc-ref alist key)])
+                                                                                  (if value (transform-funct value) #f)))
+                                                                      rest)]
+    [(_ generate-funct alist
+        (args                     ...)
+        ([key]                 . rest)) (generate-masto-object-helper generate-funct alist
+                                                                      (args ... (let ([value (assoc-ref alist key)])
+                                                                                  (if value value                   #f)))
+                                                                      rest)]))
+
+(define-syntax generate-masto-object
+  (syntax-rules ()
+    [(_ generate-funct alist args ...)  (generate-masto-object-helper generate-funct alist
+                                                                      ()
+                                                                      (args ...))]))
+
+
+
 (define (masto-string->date str)
   (let ([strLen (string-length str)])
     (string->date

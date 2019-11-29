@@ -186,11 +186,11 @@
   (visibleInPicker masto-emoji-visible-in-picker masto-emoji-visible-in-picker-set!))
 
 (define (generate-masto-emoji emoji)
-  (make-masto-emoji
-    (assoc-ref emoji "shortcode")
-    (string->uri (assoc-ref emoji "url"))
-    (string->uri (assoc-ref emoji "static_url"))
-    (assoc-ref emoji "visible_in_picker")))
+  (generate-masto-object make-masto-emoji emoji
+    ["shortcode"]
+    ["url"               string->uri]
+    ["static_url"        string->uri]
+    ["visible_in_picker"]))
 
 (define (generate-masto-emoji-array emojis)
   (vector-fold (lambda (index finalList emoji)

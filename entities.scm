@@ -48,6 +48,24 @@
                                                         masto-relationship-endorsed
             generate-masto-relationship))
 
+(define (masto-string->date str)
+  (let ([strLen (string-length str)])
+    (string->date
+      (if (char=? (char-upcase (string-ref str (1- strLen))) #\Z)
+          str
+        (string-append
+          (substring str 0 (- strLen 3))
+          (substring str (- strLen 2))))
+      (if (or
+            (> (string->number (substring (version) 0 3)) 2.2)
+            (and
+              (string=? (substring (version) 0 4) "2.2.")
+              (> (string->number (substring (version) 4)) 4)))
+          "~Y-~m-~dT~H:~M:~S.~N~z"
+        "~Y-~m-~dT~H:~M:~S.~z"))))
+
+
+
 (define-record-type <mastodon-pagination-object>
   (make-masto-page objectCollection prevURL nextURL http-call generate-fn)
   masto-page?

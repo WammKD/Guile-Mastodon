@@ -46,7 +46,68 @@
                                                         masto-relationship-domain-blocking
                                                         masto-relationship-showing-reblogs
                                                         masto-relationship-endorsed
-            generate-masto-relationship))
+            generate-masto-relationship
+            <mastodon-meta-subtree> masto-meta-subtree? masto-meta-subtree-width      masto-meta-subtree-height
+                                                        masto-meta-subtree-size       masto-meta-subtree-aspect
+                                                        masto-meta-subtree-frame-rate masto-meta-subtree-duration
+                                                        masto-meta-subtree-bitrate
+            generate-masto-meta-subtree
+            <mastodon-meta-focus>   masto-meta-focus?   masto-meta-focus-x            masto-meta-focus-y
+            generate-masto-meta-focus
+            <mastodon-meta>         masto-meta?         masto-meta-small              masto-meta-original
+                                                        masto-meta-focus
+            generate-masto-meta
+            <mastodon-attachment>   masto-attachment?   masto-attachment-id           masto-attachment-type
+                                                        masto-attachment-url          masto-attachment-remote-url
+                                                        masto-attachment-preview-url  masto-attachment-text-url
+                                                        masto-attachment-meta         masto-attachment-description
+                                                        masto-attachment-blurhash
+            generate-masto-attachment
+            generate-masto-attachment-array
+            <mastodon-mention> masto-mention? masto-mention-url       masto-mention-username
+                                              masto-mention-acct      masto-mention-id
+            generate-masto-mention
+            generate-masto-mention-array
+            <mastodon-history> masto-history? masto-history-day       masto-history-uses
+                                              masto-history-accounts
+            generate-masto-history
+            generate-masto-history-array
+            <mastodon-tag>     masto-tag?     masto-tag-name          masto-tag-url
+                                              masto-tag-history
+            generate-masto-tag
+            generate-masto-tag-array
+            <mastodon-card>    masto-card?    masto-card-url          masto-card-title
+                                              masto-card-description  masto-card-image
+                                              masto-card-type         masto-card-author-name
+                                              masto-card-author-url   masto-card-provider-name
+                                              masto-card-provider-url masto-card-html
+                                              masto-card-width        masto-card-height
+            generate-masto-card
+            <mastodon-poll-option> masto-poll-option? masto-poll-option-title masto-poll-option-votes-count
+            generate-masto-poll-option
+            generate-masto-poll-option-array
+            <mastodon-poll> masto-poll? masto-poll-id          masto-poll-expires-at
+                                        masto-poll-expired     masto-poll-multiple
+                                        masto-poll-votes-count masto-poll-options    masto-poll-voted
+            generate-masto-poll
+            <mastodon-application> masto-application? masto-application-name masto-application-website
+            generate-masto-application
+            <mastodon-status> masto-status? masto-status-id              masto-status-uri
+                                            masto-status-url             masto-status-account
+                                            masto-status-in-reply-to-id  masto-status-in-reply-to-account-id
+                                            masto-status-reblog          masto-status-content
+                                            masto-status-created-at      masto-status-emojis
+                                            masto-status-replies-count   masto-status-reblogs-count
+                                            masto-status-favorites-count masto-status-reblogged
+                                            masto-status-favorited       masto-status-muted
+                                            masto-status-sensitive       masto-status-spoiler-text
+                                            masto-status-visibility      masto-status-media-attachments
+                                            masto-status-mentions        masto-status-tags
+                                            masto-status-card            masto-status-poll
+                                            masto-status-application     masto-status-language
+                                            masto-status-pinned
+            generate-masto-status
+            generate-masto-status-array))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()

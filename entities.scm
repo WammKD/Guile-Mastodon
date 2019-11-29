@@ -234,47 +234,36 @@
   (bot            masto-account-bot             masto-account-bot-set!))
 
 (define (generate-masto-account account)
-  (make-masto-account
-    (assoc-ref account "id")
-    (assoc-ref account "username")
-    (assoc-ref account "acct")
-    (assoc-ref account "display_name")
-    (assoc-ref account "locked")
-    (string->date
-      (assoc-ref account "created_at")
-      (if (or
-            (> (string->number (substring (version) 0 3)) 2.2)
-            (and
-              (string=? (substring (version) 0 4) "2.2.")
-              (> (string->number (substring (version) 4)) 4)))
-          "~Y-~m-~dT~H:~M:~S.~N~z"
-        "~Y-~m-~dT~H:~M:~S.~z"))
-    (assoc-ref account "followers_count")
-    (assoc-ref account "following_count")
-    (assoc-ref account "statuses_count")
-    (assoc-ref account "note")
-    (string->uri (assoc-ref account "url"))
-    (string->uri (assoc-ref account "avatar"))
-    (string->uri (assoc-ref account "avatar_static"))
-    (string->uri (assoc-ref account "header"))
-    (string->uri (assoc-ref account "header_static"))
-    (generate-masto-emoji-array (assoc-ref account "emojis"))
-    (if-let ([moved (assoc-ref account "moved")])
-        (generate-masto-account moved)
-      #f)
-    (if-let ([fields (assoc-ref account "fields")])
-        (vector-fold
-          (lambda (i finalFieldsList field)
-            (cons
-              (make-masto-field
-                (assoc-ref field "name")
-                (assoc-ref field "value")
-                (assoc-ref field "verified_at"))
-              finalFieldsList))
-          '()
-          fields)
-      #f)
-    (if-let ([bot (assoc-ref account "bot")]) bot #f)))
+  (generate-masto-object make-masto-account account
+    ["id"]
+    ["username"]
+    ["acct"]
+    ["display_name"]
+    ["locked"]
+    ["created_at"      masto-string->date]
+    ["followers_count"]
+    ["following_count"]
+    ["statuses_count"]
+    ["note"]
+    ["url"             string->uri]
+    ["avatar"          string->uri]
+    ["avatar_static"   string->uri]
+    ["header"          string->uri]
+    ["header_static"   string->uri]
+    ["emojis"          generate-masto-emoji-array]
+    ["moved"           generate-masto-account]
+    ["fields"          (cut
+                         vector-fold
+                          (lambda (i finalFieldsList field)
+                            (cons
+                              (generate-masto-object make-masto-field field
+                                ["name"]
+                                ["value"]
+                                ["verified_at" masto-string->date])
+                              finalFieldsList))
+                          '()
+                          <>)]
+    ["bot"]))
 
 (define (generate-masto-account-array accounts)
   (vector-fold

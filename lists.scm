@@ -19,4 +19,4 @@
     (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
                                                    (utf8->string body))])
         (error (assoc-ref bodySCM "error"))
-      (generate-masto-account-array bodySCM))))
+      (generate-masto-list-array bodySCM))))

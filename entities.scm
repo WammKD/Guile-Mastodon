@@ -155,6 +155,12 @@
 
 
 
+(define (generate-masto-object-array objects generate-fn)
+  (vector-fold (lambda (index finalList object)
+                 (cons (generate-fn object) finalList)) '() objects))
+
+
+
 (define (masto-string->date str)
   (let ([strLen (string-length str)])
     (string->date
@@ -274,8 +280,7 @@
     ["visible_in_picker"]))
 
 (define (generate-masto-emoji-array emojis)
-  (vector-fold (lambda (index finalList emoji)
-                 (cons (generate-masto-emoji emoji) finalList)) '() emojis))
+  (generate-masto-object-array emojis generate-masto-emoji))
 
 
 
@@ -347,11 +352,7 @@
     ["bot"]))
 
 (define (generate-masto-account-array accounts)
-  (vector-fold
-    (lambda (index finalList account)
-      (cons (generate-masto-account account) finalList))
-    '()
-    accounts))
+  (generate-masto-object-array accounts generate-masto-account))
 
 
 
@@ -446,11 +447,7 @@
     ["blurhash"]))
 
 (define (generate-masto-attachment-array attachments)
-  (vector-fold
-    (lambda (index finalList attachment)
-      (cons (generate-masto-attachment attachment) finalList))
-    '()
-    attachments))
+  (generate-masto-object-array attachments generate-masto-attachment))
 
 
 
@@ -467,11 +464,7 @@
     ["url" string->uri] ["username"] ["acct"] ["id"]))
 
 (define (generate-masto-mention-array mentions)
-  (vector-fold
-    (lambda (index finalList mention)
-      (cons (generate-masto-mention mention) finalList))
-    '()
-    mentions))
+  (generate-masto-object-array mentions generate-masto-mention))
 
 
 
@@ -491,11 +484,7 @@
     (if-let ([accounts (assoc-ref history "accounts")]) accounts #f)))
 
 (define (generate-masto-history-array histories)
-  (vector-fold
-    (lambda (index finalList history)
-      (cons (generate-masto-history history) finalList))
-    '()
-    histories))
+  (generate-masto-object-array histories generate-masto-history))
 
 
 
@@ -513,11 +502,7 @@
     ["history" generate-masto-history-array]))
 
 (define (generate-masto-tag-array tags)
-  (vector-fold
-    (lambda (index finalList tag)
-      (cons (generate-masto-tag tag) finalList))
-    '()
-    tags))
+  (generate-masto-object-array tags generate-masto-tag))
 
 
 
@@ -567,11 +552,7 @@
     ["votes_count"]))
 
 (define (generate-masto-poll-option-array pollOptions)
-  (vector-fold
-    (lambda (index finalList poll-option)
-      (cons (generate-masto-poll-option poll-option) finalList))
-    '()
-    pollOptions))
+  (generate-masto-object-array pollOptions generate-masto-poll-option))
 
 
 
@@ -677,11 +658,7 @@
     ["pinned"]))
 
 (define (generate-masto-status-array statuses)
-  (vector-fold
-    (lambda (index finalList status)
-      (cons (generate-masto-status status) finalList))
-    '()
-    statuses))
+  (generate-masto-object-array statuses generate-masto-status))
 
 
 

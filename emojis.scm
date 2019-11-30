@@ -7,11 +7,11 @@
   #:use-module (web client)
   #:export (masto-emojis-on-instance))
 
-(define (masto-emojis-on-instance mastoApp)
+(define* (masto-emojis-on-instance #:key app domain)
   (receive (header body)
-      (http-get
-        (string-append (masto-app-domain mastoApp) "/api/v1/custom_emojis")
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
+      (http-get (string-append (if domain
+                                   (if (string-contains-ci domain "https://")
+                                       domain
+                                     (string-append/shared "https://" domain))
+                                 (masto-app-domain app)) "/api/v1/custom_emojis"))
     (generate-masto-emoji-array (json-string->scm (utf8->string body)))))

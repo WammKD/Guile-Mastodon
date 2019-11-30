@@ -108,9 +108,12 @@
                                             masto-status-pinned
             generate-masto-status
             generate-masto-status-array
-            <mastodon-filter> masto-filter? masto-filter-id              masto-filter-phrase
-                                            masto-filter-context         masto-filter-expires-at
-                                            masto-filter-irreversible    masto-filter-whole-word
+            <mastodon-filter> masto-filter? masto-filter-id                masto-filter-phrase
+                                                                           masto-filter-phrase-set!
+                                            masto-filter-context           masto-filter-expires-at
+                                            masto-filter-context-set!      masto-filter-expires-at-set!
+                                            masto-filter-irreversible      masto-filter-whole-word
+                                            masto-filter-irreversible-set! masto-filter-whole-word-set!
             generate-masto-filter))
 
 (define-syntax generate-masto-object-helper

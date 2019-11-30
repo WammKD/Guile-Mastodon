@@ -9,7 +9,7 @@
             masto-endorse-account
             masto-unendorse-account))
 
-(define (masto-endorsements-all mastoApp #:optional [limit 40])
+(define* (masto-endorsements-all mastoApp #:optional [limit 40])
   (generate-masto-page
     mastoApp
     http-get

@@ -107,7 +107,11 @@
                                             masto-status-application     masto-status-language
                                             masto-status-pinned
             generate-masto-status
-            generate-masto-status-array))
+            generate-masto-status-array
+            <mastodon-filter> masto-filter? masto-filter-id              masto-filter-phrase
+                                            masto-filter-context         masto-filter-expires-at
+                                            masto-filter-irreversible    masto-filter-whole-word
+            generate-masto-filter))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -662,3 +666,24 @@
       (cons (generate-masto-status status) finalList))
     '()
     statuses))
+
+
+
+(define-record-type <mastodon-filter>
+  (make-masto-filter id phrase context expiresAt irreversible wholeWord)
+  masto-filter?
+  (id           masto-filter-id           masto-filter-id-set!)
+  (phrase       masto-filter-phrase       masto-filter-phrase-set!)
+  (context      masto-filter-context      masto-filter-context-set!)
+  (expiresAt    masto-filter-expires-at   masto-filter-expires-at-set!)
+  (irreversible masto-filter-irreversible masto-filter-irreversible-set!)
+  (wholeWord    masto-filter-whole-word   masto-filter-whole-word-set!))
+
+(define (generate-masto-filter filter)
+  (generate-masto-object make-masto-filter filter
+    ["id"]
+    ["phrase"]
+    ["context"      (cut enum-value-of <> FILTER_CONTEXT_ENUM)]
+    ["expires_at"   masto-string->date]
+    ["irreversible"]
+    ["whole_word"]))

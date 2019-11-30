@@ -114,7 +114,20 @@
                                             masto-filter-context-set!      masto-filter-expires-at-set!
                                             masto-filter-irreversible      masto-filter-whole-word
                                             masto-filter-irreversible-set! masto-filter-whole-word-set!
-            generate-masto-filter))
+            generate-masto-filter
+            <mastodon-urls>   masto-urls?   masto-urls-streaming-api
+            generate-masto-urls
+            <mastodon-stats>  masto-stats?  masto-instance-user-count      masto-instance-status-count
+                                            masto-instance-domain-count
+            generate-masto-stats
+            <mastodon-instance> masto-instance? masto-instance-uri               masto-instance-title
+                                                masto-instance-short-description masto-instance-description
+                                                masto-instance-email             masto-instance-version
+                                                masto-instance-thumbnail         masto-instance-urls
+                                                masto-instance-stats             masto-instance-languages
+                                                masto-instance-contact-account
+            generate-masto-instance
+            ))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -690,3 +703,60 @@
     ["expires_at"   masto-string->date]
     ["irreversible"]
     ["whole_word"]))
+
+
+
+(define-record-type <mastodon-urls>
+  (make-masto-urls streamingAPI)
+  masto-urls?
+  (streamingAPI masto-urls-streaming-api masto-urls-streaming-api-set!))
+
+(define (generate-masto-urls urls)
+  (generate-masto-object make-masto-urls urls
+    ["streaming_api" string->uri]))
+
+
+
+(define-record-type <mastodon-stats>
+  (make-masto-stats userCount statusCount domainCount)
+  masto-stats?
+  (  userCount masto-instance-user-count   masto-instance-user-count-set!)
+  (statusCount masto-instance-status-count masto-instance-status-count-set!)
+  (domainCount masto-instance-domain-count masto-instance-domain-count-set!))
+
+(define (generate-masto-stats stats)
+  (generate-masto-object make-masto-stats stats
+    ["user_count"] ["status_count"] ["domain_count"]))
+
+
+
+(define-record-type <mastodon-instance>
+  (make-masto-instance uri   title     shortDescription description
+                       email version   thumbnail        urls
+                       stats languages contactAccount)
+  masto-instance?
+  (uri              masto-instance-uri               masto-instance-uri-set!)
+  (title            masto-instance-title             masto-instance-title-set!)
+  (shortDescription masto-instance-short-description masto-instance-short-description-set!)
+  (description      masto-instance-description       masto-instance-description-set!)
+  (email            masto-instance-email             masto-instance-email-set!)
+  (version          masto-instance-version           masto-instance-version-set!)
+  (thumbnail        masto-instance-thumbnail         masto-instance-thumbnail-set!)
+  (urls             masto-instance-urls              masto-instance-urls-set!)
+  (stats            masto-instance-stats             masto-instance-stats-set!)
+  (languages        masto-instance-languages         masto-instance-languages-set!)
+  (contactAccount   masto-instance-contact-account   masto-instance-contact-account-set!))
+
+(define (generate-masto-instance instance)
+  (generate-masto-object make-masto-instance instance
+    ["uri"]
+    ["title"]
+    ["short_description"]
+    ["description"]
+    ["email"]
+    ["version"]
+    ["thumbnail"         string->uri]
+    ["urls"              generate-masto-urls]
+    ["stats"             generate-masto-stats]
+    ["languages"         vector->list]
+    ["contact_account"   generate-masto-account]))

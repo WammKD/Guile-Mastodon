@@ -737,3 +737,18 @@
     ["stats"             generate-masto-stats]
     ["languages"         vector->list]
     ["contact_account"   generate-masto-account]))
+
+
+
+(define-record-type <mastodon-list>
+  (make-masto-list id title)
+  masto-list?
+  (id    masto-list-id    masto-list-id-set!)
+  (title masto-list-title masto-list-title-set!))
+
+(define (generate-masto-list list)
+  (generate-masto-object make-masto-list list
+    ["id"] ["title"]))
+
+(define (generate-masto-list-array lists)
+  (generate-masto-object-array lists generate-masto-list))

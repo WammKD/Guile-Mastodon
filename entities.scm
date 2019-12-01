@@ -129,7 +129,12 @@
             generate-masto-instance
             <mastodon-list> masto-list? masto-list-id masto-list-title
             generate-masto-list
-            generate-masto-list-array))
+            generate-masto-list-array
+            <mastodon-notification> masto-notification? masto-notification-id        masto-notification-type
+                                                        masto-notification-create-at masto-notification-account
+                                                        masto-notification-status
+            generate-masto-notification
+            generate-masto-notification-array))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -754,3 +759,25 @@
 
 (define (generate-masto-list-array lists)
   (generate-masto-object-array lists generate-masto-list))
+
+
+
+(define-record-type <mastodon-notification>
+  (make-masto-notification id type createdAt account status)
+  masto-notification?
+  (id        masto-notification-id        masto-notification-id-set!)
+  (type      masto-notification-type      masto-notification-type-set!)
+  (createdAt masto-notification-create-at masto-notification-created-at-set!)
+  (account   masto-notification-account   masto-notification-account-set!)
+  (status    masto-notification-status    masto-notification-status-set!))
+
+(define (generate-masto-notification notification)
+  (generate-masto-object make-masto-notification notification
+    ["id"]
+    ["type"      (cut enum-value-of <> NOTIFICATION_TYPE_ENUM)]
+    ["create_at" masto-string->date]
+    ["account"   generate-masto-account]
+    ["status"    generate-masto-status]))
+
+(define (generate-masto-notification-array notifications)
+  (generate-masto-object-array notifications generate-masto-notification))

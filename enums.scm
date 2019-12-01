@@ -1,9 +1,10 @@
 (define-module (elefan enums)
   #:use-module (elefan utils)
-  #:export (enum-value-of        enum-member?
-            enum-elem=?          enum-member-or-value->string
-            ATTACHMENT_TYPE_ENUM         CARD_TYPE_ENUM
-             FILTER_CONTEXT_ENUM STATUS_VISIBILITY_ENUM))
+  #:export (enum-value-of          enum-member?
+            enum-elem=?            enum-member-or-value->string
+              ATTACHMENT_TYPE_ENUM    FILTER_CONTEXT_ENUM
+                    CARD_TYPE_ENUM STATUS_VISIBILITY_ENUM
+            NOTIFICATION_TYPE_ENUM))
 
 (define (enum-value-of value enum)
   (if-let ([possMem (memq (string->symbol value) enum)]) (car possMem) possMem))
@@ -21,6 +22,7 @@
 
 
 
+(define NOTIFICATION_TYPE_ENUM '(follow  mention       reblog  favourite))
 (define   ATTACHMENT_TYPE_ENUM '(unknown image         gifv    video))
 (define         CARD_TYPE_ENUM '(link    photo         video   rich))
 (define    FILTER_CONTEXT_ENUM '(home    notifications public  thread))

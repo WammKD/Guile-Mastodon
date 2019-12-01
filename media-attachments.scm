@@ -74,3 +74,36 @@
                                                           (utf8->string body))])
                (error (assoc-ref bodySCM "error"))
              (generate-masto-attachment bodySCM)))]))
+
+(define* (masto-media-update mastoApp mediaID #:key description x y)
+  (cond
+   [(and (or x y) (not (and x y)))
+         (error (string-append
+                  "ERROR: In procedure masto-media-upload:\n"
+                  "In procedure masto-media-upload: "
+                  "Both x and y coordinates are needed for "
+                  "focus coordinates"))]
+   [(> (string-length description) 420)
+         (error (string-append
+                  "ERROR: In procedure masto-media-upload:\n"
+                  "In procedure masto-media-upload: "
+                  "Image description cannot exceed 420 characters"))]
+   [else (receive (header body)
+             (http-put
+               (string-append (masto-app-domain mastoApp) "/api/v1/media/" mediaID
+                              (if (or description (and x y)) "?" "")
+                              (if description
+                                  (string-append "description=" description)
+                                "")
+                              (if (and description x y) "&" "")
+                              (if (and x y)
+                                  (string-append "focus=" (number->string x)
+                                                 ","      (number->string y))
+                                ""))
+               #:headers `((Authorization . ,(string-append
+                                               "Bearer "
+                                               (masto-app-token mastoApp)))))
+           (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
+                                                          (utf8->string body))])
+               (error (assoc-ref bodySCM "error"))
+             (generate-masto-attachment bodySCM)))]))

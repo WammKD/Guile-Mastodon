@@ -115,10 +115,10 @@
                                             masto-filter-irreversible      masto-filter-whole-word
                                             masto-filter-irreversible-set! masto-filter-whole-word-set!
             generate-masto-filter
-            <mastodon-urls>   masto-urls?   masto-urls-streaming-api
-            generate-masto-urls
-            <mastodon-stats>  masto-stats?  masto-instance-user-count      masto-instance-status-count
-                                            masto-instance-domain-count
+            <mastodon-instance-urls> masto-instance-urls? masto-instance-urls-streaming-api
+            generate-masto-instance-urls
+            <mastodon-stats> masto-stats? masto-instance-user-count   masto-instance-status-count
+                                          masto-instance-domain-count
             generate-masto-stats
             <mastodon-instance> masto-instance? masto-instance-uri               masto-instance-title
                                                 masto-instance-short-description masto-instance-description
@@ -690,13 +690,13 @@
 
 
 
-(define-record-type <mastodon-urls>
-  (make-masto-urls streamingAPI)
-  masto-urls?
-  (streamingAPI masto-urls-streaming-api masto-urls-streaming-api-set!))
+(define-record-type <mastodon-instance-urls>
+  (make-masto-instance-urls streamingAPI)
+  masto-instance-urls?
+  (streamingAPI masto-instance-urls-streaming-api masto-instance-urls-streaming-api-set!))
 
-(define (generate-masto-urls urls)
-  (generate-masto-object make-masto-urls urls
+(define (generate-masto-instance-urls urls)
+  (generate-masto-object make-masto-instance-urls urls
     ["streaming_api" string->uri]))
 
 
@@ -740,7 +740,7 @@
     ["email"]
     ["version"]
     ["thumbnail"         string->uri]
-    ["urls"              generate-masto-urls]
+    ["urls"              generate-masto-instance-urls]
     ["stats"             generate-masto-stats]
     ["languages"         vector->list]
     ["contact_account"   generate-masto-account]))

@@ -105,20 +105,8 @@
   (receive (header body)
       (http-post
         (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
-                       listID                      "/accounts?"
-                       (substring
-                         (cdr (fold
-                                (lambda (accountID result)
-                                  (let ([index (car result)])
-                                    (cons (1+ index) (string-append
-                                                       (cdr result)
-                                                       "&account_ids["
-                                                       (number->string index)
-                                                       "]="
-                                                       accountID))))
-                                '(0 . "")
-                                accountIDs))
-                         1))
+                       listID                      "/accounts"
+                       (assemble-params `(("account_ids" ,accountIDs))))
         #:headers `((Authorization . ,(string-append
                                         "Bearer "
                                         (masto-app-token mastoApp)))))
@@ -130,20 +118,8 @@
   (receive (header body)
       (http-delete
         (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
-                       listID                      "/accounts?"
-                       (substring
-                         (cdr (fold
-                                (lambda (accountID result)
-                                  (let ([index (car result)])
-                                    (cons (1+ index) (string-append
-                                                       (cdr result)
-                                                       "&account_ids["
-                                                       (number->string index)
-                                                       "]="
-                                                       accountID))))
-                                '(0 . "")
-                                accountIDs))
-                         1))
+                       listID                      "/accounts"
+                       (assemble-params `(("account_ids" ,accountIDs))))
         #:headers `((Authorization . ,(string-append
                                         "Bearer "
                                         (masto-app-token mastoApp)))))

@@ -117,9 +117,10 @@
             generate-masto-filter
             <mastodon-instance-urls> masto-instance-urls? masto-instance-urls-streaming-api
             generate-masto-instance-urls
-            <mastodon-stats> masto-stats? masto-instance-user-count   masto-instance-status-count
-                                          masto-instance-domain-count
-            generate-masto-stats
+            <mastodon-instance-stats> masto-instance-stats? masto-instance-stats-user-count
+                                                            masto-instance-stats-status-count
+                                                            masto-instance-stats-domain-count
+            generate-masto-instance-stats
             <mastodon-instance> masto-instance? masto-instance-uri               masto-instance-title
                                                 masto-instance-short-description masto-instance-description
                                                 masto-instance-email             masto-instance-version
@@ -701,15 +702,15 @@
 
 
 
-(define-record-type <mastodon-stats>
-  (make-masto-stats userCount statusCount domainCount)
-  masto-stats?
-  (  userCount masto-instance-user-count   masto-instance-user-count-set!)
-  (statusCount masto-instance-status-count masto-instance-status-count-set!)
-  (domainCount masto-instance-domain-count masto-instance-domain-count-set!))
+(define-record-type <mastodon-instance-stats>
+  (make-masto-instance-stats userCount statusCount domainCount)
+  masto-instance-stats?
+  (  userCount masto-instance-stats-user-count   masto-instance-stats-user-count-set!)
+  (statusCount masto-instance-stats-status-count masto-instance-stats-status-count-set!)
+  (domainCount masto-instance-stats-domain-count masto-instance-stats-domain-count-set!))
 
-(define (generate-masto-stats stats)
-  (generate-masto-object make-masto-stats stats
+(define (generate-masto-instance-stats stats)
+  (generate-masto-object make-masto-instance-stats stats
     ["user_count"] ["status_count"] ["domain_count"]))
 
 
@@ -741,7 +742,7 @@
     ["version"]
     ["thumbnail"         string->uri]
     ["urls"              generate-masto-instance-urls]
-    ["stats"             generate-masto-stats]
+    ["stats"             generate-masto-instance-stats]
     ["languages"         vector->list]
     ["contact_account"   generate-masto-account]))
 

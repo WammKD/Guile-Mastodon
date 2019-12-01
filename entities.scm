@@ -127,7 +127,9 @@
                                                 masto-instance-stats             masto-instance-languages
                                                 masto-instance-contact-account
             generate-masto-instance
-            ))
+            <mastodon-list> masto-list? masto-list-id masto-list-title
+            generate-masto-list
+            generate-masto-list-array))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()

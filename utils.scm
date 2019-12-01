@@ -1,4 +1,5 @@
 (define-module (elefan utils)
+  #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-26)
   #:export (assemble-params
             if-let

@@ -12,7 +12,7 @@
 
 (define* (masto-notifications-all mastoApp #:key maxID      sinceID      minID
                                                  [limit 20] excludeTypes accountID)
-  (if (every (cut enum-member? <> NOTIFICATION_TYPE_ENUM) exclude_types)
+  (if (every (cut enum-member? <> NOTIFICATION_TYPE_ENUM) excludeTypes)
       (generate-masto-page
         mastoApp
         http-get

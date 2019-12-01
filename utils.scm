@@ -43,4 +43,25 @@
                                                                  (binding-funct-value ...) then else)]))
 
 (define (assemble-params params)
-  (string-append/shared "?" (string-join (map (cut string-join <> "=") params) "&")))
+  (string-append/shared
+    "?"
+    (string-join
+      (map
+        (lambda (param)
+          (if-let ([key            (car  param)]
+                   [values string? (cadr param)])
+              (string-join param "=")
+            (substring
+              (cdr (fold
+                     (lambda (value result)
+                       (let ([index (car result)])
+                         (cons
+                           (1+ index)
+                           (string-append
+                             (cdr result)
+                             "&" key "[" (number->string index) "]=" value))))
+                     '(0 . "")
+                     values))
+              1)))
+        (filter cadr params))
+      "&")))

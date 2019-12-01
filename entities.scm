@@ -135,7 +135,17 @@
                                                         masto-notification-create-at masto-notification-account
                                                         masto-notification-status
             generate-masto-notification
-            generate-masto-notification-array))
+            generate-masto-notification-array
+            <mastodon-web-push-subscription-alerts> masto-web-push-subscription-alerts? masto-web-push-subscription-alerts-poll
+                                                                                        masto-web-push-subscription-alerts-mention
+                                                                                        masto-web-push-subscription-alerts-reblog
+                                                                                        masto-web-push-subscription-alerts-favorite
+                                                                                        masto-web-push-subscription-alerts-follow
+            generate-masto-web-push-subscription-alerts
+            <mastodon-web-push-subscription> masto-web-push-subscription? masto-web-push-subscription-id
+                                                                          masto-web-push-subscription-endpoint
+                                                                          masto-web-push-subscription-server-key
+                                                                          masto-web-push-subscription-alerts))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -782,3 +792,33 @@
 
 (define (generate-masto-notification-array notifications)
   (generate-masto-object-array notifications generate-masto-notification))
+
+
+
+(define-record-type <mastodon-web-push-subscription-alerts>
+  (make-masto-web-push-subscription-alerts poll mention reblog favorite follow)
+  masto-web-push-subscription-alerts?
+  (poll     masto-web-push-subscription-alerts-poll     masto-web-push-subscription-alerts-poll-set!)
+  (mention  masto-web-push-subscription-alerts-mention  masto-web-push-subscription-alerts-mention-set!)
+  (reblog   masto-web-push-subscription-alerts-reblog   masto-web-push-subscription-alerts-reblog-set!)
+  (favorite masto-web-push-subscription-alerts-favorite masto-web-push-subscription-alerts-favorite-set!)
+  (follow   masto-web-push-subscription-alerts-follow   masto-web-push-subscription-alerts-follow-set!))
+
+(define (generate-masto-web-push-subscription-alerts web-push-subscription-alerts)
+  (generate-masto-object make-masto-web-push-subscription-alerts web-push-subscription-alerts
+    ["poll"] ["mention"] ["reblog"] ["favourite"] ["follow"]))
+
+
+
+(define-record-type <mastodon-web-push-subscription>
+  (make-masto-web-push-subscription id endpoint serverKey alerts)
+  masto-web-push-subscription?
+  (id        masto-web-push-subscription-id         masto-web-push-subscription-id-set!)
+  (endpoint  masto-web-push-subscription-endpoint   masto-web-push-subscription-endpoint-set!)
+  (serverKey masto-web-push-subscription-server-key masto-web-push-subscription-server-key-set!)
+  (alerts    masto-web-push-subscription-alerts     masto-web-push-subscription-alerts-set!))
+
+(define (generate-masto-web-push-subscription web-push-subscription)
+  (generate-masto-object make-masto-web-push-subscription web-push-subscription
+    ["id"]         ["endpoint" string->uri]
+    ["server_key"] ["alerts"   generate-masto-web-push-subscription-alerts]))

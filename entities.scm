@@ -161,7 +161,9 @@
                                                                 masto-scheduled-status-params
                                                                 masto-scheduled-status-media-attachments
             generate-masto-scheduled-status
-            generate-masto-scheduled-status-array))
+            generate-masto-scheduled-status-array
+            <mastodon-results> masto-results? masto-results-accounts masto-results-statuses masto-results-hashtags
+            generate-masto-results))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -886,3 +888,18 @@
 
 (define (generate-masto-scheduled-status-array scheduled-statuses)
   (generate-masto-object-array scheduled-statuses generate-masto-scheduled-status))
+
+
+
+(define-record-type <mastodon-results>
+  (make-masto-results accounts statuses hashtags)
+  masto-results?
+  (accounts masto-results-accounts masto-results-accounts-set!)
+  (statuses masto-results-statuses masto-results-statuses-set!)
+  (hashtags masto-results-hashtags masto-results-hashtags-set!))
+
+(define (generate-masto-results results)
+  (generate-masto-object make-masto-results results
+    ["accounts" generate-masto-account-array]
+    ["statuses" generate-masto-status-array]
+    ["hashtags" generate-masto-tag-array]))

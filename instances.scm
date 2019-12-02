@@ -7,11 +7,13 @@
   #:use-module (web client)
   #:export (masto-instance-info))
 
-(define* (masto-instance-info #:key app domain)
+(define (masto-instance-info domainOrApp)
   (receive (header body)
-      (http-get (string-append (if domain
-                                   (if (string-contains-ci domain "https://")
-                                       domain
-                                     (string-append/shared "https://" domain))
-                                 (masto-app-domain app)) "/api/v1/instance"))
+      (http-get (string-append
+                  (if (masto-instance-app? domainOrApp)
+                      (masto-app-domain domainOrApp)
+                    (if (string-contains-ci domainOrApp "https://")
+                        domainOrApp
+                      (string-append/shared "https://" domainOrApp)))
+                  "/api/v1/instance"))
     (generate-masto-instance (json-string->scm (utf8->string body)))))

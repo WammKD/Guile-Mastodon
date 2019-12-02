@@ -6,7 +6,10 @@
   #:use-module (json)
   #:use-module (rnrs bytevectors)
   #:use-module (web client)
-  #:export ())
+  #:export (masto-scheduled-statuses-all
+            masto-scheduled-status-get
+            masto-scheduled-status-update
+            masto-scheduled-status-delete))
 
 (define (masto-scheduled-statuses-all mastoApp)
   (receive (header body)

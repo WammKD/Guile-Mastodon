@@ -145,7 +145,23 @@
             <mastodon-web-push-subscription> masto-web-push-subscription? masto-web-push-subscription-id
                                                                           masto-web-push-subscription-endpoint
                                                                           masto-web-push-subscription-server-key
-                                                                          masto-web-push-subscription-alerts))
+                                                                          masto-web-push-subscription-alerts
+            generate-masto-web-push-subscription
+            <mastodon-scheduled-status-params> masto-scheduled-status-params? masto-scheduled-status-params-text
+                                                                              masto-scheduled-status-params-in-reply-to-id
+                                                                              masto-scheduled-status-params-media-ids
+                                                                              masto-scheduled-status-params-sensitive
+                                                                              masto-scheduled-status-params-spoiler-text
+                                                                              masto-scheduled-status-params-visibility
+                                                                              masto-scheduled-status-params-scheduled-at
+                                                                              masto-scheduled-status-params-application-id
+            generate-masto-scheduled-status-params
+            <mastodon-scheduled-status> masto-scheduled-status? masto-scheduled-status-id
+                                                                masto-scheduled-status-scheduled-at
+                                                                masto-scheduled-status-params
+                                                                masto-scheduled-status-media-attachments
+            generate-masto-scheduled-status
+            generate-masto-scheduled-status-array))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -822,3 +838,51 @@
   (generate-masto-object make-masto-web-push-subscription web-push-subscription
     ["id"]         ["endpoint" string->uri]
     ["server_key"] ["alerts"   generate-masto-web-push-subscription-alerts]))
+
+
+
+(define-record-type <mastodon-scheduled-status-params>
+  (make-masto-scheduled-status-params text        inReplyToID
+                                      mediaIDs    sensitive
+                                      spoilerText visibility
+                                      scheduledAt applicationID)
+  masto-scheduled-status-params?
+  (text          masto-scheduled-status-params-text           masto-scheduled-status-params-text-set!)
+  (inReplyToID   masto-scheduled-status-params-in-reply-to-id masto-scheduled-status-params-in-reply-to-id-set!)
+  (mediaIDs      masto-scheduled-status-params-media-ids      masto-scheduled-status-params-media-ids-set!)
+  (sensitive     masto-scheduled-status-params-sensitive      masto-scheduled-status-params-sensitive-set!)
+  (spoilerText   masto-scheduled-status-params-spoiler-text   masto-scheduled-status-params-spoiler-text-set!)
+  (visibility    masto-scheduled-status-params-visibility     masto-scheduled-status-params-visibility-set!)
+  (scheduledAt   masto-scheduled-status-params-scheduled-at   masto-scheduled-status-params-scheduled-at-set!)
+  (applicationID masto-scheduled-status-params-application-id masto-scheduled-status-params-application-id-set!))
+
+(define (generate-masto-scheduled-status-params scheduled-status-params)
+  (generate-masto-object make-masto-scheduled-status-params scheduled-status-params
+    ["text"]
+    ["in_reply_to_id"]
+    ["media_ids"      vector->list]
+    ["sensitive"]
+    ["spoiler_text"]
+    ["visibility"     (cut enum-value-of <> STATUS_VISIBILITY_ENUM)]
+    ["scheduled_at"   masto-string->date]
+    ["application_id"]))
+
+
+
+(define-record-type <mastodon-scheduled-status>
+  (make-masto-scheduled-status id scheduledAt params mediaAttachments)
+  masto-scheduled-status?
+  (id               masto-scheduled-status-id                masto-scheduled-status-id-set!)
+  (scheduledAt      masto-scheduled-status-scheduled-at      masto-scheduled-status-scheduled-at-set!)
+  (params           masto-scheduled-status-params            masto-scheduled-status-params-set!)
+  (mediaAttachments masto-scheduled-status-media-attachments masto-scheduled-status-media-attachments-set!))
+
+(define (generate-masto-scheduled-status scheduled-status)
+  (generate-masto-object make-masto-scheduled-status scheduled-status
+    ["id"]
+    ["scheduled_at"      masto-string->date]
+    ["params"            generate-masto-scheduled-status-params]
+    ["media_attachments" generate-masto-attachment-array]))
+
+(define (generate-masto-scheduled-status-array scheduled-statuses)
+  (generate-masto-object-array scheduled-statuses generate-masto-scheduled-status))

@@ -230,9 +230,11 @@
 
 (define (generate-masto-page mastoApp http-type url generate-fn)
   (receive (header body)
-      (http-type url #:headers `((Authorization . ,(string-append
-                                                     "Bearer "
-                                                     (masto-app-token mastoApp)))))
+      (if (not mastoApp)
+          (http-type url)
+        (http-type url #:headers `((Authorization . ,(string-append
+                                                       "Bearer "
+                                                       (masto-app-token mastoApp))))))
     (if-let ([links (assoc-ref (response-headers header) 'link)])
         (let ([pages (map
                        (lambda (elem)

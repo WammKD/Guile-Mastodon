@@ -163,7 +163,9 @@
             generate-masto-scheduled-status
             generate-masto-scheduled-status-array
             <mastodon-results> masto-results? masto-results-accounts masto-results-statuses masto-results-hashtags
-            generate-masto-results))
+            generate-masto-results
+            <mastodon-context> masto-context? masto-context-ancestors masto-context-descendants
+            generate-masto-context))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -903,3 +905,15 @@
     ["accounts" generate-masto-account-array]
     ["statuses" generate-masto-status-array]
     ["hashtags" generate-masto-tag-array]))
+
+
+
+(define-record-type <mastodon-context>
+  (make-masto-context ancestors descendants)
+  masto-context?
+  (ancestors   masto-context-ancestors   masto-context-ancestors-set!)
+  (descendants masto-context-descendants masto-context-descendants-set!))
+
+(define (generate-masto-context context)
+  (generate-masto-object make-masto-context context
+    ["ancestors" generate-masto-status] ["descendants" generate-masto-status]))

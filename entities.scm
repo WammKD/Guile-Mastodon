@@ -228,37 +228,41 @@
   (http-call        masto-page-http-call   masto-page-http-call-set!)
   (generate-fn      masto-page-generate-fn masto-page-generate-fn-set!))
 
-(define (generate-masto-page mastoApp http-type url generate-fn)
-  (receive (header body)
-      (if (not mastoApp)
-          (http-type url)
-        (http-type url #:headers `((Authorization . ,(string-append
-                                                       "Bearer "
-                                                       (masto-app-token mastoApp))))))
-    (if-let ([links (assoc-ref (response-headers header) 'link)])
-        (let ([pages (map
-                       (lambda (elem)
-                          (let ([page (reverse
-                                        (map
-                                          (lambda (e)
-                                            (if-let ([refined (cut string-contains <> "<") (string-trim e)])
-                                                (substring refined 1 (1- (string-length refined)))
-                                              (substring refined 5 (1- (string-length refined)))))
-                                          (string-split elem #\;)))])
-                            (cons (car page) (cadr page))))
-                       (map string-trim (string-split links #\,)))])
-          (make-masto-page
-            (generate-fn (json-string->scm (utf8->string body)))
-            (assoc-ref pages "prev")
-            (assoc-ref pages "next")
-            http-type
-            generate-fn))
-      (make-masto-page
-        (generate-fn (json-string->scm (utf8->string body)))
-        #f
-        #f
-        http-type
-        generate-fn))))
+(define (generate-masto-page mastoApp type url generate-fn)
+  (let ([http-type (assoc-ref `((get    . ,http-get)
+                                (post   . ,http-post)
+                                (put    . ,http-put)
+                                (delete . ,http-delete)) type)])
+    (receive (header body)
+        (if (not mastoApp)
+            (http-type url)
+          (http-type url #:headers `((Authorization . ,(string-append
+                                                         "Bearer "
+                                                         (masto-app-token mastoApp))))))
+      (if-let ([links (assoc-ref (response-headers header) 'link)])
+          (let ([pages (map
+                         (lambda (elem)
+                            (let ([page (reverse
+                                          (map
+                                            (lambda (e)
+                                              (if-let ([refined (cut string-contains <> "<") (string-trim e)])
+                                                  (substring refined 1 (1- (string-length refined)))
+                                                (substring refined 5 (1- (string-length refined)))))
+                                            (string-split elem #\;)))])
+                              (cons (car page) (cadr page))))
+                         (map string-trim (string-split links #\,)))])
+            (make-masto-page
+              (generate-fn (json-string->scm (utf8->string body)))
+              (assoc-ref pages "prev")
+              (assoc-ref pages "next")
+              http-type
+              generate-fn))
+        (make-masto-page
+          (generate-fn (json-string->scm (utf8->string body)))
+          #f
+          #f
+          http-type
+          generate-fn)))))
 
 (define (generate-masto-page-prev mastoApp page)
   (let ([prevURL     (masto-page-url-prev    page)]

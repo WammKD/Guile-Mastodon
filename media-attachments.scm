@@ -5,7 +5,28 @@
   #:use-module (ice-9 binary-ports)
   #:use-module (rnrs bytevectors)
   #:use-module (web uri)
-  #:export (masto-media-upload))
+  #:export (masto-media-upload)
+  #:re-export (<mastodon-meta-subtree> masto-meta-subtree? masto-meta-subtree-width
+                                                           masto-meta-subtree-height
+                                                           masto-meta-subtree-size
+                                                           masto-meta-subtree-aspect
+                                                           masto-meta-subtree-frame-rate
+                                                           masto-meta-subtree-duration
+                                                           masto-meta-subtree-bitrate
+               <mastodon-meta-focus>   masto-meta-focus?   masto-meta-focus-x
+                                                           masto-meta-focus-y
+               <mastodon-meta>         masto-meta?         masto-meta-small
+                                                           masto-meta-original
+                                                           masto-meta-focus
+               <mastodon-attachment>   masto-attachment?   masto-attachment-id
+                                                           masto-attachment-type
+                                                           masto-attachment-url
+                                                           masto-attachment-remote-url
+                                                           masto-attachment-preview-url
+                                                           masto-attachment-text-url
+                                                           masto-attachment-meta
+                                                           masto-attachment-description
+                                                           masto-attachment-blurhash))
 
 (define* (masto-media-upload mastoApp filePath #:key description x y)
   (cond

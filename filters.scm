@@ -21,8 +21,36 @@
 
 (define* (masto-filter-create mastoApp #:key filter    phrase       context
                                              expiresIn irreversible wholeWord)
-  (let ([f (if filter filter (make-masto-filter #f        phrase       context
-                                                expiresIn irreversible wholeWord))])
+  (let ([f `(("phrase"       ,(if filter (masto-filter-phrase filter) phrase))
+             ("context"      ,(enum-member-or-value->string
+                                (if filter (masto-filter-context filter) context)))
+             ("irreversible" ,(boolean->string
+                                (if filter (masto-filter-irreversible
+                                             filter)                   irreversible)))
+             ("whole_word"   ,(boolean->string
+                                (if filter (masto-filter-whole-word
+                                             filter)                 wholeWord)))
+             ("expires_in"   ,(if-let ([ei not (if filter
+                                                   (masto-filter-expires-at filter)
+                                                 expiresIn)])
+                                  ei
+                                (number->string
+                                  (cond
+                                   [(date?   ei)
+                                         (time-second
+                                           (time-difference
+                                             (date->time-utc ei)
+                                             (date->time-utc (current-date
+                                                               (date-zone-offset ei)))))]
+                                   [(time?   ei)
+                                         (time-second ei)]
+                                   [(number? ei)
+                                         ei]
+                                   [else (error (string-append
+                                                  "ERROR: In procedure masto-filter-create:\n"
+                                                  "In procedure masto-filter-create: "
+                                                  "expiresIn must be srfi-19 date or time "
+                                                  "or number of seconds"))])))))])
     (cond
      [(not (enum-member? (masto-filter-context f) FILTER_CONTEXT_ENUM))
            (error (string-append
@@ -38,32 +66,7 @@
              (http 'post
                (string-append (masto-app-domain mastoApp) "/api/v1/filters")
                #:token       (masto-app-token mastoApp)
-               #:queryParams `(("phrase"       ,(masto-filter-phrase f))
-                               ("context"      ,(enum-member-or-value->string
-                                                  (masto-filter-context f)))
-                               ("irreversible" ,(boolean->string
-                                                  (masto-filter-irreversible f)))
-                               ("whole_word"   ,(boolean->string
-                                                  (masto-filter-whole-word   f)))
-                               ("expires_in"   ,(if-let ([ei not (masto-filter-expires-at f)])
-                                                    ei
-                                                  (number->string
-                                                    (cond
-                                                     [(date? ei)
-                                                           (time-second
-                                                             (time-difference
-                                                               (date->time-utc ei)
-                                                               (date->time-utc (current-date
-                                                                                 (date-zone-offset ei)))))]
-                                                     [(time? ei)
-                                                           (time-second ei)]
-                                                     [(number? ei)
-                                                           ei]
-                                                     [else (error (string-append
-                                                                    "ERROR: In procedure masto-filter-create:\n"
-                                                                    "In procedure masto-filter-create: "
-                                                                    "expiresIn must be srfi-19 date or time "
-                                                                    "or number of seconds"))])))))))])))
+               #:queryParams f))])))
 
 (define (masto-filter-get mastoApp filterID)
   (generate-masto-filter

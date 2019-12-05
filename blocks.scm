@@ -2,7 +2,6 @@
   #:use-module (elefan auth)
   #:use-module (elefan entities)
   #:use-module (elefan utils)
-  #:use-module (web client)
   #:export (masto-blocks-all
             masto-block-account
             masto-unblock-account))
@@ -10,7 +9,7 @@
 (define* (masto-blocks-all mastoApp #:optional [limit 40])
   (generate-masto-page
     mastoApp
-    http-get
+    'get
     (string-append (masto-app-domain mastoApp) "/api/v1/blocks"
                    "?limit="                   (number->string limit))
     generate-masto-account-array))

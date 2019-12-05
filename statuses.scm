@@ -207,3 +207,17 @@
       (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
                      statusID                    "/unreblog")
       #:token (masto-app-token mastoApp))))
+
+(define (masto-status-pin mastoApp statusID)
+  (generate-masto-status
+    (http 'post
+      (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
+                     statusID                    "/pin")
+      #:token (masto-app-token mastoApp))))
+
+(define (masto-status-unpin mastoApp statusID)
+  (generate-masto-status
+    (http 'post
+      (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
+                     statusID                    "/unpin")
+      #:token (masto-app-token mastoApp))))

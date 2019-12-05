@@ -63,3 +63,6 @@
         (filter (lambda (elem)
                   (and (cadr elem) (not (null? (cadr elem))))) params))
       "&")))
+
+(define (boolean->string bool)
+  (if bool "true" "false"))

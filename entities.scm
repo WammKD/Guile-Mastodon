@@ -165,7 +165,11 @@
             <mastodon-results> masto-results? masto-results-accounts masto-results-statuses masto-results-hashtags
             generate-masto-results
             <mastodon-context> masto-context? masto-context-ancestors masto-context-descendants
-            generate-masto-context))
+            generate-masto-context
+            <mastodon-conversation> masto-convo? masto-convo-id          masto-convo-accounts
+                                                 masto-convo-last-status masto-convo-unread
+            generate-masto-convo
+            generate-masto-convo-array))
 
 (define-syntax generate-masto-object-helper
   (syntax-rules ()
@@ -923,3 +927,21 @@
 (define (generate-masto-context context)
   (generate-masto-object make-masto-context context
     ["ancestors" generate-masto-status] ["descendants" generate-masto-status]))
+
+
+
+(define-record-type <mastodon-conversation>
+  (make-masto-convo id accounts lastStatus unread)
+  masto-convo?
+  (id         masto-convo-id          masto-convo-id-set!)
+  (accounts   masto-convo-accounts    masto-convo-accounts-set!)
+  (lastStatus masto-convo-last-status masto-convo-last-status-set!)
+  (unread     masto-convo-unread      masto-convo-unread-set!))
+
+(define (generate-masto-convo convo)
+  (generate-masto-object make-masto-convo convo
+    ["id"]                               ["accounts" generate-masto-account-array]
+    ["lastStatus" generate-masto-status] ["unread"]))
+
+(define (generate-masto-convo-array convos)
+  (generate-masto-object-array convos generate-masto-convo))

@@ -5,7 +5,13 @@
   #:use-module (elefan utils)
   #:use-module (srfi srfi-19)
   #:export (masto-filters-all masto-filter-create
-            masto-filter-get  masto-filter-update masto-filter-delete))
+            masto-filter-get  masto-filter-update masto-filter-delete)
+  #:re-export (<mastodon-filter> masto-filter? masto-filter-id
+                                               masto-filter-phrase
+                                               masto-filter-context
+                                               masto-filter-expires-at
+                                               masto-filter-irreversible
+                                               masto-filter-whole-word))
 
 (define (masto-filters-all mastoApp)
   (generate-masto-filter

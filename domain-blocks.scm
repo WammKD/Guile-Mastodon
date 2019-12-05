@@ -4,7 +4,10 @@
   #:use-module (elefan utils)
   #:export (masto-domain-blocks-all
             masto-block-domain
-            masto-unblock-domain))
+            masto-unblock-domain)
+  #:re-export (<mastodon-pagination-object> masto-page? masto-page-objects
+                                                        masto-page-prev
+                                                        masto-page-next))
 
 (define* (masto-domain-blocks-all mastoApp #:optional [limit 40])
   (generate-masto-page

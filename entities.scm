@@ -16,8 +16,8 @@
                                                      masto-page-url-prev masto-page-internal-prev
                                                      masto-page-url-next masto-page-internal-next
             generate-masto-page
-            generate-masto-page-prev
-            generate-masto-page-next
+            masto-page-prev
+            masto-page-next
             <mastodon-emoji>   masto-emoji?   masto-emoji-shortcode masto-emoji-static-url
                                               masto-emoji-url       masto-emoji-visible-in-picker
             generate-masto-emoji
@@ -268,7 +268,7 @@
           http-type
           generate-fn)))))
 
-(define (generate-masto-page-prev mastoApp page)
+(define (masto-page-prev mastoApp page)
   (let ([prevURL     (masto-page-url-prev      page)]
         [http-type   (masto-page-http-call     page)]
         [prevPage    (masto-page-internal-prev page)]
@@ -289,7 +289,7 @@
                             newPage)
                         #f))])))
 
-(define (generate-masto-page-next mastoApp page)
+(define (masto-page-next mastoApp page)
   (let ([nextURL     (masto-page-url-next      page)]
         [http-type   (masto-page-http-call     page)]
         [nextPage    (masto-page-internal-next page)]

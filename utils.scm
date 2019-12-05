@@ -1,6 +1,13 @@
 (define-module (elefan utils)
+  #:use-module (ice-9 receive)
+  #:use-module (json)
+  #:use-module (rnrs bytevectors)
+  #:use-module (web client)
+  #:use-module (web response)
+  #:use-module (web uri)
   #:export (assemble-params
             boolean->string
+            http
             if-let
             if-let-helper))
 
@@ -65,3 +72,35 @@
 
 (define (boolean->string bool)
   (if bool "true" "false"))
+
+(define* (http type url #:key body
+                              token
+                              queryParams
+                              [contentType "application/x-www-form-urlencoded"]
+                              idempotencyKey)
+  (receive (headers body)
+      ((assoc-ref `((get    . ,http-get)
+                    (post   . ,http-post)
+                    (put    . ,http-put)
+                    (delete . ,http-delete)) type)
+        (string-append url (if queryParams (assemble-params queryParams) ""))
+        #:body         (if (string? body) (string->utf8 body) body)
+        #:version      '(1 . 1)
+        #:keep-alive?  #f
+        #:headers      (filter
+                         (lambda (elem) (not (unspecified? elem)))
+                         (list
+                           (when token
+                             (cons 'Authorization (string-append "Bearer " token)))
+                           (when body (cons 'Content-Type  contentType))
+                           (when idempotencyKey
+                             (cons 'Idempotency-Key idempotencyKey))))
+        #:decode-body? #t
+        #:streaming?   #f)
+    (case (response-code headers)
+      [(200) (json-string->scm (utf8->string body))]
+      [else  (throw 'elefan `(("response-code"   . ,(response-code          headers))
+                              ("response-phrase" . ,(response-reason-phrase headers))
+                              ("response"        . ,(if (bytevector? body)
+                                                        (utf8->string body)
+                                                      body))))])))

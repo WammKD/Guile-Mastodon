@@ -1,5 +1,6 @@
 (define-module (elefan utils)
   #:export (assemble-params
+            boolean->string
             if-let
             if-let-helper))
 

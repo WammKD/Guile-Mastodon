@@ -186,3 +186,10 @@
                #:token          (masto-app-token mastoApp)
                #:queryParams    s
                #:idempotencyKey (if idempotencyKey idempotencyKey #f)))])))
+
+(define (masto-status-delete mastoApp statusID)
+  (http 'delete
+    (string-append (masto-app-domain mastoApp) "/api/v1/statuses/" statusID)
+    #:token (masto-app-token mastoApp))
+
+  #t)

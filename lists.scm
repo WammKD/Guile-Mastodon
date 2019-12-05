@@ -2,12 +2,6 @@
   #:use-module (elefan auth)
   #:use-module (elefan entities)
   #:use-module (elefan utils)
-  #:use-module (ice-9 receive)
-  #:use-module (json)
-  #:use-module (rnrs bytevectors)
-  #:use-module (srfi srfi-1)
-  #:use-module (srfi srfi-26)
-  #:use-module (web client)
   #:export (masto-lists-all
             masto-lists-by-account
             masto-accounts-by-list
@@ -19,110 +13,68 @@
             masto-list-delete-account))
 
 (define (masto-lists-all mastoApp)
-  (receive (header body)
-      (http-get
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists")
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
-                                                   (utf8->string body))])
-        (error (assoc-ref bodySCM "error"))
-      (generate-masto-list-array bodySCM))))
+  (generate-masto-list-array
+    (http 'get
+      (string-append (masto-app-domain mastoApp) "/api/v1/lists")
+      #:token (masto-app-token mastoApp))))
 
 (define (masto-lists-by-account mastoApp accountID)
-  (receive (header body)
-      (http-get
-        (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"
-                       accountID                   "/lists")
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
-                                                   (utf8->string body))])
-        (error (assoc-ref bodySCM "error"))
-      (generate-masto-list-array bodySCM))))
+  (generate-masto-list-array
+    (http 'get
+      (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"
+                     accountID                   "/lists")
+      #:token (masto-app-token mastoApp))))
 
 (define* (masto-accounts-by-list mastoApp listID #:optional [limit 40])
   (generate-masto-page
     mastoApp
-    http-get
+    'get
     (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
                    listID                      "/accounts"
                    "?limit="                   (number->string limit))
     generate-masto-account-array))
 
 (define (masto-list-get mastoApp listID)
-  (receive (header body)
-      (http-get
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists/" listID)
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
-                                                   (utf8->string body))])
-        (error (assoc-ref bodySCM "error"))
-      (generate-masto-list bodySCM))))
+  (generate-masto-list
+    (http 'get
+      (string-append (masto-app-domain mastoApp) "/api/v1/lists/" listID)
+      #:token (masto-app-token mastoApp))))
 
 (define (masto-list-create mastoApp title)
-  (receive (header body)
-      (http-post
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists"
-                       "?title="                   title)
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
-                                                   (utf8->string body))])
-        (error (assoc-ref bodySCM "error"))
-      (generate-masto-list bodySCM))))
+  (generate-masto-list
+    (http 'post
+      (string-append (masto-app-domain mastoApp) "/api/v1/lists")
+      #:token       (masto-app-token mastoApp)
+      #:queryParams `(("title" ,title)))))
 
 (define (masto-list-update mastoApp listID title)
-  (receive (header body)
-      (http-put
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists/" listID
-                       "?title="                   title)
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([bodySCM (cut assoc-ref <> "error") (json-string->scm
-                                                   (utf8->string body))])
-        (error (assoc-ref bodySCM "error"))
-      (generate-masto-list bodySCM))))
+  (generate-masto-list
+    (http 'put
+      (string-append (masto-app-domain mastoApp) "/api/v1/lists/" listID)
+      #:token       (masto-app-token mastoApp)
+      #:queryParams `(("title" ,title)))))
 
 (define (masto-list-delete mastoApp listID)
-  (receive (header body)
-      (http-delete
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists/" listID)
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([errMsg (assoc-ref (json-string->scm (utf8->string body)) "error")])
-        (error errMsg)
-      #t)))
+  (http 'delete
+    (string-append (masto-app-domain mastoApp) "/api/v1/lists/" listID)
+    #:token (masto-app-token mastoApp))
+
+  #t)
 
 (define (masto-list-add-account mastoApp listID accountIDs)
-  (receive (header body)
-      (http-post
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
-                       listID                      "/accounts"
-                       (assemble-params `(("account_ids" ,accountIDs))))
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([errMsg (assoc-ref (json-string->scm (utf8->string body)) "error")])
-        (error errMsg)
-      #t)))
+  (http 'post
+    (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
+                   listID                      "/accounts")
+    #:token       (masto-app-token mastoApp)
+    #:queryParams `(("account_ids" ,accountIDs)))
+
+  #t)
 
 (define (masto-list-delete-account mastoApp listID accountIDs)
-  (receive (header body)
-      (http-delete
-        (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
-                       listID                      "/accounts"
-                       (assemble-params `(("account_ids" ,accountIDs))))
-        #:headers `((Authorization . ,(string-append
-                                        "Bearer "
-                                        (masto-app-token mastoApp)))))
-    (if-let ([errMsg (assoc-ref (json-string->scm (utf8->string body)) "error")])
-        (error errMsg)
-      #t)))
+  (http 'delete
+    (string-append (masto-app-domain mastoApp) "/api/v1/lists/"
+                   listID                      "/accounts")
+    #:token       (masto-app-token mastoApp)
+    #:queryParams `(("account_ids" ,accountIDs)))
+
+  #t)

@@ -52,12 +52,12 @@
                                                   "expiresIn must be srfi-19 date or time "
                                                   "or number of seconds"))])))))])
     (cond
-     [(not (enum-member? (masto-filter-context f) FILTER_CONTEXT_ENUM))
+     [(not (enum-member? (car (assoc-ref "context" f)) FILTER_CONTEXT_ENUM))
            (error (string-append
                     "ERROR: In procedure masto-filter-create:\n"
                     "In procedure masto-filter-create: Non-valid "
                     "context provided for second argument"))]
-     [(not (masto-filter-phrase f))
+     [(not (car (assoc-ref "phrase" f)))
            (error (string-append
                     "ERROR: In procedure masto-filter-create:\n"
                     "In procedure masto-filter-create: No phrase "

@@ -193,3 +193,17 @@
     #:token (masto-app-token mastoApp))
 
   #t)
+
+(define (masto-status-reblog mastoApp statusID)
+  (generate-masto-status
+    (http 'post
+      (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
+                     statusID                    "/reblog")
+      #:token (masto-app-token mastoApp))))
+
+(define (masto-status-unreblog mastoApp statusID)
+  (generate-masto-status
+    (http 'post
+      (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
+                     statusID                    "/unreblog")
+      #:token (masto-app-token mastoApp))))

@@ -33,7 +33,17 @@
                                                  masto-account-emojis
                                                  masto-account-moved
                                                  masto-account-fields
-                                                 masto-account-bot))
+                                                 masto-account-bot
+               <mastodon-relationship> masto-relationship? masto-relationship-id
+                                                           masto-relationship-following
+                                                           masto-relationship-followed-by
+                                                           masto-relationship-blocking
+                                                           masto-relationship-muting
+                                                           masto-relationship-muting-notifications
+                                                           masto-relationship-requested
+                                                           masto-relationship-domain-blocking
+                                                           masto-relationship-showing-reblogs
+                                                           masto-relationship-endorsed))
 
 (define* (masto-blocks-all mastoApp #:optional [limit 40])
   (generate-masto-page

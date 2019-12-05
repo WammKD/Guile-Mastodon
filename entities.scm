@@ -13,8 +13,8 @@
   #:use-module (web response)
   #:use-module (web uri)
   #:export (<mastodon-pagination-object> masto-page? masto-page-objects
-                                                     masto-page-url-prev masto-page-prev
-                                                     masto-page-url-next masto-page-next
+                                                     masto-page-url-prev masto-page-internal-prev
+                                                     masto-page-url-next masto-page-internal-next
             generate-masto-page
             generate-masto-page-prev
             generate-masto-page-next
@@ -224,13 +224,13 @@
 (define-record-type <mastodon-pagination-object>
   (make-masto-page objectCollection prevURL nextURL http-call generate-fn)
   masto-page?
-  (objectCollection masto-page-objects     masto-page-objects-set!)
-  (prevURL          masto-page-url-prev    masto-page-url-prev-set!)
-  (prevPage         masto-page-prev        masto-page-prev-set!)
-  (nextURL          masto-page-url-next    masto-page-url-next-set!)
-  (nextPage         masto-page-next        masto-page-next-set!)
-  (http-call        masto-page-http-call   masto-page-http-call-set!)
-  (generate-fn      masto-page-generate-fn masto-page-generate-fn-set!))
+  (objectCollection masto-page-objects       masto-page-objects-set!)
+  (prevURL          masto-page-url-prev      masto-page-url-prev-set!)
+  (prevPage         masto-page-internal-prev masto-page-internal-prev-set!)
+  (nextURL          masto-page-url-next      masto-page-url-next-set!)
+  (nextPage         masto-page-internal-next masto-page-internal-next-set!)
+  (http-call        masto-page-http-call     masto-page-http-call-set!)
+  (generate-fn      masto-page-generate-fn   masto-page-generate-fn-set!))
 
 (define (generate-masto-page mastoApp type url generate-fn)
   (let ([http-type (assoc-ref `((get    . ,http-get)
@@ -269,10 +269,10 @@
           generate-fn)))))
 
 (define (generate-masto-page-prev mastoApp page)
-  (let ([prevURL     (masto-page-url-prev    page)]
-        [http-type   (masto-page-http-call   page)]
-        [prevPage    (masto-page-prev        page)]
-        [generate-fn (masto-page-generate-fn page)])
+  (let ([prevURL     (masto-page-url-prev      page)]
+        [http-type   (masto-page-http-call     page)]
+        [prevPage    (masto-page-internal-prev page)]
+        [generate-fn (masto-page-generate-fn   page)])
     (cond
      [prevPage      prevPage]
      [(not prevURL) #f]
@@ -283,17 +283,17 @@
                             (masto-page-url-next newPage)
                             (not (null? (masto-page-objects newPage))))
                           (begin
-                            (masto-page-next-set! newPage page)
-                            (masto-page-prev-set! page newPage)
+                            (masto-page-internal-next-set! newPage page)
+                            (masto-page-internal-prev-set! page newPage)
 
                             newPage)
                         #f))])))
 
 (define (generate-masto-page-next mastoApp page)
-  (let ([nextURL     (masto-page-url-next    page)]
-        [http-type   (masto-page-http-call   page)]
-        [nextPage    (masto-page-next        page)]
-        [generate-fn (masto-page-generate-fn page)])
+  (let ([nextURL     (masto-page-url-next      page)]
+        [http-type   (masto-page-http-call     page)]
+        [nextPage    (masto-page-internal-next page)]
+        [generate-fn (masto-page-generate-fn   page)])
     (cond
      [nextPage      nextPage]
      [(not nextURL) #f]
@@ -304,8 +304,8 @@
                             (masto-page-url-next newPage)
                             (not (null? (masto-page-objects newPage))))
                           (begin
-                            (masto-page-prev-set! newPage page)
-                            (masto-page-next-set! page newPage)
+                            (masto-page-internal-prev-set! newPage page)
+                            (masto-page-internal-next-set! page newPage)
 
                             newPage)
                         #f))])))

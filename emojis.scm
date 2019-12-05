@@ -2,7 +2,11 @@
   #:use-module (elefan auth)
   #:use-module (elefan entities)
   #:use-module (elefan utils)
-  #:export (masto-emojis-on-instance))
+  #:export     (masto-emojis-on-instance)
+  #:re-export  (<mastodon-emoji> masto-emoji? masto-emoji-shortcode
+                                              masto-emoji-static-url
+                                              masto-emoji-url
+                                              masto-emoji-visible-in-picker))
 
 (define (masto-emojis-on-instance domainOrApp)
   (generate-masto-emoji-array

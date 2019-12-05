@@ -52,18 +52,14 @@
           (if-let ([key            (car  param)]
                    [values string? (cadr param)])
               (string-join param "=")
-            (let ([r (cdr (fold
-                            (lambda (value result)
-                              (let ([index (car result)])
-                                (cons
-                                  (1+ index)
-                                  (string-append
-                                    (cdr result)
-                                    "&" (uri-encode key)
-                                    "[" (number->string index) "]="
-                                    (uri-encode value)))))
-                            '(0 . "")
-                            (filter identity values)))])
-              (substring r (if (string-null? r) 0 1)))))
-        (filter cadr params))
+            (string-join (let ([filteredValues (filter identity values)])
+                           (map
+                             (lambda (index value)
+                               (string-append
+                                 (uri-encode key) "[" (number->string index) "]="
+                                 (uri-encode value)))
+                             (iota (length filteredValues))
+                             filteredValues)) "&")))
+        (filter (lambda (elem)
+                  (and (cadr elem) (not (null? (cadr elem))))) params))
       "&")))

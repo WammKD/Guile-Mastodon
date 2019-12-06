@@ -20,7 +20,7 @@
       (string-append (masto-app-domain mastoApp) "/api/v1/polls/" pollID)
       #:token (masto-app-token mastoApp))))
 
-(define (masto-poll-send-vote mastoApp choices)
+(define (masto-poll-send-vote mastoApp pollID choices)
   (generate-masto-poll
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/polls/"

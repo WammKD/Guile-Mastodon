@@ -3,7 +3,16 @@
   #:use-module (elefan entities)
   #:use-module (elefan utils)
   #:export (masto-poll-get
-            masto-poll-send-vote))
+            masto-poll-send-vote)
+  #:re-export (<mastodon-poll-option> masto-poll-option? masto-poll-option-title
+                                                         masto-poll-option-votes-count
+               <mastodon-poll>        masto-poll?        masto-poll-id
+                                                         masto-poll-expires-at
+                                                         masto-poll-expired
+                                                         masto-poll-multiple
+                                                         masto-poll-votes-count
+                                                         masto-poll-options
+                                                         masto-poll-voted))
 
 (define (masto-poll-get mastoApp pollID)
   (generate-masto-poll

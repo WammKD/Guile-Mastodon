@@ -21,7 +21,7 @@
                                                            masto-attachment-type
                                                            masto-attachment-url
                                                            masto-attachment-remote-url
-p                                                           masto-attachment-preview-url
+                                                           masto-attachment-preview-url
                                                            masto-attachment-text-url
                                                            masto-attachment-meta
                                                            masto-attachment-description

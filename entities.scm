@@ -95,7 +95,7 @@
             <mastodon-status> masto-status? masto-status-id              masto-status-uri
                                             masto-status-url             masto-status-account
                                             masto-status-in-reply-to-id  masto-status-in-reply-to-account-id
-                                            masto-status-reblog          masto-status-content
+                                            masto-status-reblog-status   masto-status-content
                                             masto-status-created-at      masto-status-emojis
                                             masto-status-replies-count   masto-status-reblogs-count
                                             masto-status-favorites-count masto-status-reblogged
@@ -639,7 +639,7 @@
 (define-record-type <mastodon-status>
   (make-masto-status id             uri              url
                      account        inReplyToID      inReplyToAccountID
-                     reblog         content          createdAt
+                     reblogStatus   content          createdAt
                      emojis         repliesCount     reblogsCount
                      favoritesCount reblogged        favorited
                      muted          sensitive        spoilerText
@@ -653,7 +653,7 @@
   (account            masto-status-account                masto-status-account-set!)
   (inReplyToID        masto-status-in-reply-to-id         masto-status-in-reply-to-id-set!)
   (inReplyToAccountID masto-status-in-reply-to-account-id masto-status-in-reply-to-account-id-set!)
-  (reblog             masto-status-reblog                 masto-status-reblog-set!)
+  (reblogStatus       masto-status-reblog-status          masto-status-reblog-status-set!)
   (content            masto-status-content                masto-status-content-set!)
   (createdAt          masto-status-created-at             masto-status-created-at-set!)
   (emojis             masto-status-emojis                 masto-status-emojis-set!)

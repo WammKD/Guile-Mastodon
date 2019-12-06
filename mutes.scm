@@ -101,7 +101,7 @@
                                                masto-status-account
                                                masto-status-in-reply-to-id
                                                masto-status-in-reply-to-account-id
-                                               masto-status-reblog
+                                               masto-status-reblog-status
                                                masto-status-content
                                                masto-status-created-at
                                                masto-status-emojis

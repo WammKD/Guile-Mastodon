@@ -90,15 +90,13 @@
 (define* (masto-app-set-token-via-code! mastoApp code #:optional redirect)
   (masto-app-set-token-via-post-call!
     mastoApp
-    (masto-app-domain mastoApp) "/oauth/token"
-    (assemble-params
-      `(("client_id"     ,(masto-app-id     mastoApp))
-        ("client_secret" ,(masto-app-secret mastoApp))
-        ("grant_type"    "authorization_code")
-        ("code"          ,code)
-        ("redirect_uri"  ,(if redirect
-                              redirect
-                            (car (masto-app-redirects mastoApp))))))))
+    `(("client_id"     ,(masto-app-id     mastoApp))
+      ("client_secret" ,(masto-app-secret mastoApp))
+      ("grant_type"    "authorization_code")
+      ("code"          ,code)
+      ("redirect_uri"  ,(if redirect
+                            redirect
+                          (car (masto-app-redirects mastoApp)))))))
 
 
 
@@ -106,34 +104,29 @@
                                              password #:optional scopes)
   (masto-app-set-token-via-post-call!
     mastoApp
-    (masto-app-domain mastoApp) "/oauth/token"
-    (assemble-params
-      `(("grant_type"    "password")
-        ("username"      ,username)
-        ("password"      ,password)
-        ("client_id"     ,(masto-app-id     mastoApp))
-        ("client_secret" ,(masto-app-secret mastoApp))
-        ("scope"         ,(string-join
-                            (if scopes scopes (masto-app-scopes mastoApp))
-                            "%20"))))))
+    `(("grant_type"    "password")
+      ("username"      ,username)
+      ("password"      ,password)
+      ("client_id"     ,(masto-app-id     mastoApp))
+      ("client_secret" ,(masto-app-secret mastoApp))
+      ("scope"         ,(string-join
+                          (if scopes scopes (masto-app-scopes mastoApp))
+                          "%20")))))
 
 
 
 (define* (masto-app-set-token-via-client-cred! mastoApp #:optional scopes)
   (masto-app-set-token-via-post-call!
     mastoApp
-    (masto-app-domain mastoApp) "/oauth/token"
-    (assemble-params `(("grant_type"    "client_credentials")
-                       ("client_id"     ,(masto-app-id     mastoApp))
-                       ("client_secret" ,(masto-app-secret mastoApp))))))
+    `(("grant_type"    "client_credentials")
+      ("client_id"     ,(masto-app-id     mastoApp))
+      ("client_secret" ,(masto-app-secret mastoApp)))))
 
 
 
 
 
 (define (masto-app-verify-cred mastoApp)
-  (receive (header body)
-      (http-get (string-append/shared
-                  (masto-app-domain mastoApp)
-                  "/api/v1/apps/verify_credentials"))
-    (json-string->scm (utf8->string body))))
+  (http 'get (string-append/shared
+               (masto-app-domain mastoApp)
+               "/api/v1/apps/verify_credentials")))

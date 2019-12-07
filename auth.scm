@@ -40,16 +40,12 @@
                                              [redirects '("urn:ietf:wg:oauth:2.0:oob")]
                                              [scopes                         '("read")])
   (let ([app (if (or (not id) (not secret) (not key))
-                 (receive (header body)
-                     (http-post
-                       (string-append/shared
-                         domain            "/api/v1/apps"
-                         (assemble-params
-                           `(("client_name"   ,name)
-                             ("redirect_uris" ,(string-join redirects "\n"))
-                             ("scopes"        ,(string-join scopes    "%20"))))
-                         (if website (string-append/shared "&website=" website) "")))
-                   (json-string->scm (utf8->string body)))
+                 (http 'post
+                   (string-append/shared domain "/api/v1/apps")
+                   #:queryParams `(("client_name"   ,name)
+                                   ("redirect_uris" ,(string-join redirects "\n"))
+                                   ("scopes"        ,(string-join scopes    "%20"))
+                                   ("website"       ,website)))
                `(("name"          . ,name)
                  ("client_id"     . ,id)
                  ("client_secret" . ,secret)

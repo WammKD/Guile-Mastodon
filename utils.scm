@@ -61,7 +61,7 @@
             (string-join (let ([filteredValues (filter identity values)])
                            (map
                              (lambda (index value)
-                               (string-append
+                               (string-append/shared
                                  (uri-encode key) "[" (number->string index) "]="
                                  (uri-encode value)))
                              (iota (length filteredValues))
@@ -83,7 +83,7 @@
                     (post   . ,http-post)
                     (put    . ,http-put)
                     (delete . ,http-delete)) type)
-        (string-append url (if queryParams (assemble-params queryParams) ""))
+        (string-append/shared url (if queryParams (assemble-params queryParams) ""))
         #:body         (if (string? body) (string->utf8 body) body)
         #:version      '(1 . 1)
         #:keep-alive?  #f

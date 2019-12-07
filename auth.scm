@@ -60,16 +60,14 @@
 
 
 
-(define (masto-app-set-token-via-post-call! app . uriParts)
-  (receive (header body)
-      (http-post (apply string-append/shared uriParts))
-    (let ([bodySCM (json-string->scm (utf8->string body))])
-      (if (assoc-ref bodySCM "error")
-          (error (assoc-ref bodySCM "error_description"))
-        (begin
-          (masto-app-token-set! app (assoc-ref bodySCM "access_token"))
+(define (masto-app-set-token-via-post-call! app queryParams)
+  (masto-app-token-set! app (assoc-ref (http 'post
+                                         (string-append/shared
+                                           (masto-app-domain app)
+                                           "/oauth/token")
+                                         #:queryParams queryParams) "access_token"))
 
-          app)))))
+  app)
 
 
 

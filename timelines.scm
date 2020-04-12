@@ -128,7 +128,7 @@
       #:queryParams `((  "max_id" ,maxID)
                       ("since_id" ,sinceID)
                       (  "min_id" ,minID)
-                      ("limit"    ,limit)))))
+                      ("limit"    ,(number->string limit))))))
 
 (define* (masto-conversations-all mastoApp #:key maxID sinceID minID [limit 20])
   (generate-masto-page
@@ -138,7 +138,7 @@
                    (assemble-params `((  "max_id" ,maxID)
                                       ("since_id" ,sinceID)
                                       (  "min_id" ,minID)
-                                      ("limit"    ,limit))))
+                                      ("limit"    ,(number->string limit)))))
     generate-masto-convo-array))
 
 (define* (masto-timelines-public domainOrApp #:key local   onlyMedia maxID
@@ -158,7 +158,7 @@
                          (  "max_id"   ,maxID)
                          ("since_id"   ,sinceID)
                          (  "min_id"   ,minID)
-                         ("limit"      ,limit))))
+                         ("limit"      ,(number->string limit)))))
     generate-masto-status-array))
 
 (define* (masto-timelines-tag domainOrApp hashtag #:key local onlyMedia
@@ -179,7 +179,7 @@
                          (  "max_id"   ,maxID)
                          ("since_id"   ,sinceID)
                          (  "min_id"   ,minID)
-                         ("limit"      ,limit))))
+                         ("limit"      ,(number->string limit)))))
     generate-masto-status-array))
 
 (define* (masto-timelines-list mastoApp listID #:key maxID sinceID
@@ -191,5 +191,5 @@
                    (assemble-params `((  "max_id" ,maxID)
                                       ("since_id" ,sinceID)
                                       (  "min_id" ,minID)
-                                      ("limit"    ,limit))))
+                                      ("limit"    ,(number->string limit)))))
     generate-masto-status-array))

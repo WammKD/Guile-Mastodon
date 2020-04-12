@@ -9,6 +9,7 @@
             masto-instance-app?
             masto-app-domain
             masto-app-key
+            masto-app-id
             masto-app-secret
             masto-app-name
             masto-app-redirects

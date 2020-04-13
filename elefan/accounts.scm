@@ -1,4 +1,5 @@
 (define-module (elefan accounts)
+  #:use-module (elefan auth)
   #:use-module (elefan utils)
   #:use-module (ice-9 receive)
   #:use-module (json)

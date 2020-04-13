@@ -3,35 +3,11 @@
 
 <br />
 
-## masto-emoji-shortcode
+## masto-emoji-visible-in-picker
 #### Summary
 #f
 #### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
-
-<br />
-
-## masto-emoji-static-url
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
-
-<br />
-
-## masto-emoji-url
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
-
-<br />
-
-## masto-emoji?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`obj` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
@@ -39,15 +15,39 @@
 #### Summary
 #f
 #### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`domainOrApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 
 <br />
 
-## masto-emoji-visible-in-picker
+## masto-emoji-shortcode
 #### Summary
 #f
 #### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji-url
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-emoji-static-url
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 

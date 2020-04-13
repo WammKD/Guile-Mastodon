@@ -7,11 +7,11 @@
 #### Summary
 #f
 #### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`accountID` <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:statusIDs` (argument position 3) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:comment` (argument position 4) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:forward` (argument position 5) <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:statusIDs` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:comment` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:forward` (argument position 5) <br />
 
 <br />
 

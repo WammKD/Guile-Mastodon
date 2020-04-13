@@ -81,13 +81,13 @@ found [here, under the "Create an application" section](https://docs.joinmastodo
 To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth-scopes/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domain` <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:website` (argument position 2) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:id` (argument position 3) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:secret` (argument position 4) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:key` (argument position 5) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:name` (argument position 6) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:redirects` (argument position 7) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scopes` (argument position 8) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`website` (argument position 2) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`id` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`secret` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`key` (argument position 5) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`name` (argument position 6) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`redirects` (argument position 7) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) **#:**`scopes` (argument position 8) <br />
 
 <br />
 
@@ -97,7 +97,7 @@ To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `code` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[redirect]` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) **[**`redirect`**]** <br />
 
 <br />
 

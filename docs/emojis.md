@@ -3,43 +3,11 @@
 
 <br />
 
-## masto-emoji-shortcode
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
-
-<br />
-
-## masto-emojis-on-instance
-#### Summary
-#f
-#### Parameters
-> `domainOrApp` _required_ <br />
-
-<br />
-
-## masto-emoji-url
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
-
-<br />
-
 ## masto-emoji?
 #### Summary
 #f
 #### Parameters
-> `obj` _required_ <br />
-
-<br />
-
-## masto-emoji-static-url
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
+> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
@@ -47,7 +15,31 @@
 #### Summary
 #f
 #### Parameters
-> `s` _required_ <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-emojis-on-instance
+#### Summary
+#f
+#### Parameters
+> `domainOrApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-emoji-url
+#### Summary
+#f
+#### Parameters
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-emoji-shortcode
+#### Summary
+#f
+#### Parameters
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
@@ -59,6 +51,14 @@ A record object that can be returned by an API call.
 > `staticURL` <br />
 > `url` <br />
 > `visibleInPicker` <br />
+
+<br />
+
+## masto-emoji-static-url
+#### Summary
+#f
+#### Parameters
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 

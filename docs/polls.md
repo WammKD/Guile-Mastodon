@@ -3,20 +3,11 @@
 
 <br />
 
-## masto-poll-expires-at
+## masto-poll-option-votes-count
 #### Summary
 #f
 #### Parameters
-> `s` _required_ <br />
-
-<br />
-
-## <mastodon-poll-option>
-#### Summary
-A record object that can be returned by an API call.
-#### Record Fields
-> `title` <br />
-> `votesCount` <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
@@ -24,47 +15,7 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `obj` _required_ <br />
-
-<br />
-
-## masto-poll-option-votes-count
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
-
-<br />
-
-## masto-poll-votes-count
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
-
-<br />
-
-## masto-poll-id
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
-
-<br />
-
-## masto-poll?
-#### Summary
-#f
-#### Parameters
-> `obj` _required_ <br />
-
-<br />
-
-## masto-poll-option-title
-#### Summary
-#f
-#### Parameters
-> `s` _required_ <br />
+> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
@@ -72,16 +23,42 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `mastoApp` _required_ <br />
-> `pollID` _required_ <br />
+> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> `pollID`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
-## masto-poll-multiple
+## masto-poll-expired
 #### Summary
 #f
 #### Parameters
-> `s` _required_ <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-poll-id
+#### Summary
+#f
+#### Parameters
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-poll-send-vote
+#### Summary
+#f
+#### Parameters
+> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> `pollID`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> `choices`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-poll-options
+#### Summary
+#f
+#### Parameters
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
@@ -99,37 +76,60 @@ A record object that can be returned by an API call.
 
 <br />
 
+## <mastodon-poll-option>
+#### Summary
+A record object that can be returned by an API call.
+#### Record Fields
+> `title` <br />
+> `votesCount` <br />
+
+<br />
+
+## masto-poll-option-title
+#### Summary
+#f
+#### Parameters
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
 ## masto-poll-voted
 #### Summary
 #f
 #### Parameters
-> `s` _required_ <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
-## masto-poll-expired
+## masto-poll-votes-count
 #### Summary
 #f
 #### Parameters
-> `s` _required_ <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
-## masto-poll-send-vote
+## masto-poll-expires-at
 #### Summary
 #f
 #### Parameters
-> `mastoApp` _required_ <br />
-> `pollID` _required_ <br />
-> `choices` _required_ <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 
-## masto-poll-options
+## masto-poll-multiple
 #### Summary
 #f
 #### Parameters
-> `s` _required_ <br />
+> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+
+<br />
+
+## masto-poll?
+#### Summary
+#f
+#### Parameters
+> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 

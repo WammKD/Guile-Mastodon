@@ -111,7 +111,20 @@ To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth
 
 
 
-(define* (masto-app-authorize-uri mastoApp #:key redirect scopes)
+(define* (masto-app-authorize-uri mastoApp #:key redirect scopes force)
+  "Generates the URL to supply the user in order to display an authorization
+form to zem.
+
+If no redirect URI is specified (via the `redirect` argument), the first of the
+specified redirect URIs stored in the app. record (`mastoApp`) will be used.
+
+`scopes`, likewise, will default to the values stored in the app. record if no
+scopes are provided to the argument `scopes` for this function.
+
+`force` will default to `false` if no value is specified.
+
+Original Mastodon documentation of the HTTP call used for this process can be
+found [here, under the \"Authorize a user\" section](https://docs.joinmastodon.org/methods/apps/oauth/)."
   (string-append (masto-app-domain mastoApp) "/oauth/authorize"
                  (assemble-params
                    `(("scope"         ,(string-join (if scopes
@@ -122,8 +135,8 @@ To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth
                      ("redirect_uri"  ,(if redirect
                                            redirect
                                          (car (masto-app-redirects mastoApp))))
-                     ("client_id"     ,(masto-app-id     mastoApp))
-                     ("client_secret" ,(masto-app-secret mastoApp))))))
+                     ("force_login"   ,(if force "true" "false"))
+                     ("client_id"     ,(masto-app-id mastoApp))))))
 
 (define* (masto-app-set-token-via-code! mastoApp code #:optional redirect)
   (masto-app-set-token-via-post-call!

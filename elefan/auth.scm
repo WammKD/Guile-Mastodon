@@ -64,7 +64,19 @@
                                              [name                            "Elefan"]
                                              [redirects '("urn:ietf:wg:oauth:2.0:oob")]
                                              [scopes                         '("read")])
-  "Sterf 2"
+  "Instantiate an application record for use with authentication.
+
+Only an instance domain is required; if no client ID, secret, or key are
+provided, a client is registered at the specified instance; to avoid registering
+a new client and use an existing one, all three must be provided.
+
+`name`, `redirects`, and `scopes` default to – respectively – `\"Elefan\"`,
+`'(\"urn:ietf:wg:oauth:2.0:oob\")`, and `'(\"read\")`, if not provided for.
+
+Original Mastodon documentation of the HTTP call used for this process can be
+found [here, under the \"Create an application\" section](https://docs.joinmastodon.org/methods/apps/).
+
+To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth-scopes/)."
   (let ([app (if (or (not id) (not secret) (not key))
                  (http 'post
                    (string-append/shared domain "/api/v1/apps")

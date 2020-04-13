@@ -55,14 +55,12 @@
               (newln)
               (newln)
 
-              (module-for-each
-                (lambda (sym var)
+              (for-each
+                (lambda (elem)
                   (disp "## ")
                   (disp (string-join
                           (string-split
-                            (string-join
-                              (string-split (symbol->string sym) #\<)
-                              "\\<")
+                            (string-join (string-split elem #\<) "\\<")
                             #\>)
                           "\\>"))
                   (newln)
@@ -70,10 +68,7 @@
                   (disp "#### Summary")
                   (newln)
 
-                  (if (eval-string (string-append
-                                     "(record-type? "
-                                     (symbol->string sym)
-                                     ")"))
+                  (if (eval-string (string-append "(record-type? " elem ")"))
                       (begin
                         (disp "A record object that can be returned by an API call.")
                         (newln)
@@ -89,12 +84,12 @@
                             (newln))
                           (eval-string (string-append
                                          "(record-type-fields "
-                                         (symbol->string sym)
+                                         elem
                                          ")"))))
                     (begin
                       (disp (eval-string (string-append
                                            "(procedure-documentation "
-                                           (symbol->string sym)
+                                           elem
                                            ")")))
                       (newln)
 
@@ -109,7 +104,7 @@
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "
-                                                  (symbol->string sym)
+                                                  elem
                                                   ")")) 'required))
 
                       (for-each
@@ -122,7 +117,7 @@
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "
-                                                  (symbol->string sym)
+                                                  elem
                                                   ")")) 'keyword))
 
                       (for-each
@@ -133,13 +128,17 @@
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "
-                                                  (symbol->string sym)
+                                                  elem
                                                   ")")) 'optional))))
 
                   (newln)
                   (disp "<br />")
                   (newln)
                   (newln))
-                (resolve-interface `(elefan ,(string->symbol moduleName))))))))))
+                (sort-list
+                  (module-map
+                    (lambda (sym var) (symbol->string sym))
+                    (resolve-interface `(elefan ,(string->symbol moduleName))))
+                  string<?))))))))
 
   (closedir dir))

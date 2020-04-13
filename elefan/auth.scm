@@ -40,6 +40,7 @@
                                              [name                            "Elefan"]
                                              [redirects '("urn:ietf:wg:oauth:2.0:oob")]
                                              [scopes                         '("read")])
+  "Sterf 2"
   (let ([app (if (or (not id) (not secret) (not key))
                  (http 'post
                    (string-append/shared domain "/api/v1/apps")

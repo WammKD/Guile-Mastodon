@@ -99,7 +99,7 @@
                         (lambda (argAsSym)
                           (disp "> `")
                           (disp argAsSym)
-                          (disp "` _required_ <br />")
+                          (disp "`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />")
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "
@@ -110,7 +110,7 @@
                         (lambda (keywordPair)
                           (disp "> `")
                           (disp (car keywordPair))
-                          (disp "` _keyword_ (argument position ")
+                          (disp "`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position ")
                           (disp (cdr keywordPair))
                           (disp ") <br />")
                           (newln))
@@ -123,7 +123,7 @@
                         (lambda (optAsSym)
                           (disp "> `")
                           (disp optAsSym)
-                          (disp "` _required_ <br />")
+                          (disp "`  ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_ <br />")
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "

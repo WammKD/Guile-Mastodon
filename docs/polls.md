@@ -3,28 +3,11 @@
 
 <br />
 
-## masto-poll-option-votes-count
+## masto-poll-id
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll-option?
-#### Summary
-#f
-#### Parameters
-> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll-get
-#### Summary
-#f
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `pollID`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -32,15 +15,7 @@
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll-id
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -48,9 +23,9 @@
 #### Summary
 #f
 #### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `pollID`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `choices`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`pollID` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`choices` <br />
 
 <br />
 
@@ -58,7 +33,65 @@
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-poll-option-votes-count
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## <mastodon-poll-option>
+#### Summary
+A record object that can be returned by an API call.
+#### Record Fields
+> `title` <br />
+> `votesCount` <br />
+
+<br />
+
+## masto-poll?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`obj` <br />
+
+<br />
+
+## masto-poll-option?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`obj` <br />
+
+<br />
+
+## masto-poll-votes-count
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-poll-get
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`pollID` <br />
+
+<br />
+
+## masto-poll-expires-at
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -76,12 +109,11 @@ A record object that can be returned by an API call.
 
 <br />
 
-## <mastodon-poll-option>
+## masto-poll-multiple
 #### Summary
-A record object that can be returned by an API call.
-#### Record Fields
-> `title` <br />
-> `votesCount` <br />
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -89,7 +121,7 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -97,39 +129,7 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll-votes-count
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll-expires-at
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll-multiple
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-poll?
-#### Summary
-#f
-#### Parameters
-> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 

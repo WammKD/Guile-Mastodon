@@ -3,20 +3,11 @@
 
 <br />
 
-## masto-filters-all
+## masto-filter-context
 #### Summary
 #f
 #### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-filter-get
-#### Summary
-#f
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `filterID`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -33,36 +24,27 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-filter-delete
+## masto-filter-update
 #### Summary
 #f
 #### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `filterID`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:filter` (argument position 2) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:id` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:phrase` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:context` (argument position 5) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:expiresIn` (argument position 6) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:irreversible` (argument position 7) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:wholeWord` (argument position 8) <br />
 
 <br />
 
-## masto-filter-id
+## masto-filter-get
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-filter?
-#### Summary
-#f
-#### Parameters
-> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-filter-phrase
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`filterID` <br />
 
 <br />
 
@@ -70,21 +52,13 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `#:filter`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 2) <br />
-> `#:phrase`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 3) <br />
-> `#:context`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 4) <br />
-> `#:expiresIn`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 5) <br />
-> `#:irreversible`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 6) <br />
-> `#:wholeWord`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 7) <br />
-
-<br />
-
-## masto-filter-context
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:filter` (argument position 2) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:phrase` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:context` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:expiresIn` (argument position 5) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:irreversible` (argument position 6) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:wholeWord` (argument position 7) <br />
 
 <br />
 
@@ -92,7 +66,48 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-filter-id
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-filter?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`obj` <br />
+
+<br />
+
+## masto-filter-delete
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`filterID` <br />
+
+<br />
+
+## masto-filters-all
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+
+<br />
+
+## masto-filter-phrase
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -100,22 +115,7 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-filter-update
-#### Summary
-#f
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `#:filter`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 2) <br />
-> `#:id`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 3) <br />
-> `#:phrase`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 4) <br />
-> `#:context`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 5) <br />
-> `#:expiresIn`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 6) <br />
-> `#:irreversible`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 7) <br />
-> `#:wholeWord`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 8) <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -123,7 +123,7 @@ A record object that can be returned by an API call.
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 

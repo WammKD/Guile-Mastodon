@@ -8,25 +8,6 @@
 
 <br />
 
-## masto-app-secret
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-verify-cred
-#### Summary
-Confirm that the app's OAuth2 credentials stored in the record work.
-
-Original Mastodon documentation of the HTTP call used for this process can be
-found [here, under the "Verify your app works" section](https://docs.joinmastodon.org/methods/apps/).
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
 ## masto-app-authorize-uri
 #### Summary
 Generates the URL to supply the user in order to display an authorization
@@ -43,10 +24,123 @@ scopes are provided to the argument `scopes` for this function.
 Original Mastodon documentation of the HTTP call used for this process can be
 found [here, under the "Authorize a user" section](https://docs.joinmastodon.org/methods/apps/oauth/).
 #### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `#:redirect`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 2) <br />
-> `#:scopes`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 3) <br />
-> `#:force`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 4) <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:redirect` (argument position 2) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:scopes` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:force` (argument position 4) <br />
+
+<br />
+
+## masto-app-token
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-id
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-secret
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-verify-cred
+#### Summary
+Confirm that the app's OAuth2 credentials stored in the record work.
+
+Original Mastodon documentation of the HTTP call used for this process can be
+found [here, under the "Verify your app works" section](https://docs.joinmastodon.org/methods/apps/).
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+
+<br />
+
+## masto-app-set-token-via-user-cred!
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`username` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`password` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_	`scopes` <br />
+
+<br />
+
+## masto-app-key
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-name
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-domain
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-instance-app?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`obj` <br />
+
+<br />
+
+## masto-app-website
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-redirects
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
+
+<br />
+
+## masto-app-set-token-via-client-cred!
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_	`scopes` <br />
+
+<br />
+
+## masto-app-set-token-via-code!
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`code` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_	`redirect` <br />
 
 <br />
 
@@ -66,41 +160,14 @@ found [here, under the "Create an application" section](https://docs.joinmastodo
 
 To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth-scopes/).
 #### Parameters
-> `domain`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `#:website`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 2) <br />
-> `#:id`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 3) <br />
-> `#:secret`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 4) <br />
-> `#:key`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 5) <br />
-> `#:name`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 6) <br />
-> `#:redirects`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 7) <br />
-> `#:scopes`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position 8) <br />
-
-<br />
-
-## masto-app-id
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-set-token-via-user-cred!
-#### Summary
-#f
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `username`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `password`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `scopes`  ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_ <br />
-
-<br />
-
-## masto-app-name
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`domain` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:website` (argument position 2) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:id` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:secret` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:key` (argument position 5) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:name` (argument position 6) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:redirects` (argument position 7) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_	`#:scopes` (argument position 8) <br />
 
 <br />
 
@@ -108,17 +175,7 @@ To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth
 #### Summary
 #f
 #### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-set-token-via-code!
-#### Summary
-#f
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `code`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `redirect`  ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_ <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_	`s` <br />
 
 <br />
 
@@ -135,63 +192,6 @@ A record object that can be returned by an API call.
 > `key` <br />
 > `scopes` <br />
 > `token` <br />
-
-<br />
-
-## masto-app-token
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-key
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-website
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-domain
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-app-set-token-via-client-cred!
-#### Summary
-#f
-#### Parameters
-> `mastoApp`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-> `scopes`  ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_ <br />
-
-<br />
-
-## masto-app-redirects
-#### Summary
-#f
-#### Parameters
-> `s`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
-
-<br />
-
-## masto-instance-app?
-#### Summary
-#f
-#### Parameters
-> `obj`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />
 
 <br />
 

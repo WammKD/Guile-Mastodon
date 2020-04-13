@@ -58,7 +58,13 @@
               (module-for-each
                 (lambda (sym var)
                   (disp "## ")
-                  (disp (symbol->string sym))
+                  (disp (string-join
+                          (string-split
+                            (string-join
+                              (string-split (symbol->string sym) #\<)
+                              "\\<")
+                            #\>)
+                          "\\>"))
                   (newln)
 
                   (disp "#### Summary")

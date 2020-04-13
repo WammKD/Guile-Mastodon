@@ -11,11 +11,19 @@
 
 <br />
 
-## masto-filter-whole-word
+## masto-filter-phrase
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-filters-all
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 
 <br />
 
@@ -34,11 +42,58 @@
 
 <br />
 
-## masto-filters-all
+## \<mastodon-filter\>
+#### Summary
+A record object that can be returned by an API call.
+#### Record Fields
+> `id` <br />
+> `phrase` <br />
+> `context` <br />
+> `expiresAt` <br />
+> `irreversible` <br />
+> `wholeWord` <br />
+
+<br />
+
+## masto-filter?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-filter-get
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />
+
+<br />
+
+## masto-filter-whole-word
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-filter-irreversible
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-filter-delete
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />
 
 <br />
 
@@ -64,66 +119,11 @@
 
 <br />
 
-## masto-filter-irreversible
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-filter?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
-
-<br />
-
-## masto-filter-phrase
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## \<mastodon-filter\>
-#### Summary
-A record object that can be returned by an API call.
-#### Record Fields
-> `id` <br />
-> `phrase` <br />
-> `context` <br />
-> `expiresAt` <br />
-> `irreversible` <br />
-> `wholeWord` <br />
-
-<br />
-
 ## masto-filter-expires-at
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-filter-delete
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />
-
-<br />
-
-## masto-filter-get
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />
 
 <br />
 

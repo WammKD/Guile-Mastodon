@@ -8,6 +8,35 @@
 
 <br />
 
+## masto-app-set-token-via-code!
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `code` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[redirect]` <br />
+
+<br />
+
+## masto-app-website
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-app-verify-cred
+#### Summary
+Confirm that the app's OAuth2 credentials stored in the record work.
+
+Original Mastodon documentation of the HTTP call used for this process can be
+found [here, under the "Verify your app works" section](https://docs.joinmastodon.org/methods/apps/).
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+
+<br />
+
 ## masto-app-authorize-uri
 #### Summary
 Generates the URL to supply the user in order to display an authorization
@@ -31,7 +60,7 @@ found [here, under the "Authorize a user" section](https://docs.joinmastodon.org
 
 <br />
 
-## masto-app-website
+## masto-app-scopes
 #### Summary
 #f
 #### Parameters
@@ -39,7 +68,7 @@ found [here, under the "Authorize a user" section](https://docs.joinmastodon.org
 
 <br />
 
-## masto-app-token
+## masto-app-secret
 #### Summary
 #f
 #### Parameters
@@ -56,22 +85,6 @@ found [here, under the "Authorize a user" section](https://docs.joinmastodon.org
 
 <br />
 
-## masto-app-scopes
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-app-domain
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
 ## masto-instance-app?
 #### Summary
 #f
@@ -80,24 +93,19 @@ found [here, under the "Authorize a user" section](https://docs.joinmastodon.org
 
 <br />
 
-## masto-app-verify-cred
-#### Summary
-Confirm that the app's OAuth2 credentials stored in the record work.
-
-Original Mastodon documentation of the HTTP call used for this process can be
-found [here, under the "Verify your app works" section](https://docs.joinmastodon.org/methods/apps/).
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-
-<br />
-
-## masto-app-set-token-via-code!
+## masto-app-key
 #### Summary
 #f
 #### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `code` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[redirect]` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-app-token
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
@@ -109,7 +117,7 @@ found [here, under the "Verify your app works" section](https://docs.joinmastodo
 
 <br />
 
-## masto-app-id
+## masto-app-domain
 #### Summary
 #f
 #### Parameters
@@ -144,27 +152,11 @@ To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth
 
 <br />
 
-## masto-app-secret
+## masto-app-id
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## \<mastodon-instance-application\>
-#### Summary
-A record object that can be returned by an API call.
-#### Record Fields
-> `domain` <br />
-> `name` <br />
-> `website` <br />
-> `redirects` <br />
-> `id` <br />
-> `secret` <br />
-> `key` <br />
-> `scopes` <br />
-> `token` <br />
 
 <br />
 
@@ -187,11 +179,19 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-app-key
+## \<mastodon-instance-application\>
 #### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+A record object that can be returned by an API call.
+#### Record Fields
+> `domain` <br />
+> `name` <br />
+> `website` <br />
+> `redirects` <br />
+> `id` <br />
+> `secret` <br />
+> `key` <br />
+> `scopes` <br />
+> `token` <br />
 
 <br />
 

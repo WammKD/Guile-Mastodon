@@ -97,9 +97,9 @@
 
                       (for-each
                         (lambda (argAsSym)
-                          (disp "> `")
+                          (disp "> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `")
                           (disp argAsSym)
-                          (disp "`  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) _required_ <br />")
+                          (disp "` <br />")
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "
@@ -108,9 +108,9 @@
 
                       (for-each
                         (lambda (keywordPair)
-                          (disp "> `")
+                          (disp "> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `")
                           (disp (car keywordPair))
-                          (disp "`  ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) _keyword_ (argument position ")
+                          (disp "` (argument position ")
                           (disp (cdr keywordPair))
                           (disp ") <br />")
                           (newln))
@@ -121,9 +121,9 @@
 
                       (for-each
                         (lambda (optAsSym)
-                          (disp "> `")
+                          (disp "> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[")
                           (disp optAsSym)
-                          (disp "`  ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) _optional_ <br />")
+                          (disp "]` <br />")
                           (newln))
                         (assoc-ref (eval-string (string-append
                                                   "(procedure-arguments "

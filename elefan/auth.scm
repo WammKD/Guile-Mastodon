@@ -17,8 +17,8 @@
 
 ;;; Commentary:
 ;; This module constructs the <mastodon-instance-application> record which
-;; serves as a representation of a Mastodon account, holding the credentials
-;; which are made use of to authenticate with an instance's API (when said
+;; serves as a representation of a Mastodon client, holding the credentials
+;; which are used to authenticate with an instance's API (when said
 ;; authentication is needed, as not all endpoints require authentication).
 ;;
 ;;; Code:

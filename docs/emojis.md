@@ -3,14 +3,6 @@
 
 <br />
 
-## masto-emoji-visible-in-picker
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
 ## \<mastodon-emoji\>
 #### Summary
 A record object that can be returned by an API call.
@@ -38,19 +30,27 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-emoji?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
-
-<br />
-
 ## masto-emoji-url
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji-visible-in-picker
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 

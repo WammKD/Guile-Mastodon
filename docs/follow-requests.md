@@ -3,22 +3,6 @@
 
 <br />
 
-## masto-account-statuses-count
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-account-avatar-static
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
 ## \<mastodon-account\>
 #### Summary
 A record object that can be returned by an API call.
@@ -45,36 +29,14 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-page-prev
+## \<mastodon-emoji\>
 #### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `page` <br />
-
-<br />
-
-## masto-account-url
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-emoji-static-url
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-account-note
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+A record object that can be returned by an API call.
+#### Record Fields
+> `shortcode` <br />
+> `staticURL` <br />
+> `url` <br />
+> `visibleInPicker` <br />
 
 <br />
 
@@ -85,72 +47,6 @@ A record object that can be returned by an API call.
 > `name` <br />
 > `value` <br />
 > `verifiedAt` <br />
-
-<br />
-
-## masto-account-bot
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-follow-request-reject
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `requestID` <br />
-
-<br />
-
-## masto-emoji-url
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-emoji?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
-
-<br />
-
-## masto-account-locked
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-follow-requests-all
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
-
-<br />
-
-## masto-account-username
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-account-fields
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
@@ -168,7 +64,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-account-id
+## masto-account-acct
 #### Summary
 #f
 #### Parameters
@@ -176,7 +72,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-account-header
+## masto-account-avatar
 #### Summary
 #f
 #### Parameters
@@ -184,7 +80,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-account-display-name
+## masto-account-avatar-static
 #### Summary
 #f
 #### Parameters
@@ -192,72 +88,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-field-verified-at
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-page-objects
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-emoji-shortcode
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-emoji-visible-in-picker
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-account?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
-
-<br />
-
-## masto-account-emojis
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-follow-request-authorize
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `requestID` <br />
-
-<br />
-
-## masto-account-moved
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-account-following-count
+## masto-account-bot
 #### Summary
 #f
 #### Parameters
@@ -273,7 +104,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-field-value
+## masto-account-display-name
 #### Summary
 #f
 #### Parameters
@@ -281,15 +112,39 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-field?
+## masto-account-emojis
 #### Summary
 #f
 #### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-fields
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
 ## masto-account-followers-count
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-following-count
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-header
 #### Summary
 #f
 #### Parameters
@@ -305,7 +160,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-account-acct
+## masto-account-id
 #### Summary
 #f
 #### Parameters
@@ -313,7 +168,95 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-page?
+## masto-account-locked
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-moved
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-note
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-statuses-count
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-url
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account-username
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-account?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-emoji-shortcode
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji-static-url
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji-url
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji-visible-in-picker
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-emoji?
 #### Summary
 #f
 #### Parameters
@@ -329,6 +272,57 @@ A record object that can be returned by an API call.
 
 <br />
 
+## masto-field-value
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-field-verified-at
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-field?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-follow-request-authorize
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `requestID` <br />
+
+<br />
+
+## masto-follow-request-reject
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `requestID` <br />
+
+<br />
+
+## masto-follow-requests-all
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
+
+<br />
+
 ## masto-page-next
 #### Summary
 #f
@@ -338,22 +332,28 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-emoji\>
-#### Summary
-A record object that can be returned by an API call.
-#### Record Fields
-> `shortcode` <br />
-> `staticURL` <br />
-> `url` <br />
-> `visibleInPicker` <br />
-
-<br />
-
-## masto-account-avatar
+## masto-page-objects
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-page-prev
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `page` <br />
+
+<br />
+
+## masto-page?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 

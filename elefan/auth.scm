@@ -178,6 +178,10 @@ found [here, under the \"Authorize a user\" section](https://docs.joinmastodon.o
 
 
 (define (masto-app-verify-cred mastoApp)
+  "Confirm that the app's OAuth2 credentials stored in the record work.
+
+Original Mastodon documentation of the HTTP call used for this process can be
+found [here, under the \"Verify your app works\" section](https://docs.joinmastodon.org/methods/apps/)."
   (http 'get (string-append/shared
                (masto-app-domain mastoApp)
                "/api/v1/apps/verify_credentials")))

@@ -139,6 +139,14 @@ found [here, under the \"Authorize a user\" section](https://docs.joinmastodon.o
                      ("client_id"     ,(masto-app-id mastoApp))))))
 
 (define* (masto-app-set-token-via-code! mastoApp code #:optional redirect)
+  "Obtain a token (to store in your `mastoApp` record object) via a user
+authorization code, obtained via [masto-app-authorize-uri](#masto-app-authorize-uri).
+
+If no redirect URI is specified (via the `redirect` argument), the first of the
+specified redirect URIs stored in the app. record (`mastoApp`) will be used.
+
+Original Mastodon documentation of the HTTP call used for this process can be
+found [here, under the \"Obtain a token\" section](https://docs.joinmastodon.org/methods/apps/oauth/)."
   (masto-app-set-token-via-post-call!
     mastoApp
     `(("client_id"     ,(masto-app-id     mastoApp))

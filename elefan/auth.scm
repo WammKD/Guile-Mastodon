@@ -164,7 +164,7 @@ found [here, under the \"Obtain a token\" section](https://docs.joinmastodon.org
   (masto-app-set-token-via-post-call!
     mastoApp
     `(("grant_type"    "password")
-      ("username"      ,username)
+      ("username"      ,(string-downcase  username))
       ("password"      ,password)
       ("client_id"     ,(masto-app-id     mastoApp))
       ("client_secret" ,(masto-app-secret mastoApp))

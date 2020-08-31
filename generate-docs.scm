@@ -15,6 +15,7 @@
 ;;;; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
 ;;;;
 (use-modules (ice-9 documentation)
+             (ice-9 regex)
              (ice-9 session))
 
 (add-to-load-path ".")
@@ -139,6 +140,13 @@
                   (module-map
                     (lambda (sym var) (symbol->string sym))
                     (resolve-interface `(elefan ,(string->symbol moduleName))))
-                  string<?))))))))
+                  (lambda (s1 s2)
+                    (let* ([singular (regexp-substitute/global #f "e?s$" moduleName 'pre "" 'post)]
+                           [match1       (string-match (string-append "^masto-(un)?" singular) s1)]
+                           [match2       (string-match (string-append "^masto-(un)?" singular) s2)])
+                      (cond
+                       [(and match1 (not match2)) #f]
+                       [(and (not match1) match2) #t]
+                       [else                      (string<? s1 s2)])))))))))))
 
   (closedir dir))

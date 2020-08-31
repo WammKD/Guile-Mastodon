@@ -180,13 +180,15 @@
         (args                     ...)
         ([key transform-funct] . rest)) (generate-masto-object-helper generate-funct alist
                                                                       (args ... (let ([value (assoc-ref alist key)])
-                                                                                  (if value (transform-funct value) #f)))
+                                                                                  (if (and value (not (eq? value 'null)))
+                                                                                      (transform-funct value)
+                                                                                    #f)))
                                                                       rest)]
     [(_ generate-funct alist
         (args                     ...)
         ([key]                 . rest)) (generate-masto-object-helper generate-funct alist
                                                                       (args ... (let ([value (assoc-ref alist key)])
-                                                                                  (if value value                   #f)))
+                                                                                  (if (and value (not (eq? value 'null))) value #f)))
                                                                       rest)]))
 
 (define-syntax generate-masto-object

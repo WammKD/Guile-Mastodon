@@ -450,8 +450,8 @@ Retrieve all blocks associated with the user tied to `mastoApp`.
 
 If no `limit` value is provided, 40 is used.
 
-A [<mastodon-pagination-object>](#mastodon-pagination-object) is returned,
-consisting of the [<mastodon-account>](#mastodon-account)s that the user has
+A [\<mastodon-pagination-object\>](#mastodon-pagination-object) is returned,
+consisting of the [\<mastodon-account\>](#mastodon-account)s that the user has
 blocked.
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />

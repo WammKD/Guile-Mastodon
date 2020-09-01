@@ -56,7 +56,10 @@ A record object that can be returned by an API call.
 
 ## masto-emojis-on-instance
 #### Summary
-#f
+Retrieve all emojis belonging to a particular instance.
+
+`domainOrApp` can be the instance domain as a String or a
+[\<mastodon-instance-application\>](auth.md#mastodon-instance-application)
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 

@@ -9,6 +9,10 @@
                                               masto-emoji-visible-in-picker))
 
 (define (masto-emojis-on-instance domainOrApp)
+  "Retrieve all emojis belonging to a particular instance.
+
+`domainOrApp` can be the instance domain as a String or a
+[\\<mastodon-instance-application\\>](auth.md#mastodon-instance-application)"
   (generate-masto-emoji-array
     (http 'get (string-append
                  (if (masto-instance-app? domainOrApp)

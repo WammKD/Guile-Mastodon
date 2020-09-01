@@ -1208,7 +1208,13 @@ A record object that can be returned by an API call.
 
 ## masto-favorite-status
 #### Summary
-#f
+Favorite an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status that you wish to favorite.
+
+A [\<mastodon-status\>](#mastodon-status) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
@@ -1217,7 +1223,15 @@ A record object that can be returned by an API call.
 
 ## masto-favorites-all
 #### Summary
-#f
+Retrieve all favorites associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 20 is used.
+
+A [\<mastodon-pagination-object\>](#mastodon-pagination-object) is returned,
+consisting of the [\<mastodon-account\>](#mastodon-account)s that the user has
+endorsed.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/favourites/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
@@ -1226,7 +1240,13 @@ A record object that can be returned by an API call.
 
 ## masto-unfavorite-status
 #### Summary
-#f
+Unfavorite an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status that you wish to unfavorite.
+
+A [\<mastodon-status\>](#mastodon-status) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />

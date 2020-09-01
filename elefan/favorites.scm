@@ -113,6 +113,15 @@
                                                masto-status-pinned))
 
 (define* (masto-favorites-all mastoApp #:optional [limit 20])
+  "Retrieve all favorites associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 20 is used.
+
+A [\\<mastodon-pagination-object\\>](#mastodon-pagination-object) is returned,
+consisting of the [\\<mastodon-account\\>](#mastodon-account)s that the user has
+endorsed.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/favourites/)."
   (generate-masto-page
     mastoApp
     'get
@@ -121,6 +130,13 @@
     generate-masto-status-array))
 
 (define (masto-favorite-status mastoApp statusID)
+  "Favorite an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status that you wish to favorite.
+
+A [\\<mastodon-status\\>](#mastodon-status) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-status
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
@@ -128,6 +144,13 @@
       #:token (masto-app-token mastoApp))))
 
 (define (masto-unfavorite-status mastoApp statusID)
+  "Unfavorite an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status that you wish to unfavorite.
+
+A [\\<mastodon-status\\>](#mastodon-status) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-status
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"

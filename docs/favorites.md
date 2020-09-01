@@ -628,24 +628,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-favorite-status
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
-## masto-favorites-all
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
-
-<br />
-
 ## masto-field-name
 #### Summary
 #f
@@ -1221,6 +1203,24 @@ A record object that can be returned by an API call.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-favorite-status
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-favorites-all
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
 
 <br />
 

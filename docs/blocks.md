@@ -241,30 +241,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-block-account
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
-
-<br />
-
-## masto-blocks-all
-#### Summary
-Retrieve all blocks associated with the user tied to `mastoApp`.
-
-If no `limit` value is provided, 40 is used.
-
-A `[<mastodon-pagination-object>](#mastodon-pagination-object)` is returned,
-consisting of the `[<mastodon-account>](#mastodon-account)`s that the user has
-blocked.
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
-
-<br />
-
 ## masto-emoji-shortcode
 #### Summary
 #f
@@ -456,6 +432,30 @@ blocked.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-block-account
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
+
+<br />
+
+## masto-blocks-all
+#### Summary
+Retrieve all blocks associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, 40 is used.
+
+A `[<mastodon-pagination-object>](#mastodon-pagination-object)` is returned,
+consisting of the `[<mastodon-account>](#mastodon-account)`s that the user has
+blocked.
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
 
 <br />
 

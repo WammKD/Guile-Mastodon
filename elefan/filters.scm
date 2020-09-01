@@ -18,7 +18,7 @@
 
 This function will return a list of [\\<mastodon-filter\\>](#mastodon-filter)s.
 
-Find the original documentation [here](https://docs.joinmastodon.org/entities/filter/)."
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/)."
   (generate-masto-filter-array
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/filters")

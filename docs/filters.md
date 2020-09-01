@@ -131,7 +131,7 @@ Retrieve all filters created by the user tied to `mastoApp`.
 
 This function will return a list of [\<mastodon-filter\>](#mastodon-filter)s.
 
-Find the original documentation [here](https://docs.joinmastodon.org/entities/filter/).
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 

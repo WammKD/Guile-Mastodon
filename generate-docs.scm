@@ -147,6 +147,22 @@
                       (cond
                        [(and match1 (not match2)) #f]
                        [(and (not match1) match2) #t]
+                       [(and match1 (not (eval-string (string-append "(record-type? " s1 ")")))
+                             match2 (not (eval-string (string-append "(record-type? " s2 ")"))))
+                                                  (let ([fromRecord1 (char=?
+                                                                       (string-ref (symbol->string
+                                                                                     (eval-string
+                                                                                       (string-append "(procedure-name " s1 ")"))) 0)
+                                                                       #\%)]
+                                                        [fromRecord2 (char=?
+                                                                       (string-ref (symbol->string
+                                                                                     (eval-string
+                                                                                       (string-append "(procedure-name " s2 ")"))) 0)
+                                                                       #\%)])
+                                                    (cond
+                                                     [(and fromRecord1 (not fromRecord2)) #t]
+                                                     [(and (not fromRecord1) fromRecord2) #f]
+                                                     [else                                (string<? s1 s2)]))]
                        [else                      (string<? s1 s2)])))))))))))
 
   (closedir dir))

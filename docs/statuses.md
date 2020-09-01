@@ -1185,43 +1185,11 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-status-create
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:statusObject` (argument position 2) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:statusText` (argument position 3) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:inReplyToID` (argument position 4) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:mediaIDs` (argument position 5) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:sensitive` (argument position 6) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:spoilerText` (argument position 7) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:visibility` (argument position 8) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scheduledAt` (argument position 9) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:language` (argument position 10) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:poll` (argument position 11) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollOptions` (argument position 12) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollExpiresIn` (argument position 13) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollMultiple` (argument position 14) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollHideTotals` (argument position 15) <br />
-> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:idempotencyKey` (argument position 16) <br />
-
-<br />
-
 ## masto-status-created-at
 #### Summary
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-status-delete
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
 
 <br />
 
@@ -1246,53 +1214,6 @@ A record object that can be returned by an API call.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-status-get
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
-## masto-status-get-card
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
-## masto-status-get-context
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
-## masto-status-get-favorited-by
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
-
-<br />
-
-## masto-status-get-reblogged-by
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
 
 <br />
 
@@ -1352,15 +1273,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-status-pin
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
 ## masto-status-pinned
 #### Summary
 #f
@@ -1374,15 +1286,6 @@ A record object that can be returned by an API call.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-status-reblog
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
 
 <br />
 
@@ -1442,24 +1345,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-status-unpin
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
-## masto-status-unreblog
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
-
-<br />
-
 ## masto-status-uri
 #### Summary
 #f
@@ -1489,6 +1374,121 @@ A record object that can be returned by an API call.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-status-create
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:statusObject` (argument position 2) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:statusText` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:inReplyToID` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:mediaIDs` (argument position 5) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:sensitive` (argument position 6) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:spoilerText` (argument position 7) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:visibility` (argument position 8) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scheduledAt` (argument position 9) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:language` (argument position 10) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:poll` (argument position 11) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollOptions` (argument position 12) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollExpiresIn` (argument position 13) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollMultiple` (argument position 14) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:pollHideTotals` (argument position 15) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:idempotencyKey` (argument position 16) <br />
+
+<br />
+
+## masto-status-delete
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-get
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-get-card
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-get-context
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-get-favorited-by
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
+
+<br />
+
+## masto-status-get-reblogged-by
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
+
+<br />
+
+## masto-status-pin
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-reblog
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-unpin
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
+
+<br />
+
+## masto-status-unreblog
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
 
 <br />
 

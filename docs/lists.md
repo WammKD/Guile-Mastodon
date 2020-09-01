@@ -349,6 +349,30 @@ A record object that can be returned by an API call.
 
 <br />
 
+## masto-list-id
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-list-title
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+## masto-list?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
 ## masto-list-add-account
 #### Summary
 #f
@@ -396,22 +420,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-list-id
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
-## masto-list-title
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
-
-<br />
-
 ## masto-list-update
 #### Summary
 #f
@@ -419,14 +427,6 @@ A record object that can be returned by an API call.
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `title` <br />
-
-<br />
-
-## masto-list?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 

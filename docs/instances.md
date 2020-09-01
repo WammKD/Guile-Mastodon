@@ -342,14 +342,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-instance-info
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
-
-<br />
-
 ## masto-instance-languages
 #### Summary
 #f
@@ -467,6 +459,14 @@ A record object that can be returned by an API call.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-instance-info
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 
 <br />
 

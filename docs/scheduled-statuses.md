@@ -278,24 +278,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-scheduled-status-delete
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `scheduledStatusID` <br />
-
-<br />
-
-## masto-scheduled-status-get
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `scheduledStatusID` <br />
-
-<br />
-
 ## masto-scheduled-status-id
 #### Summary
 #f
@@ -400,6 +382,32 @@ A record object that can be returned by an API call.
 
 <br />
 
+## masto-scheduled-status?
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-scheduled-status-delete
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `scheduledStatusID` <br />
+
+<br />
+
+## masto-scheduled-status-get
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `scheduledStatusID` <br />
+
+<br />
+
 ## masto-scheduled-status-update
 #### Summary
 #f
@@ -408,14 +416,6 @@ A record object that can be returned by an API call.
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scheduledStatus` (argument position 2) <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scheduledStatusID` (argument position 3) <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scheduledAt` (argument position 4) <br />
-
-<br />
-
-## masto-scheduled-status?
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 

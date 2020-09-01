@@ -42,15 +42,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-poll-get
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />
-
-<br />
-
 ## masto-poll-id
 #### Summary
 #f
@@ -99,16 +90,6 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-poll-send-vote
-#### Summary
-#f
-#### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `choices` <br />
-
-<br />
-
 ## masto-poll-voted
 #### Summary
 #f
@@ -130,6 +111,25 @@ A record object that can be returned by an API call.
 #f
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+## masto-poll-get
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />
+
+<br />
+
+## masto-poll-send-vote
+#### Summary
+#f
+#### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `choices` <br />
 
 <br />
 

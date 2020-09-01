@@ -283,7 +283,13 @@ A record object that can be returned by an API call.
 
 ## masto-endorse-account
 #### Summary
-#f
+Endorse an existing Fediverse user for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user that you wish to endorse.
+
+A [\<mastodon-relationship\>](#mastodon-relationship) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
@@ -446,7 +452,13 @@ A record object that can be returned by an API call.
 
 ## masto-unendorse-account
 #### Summary
-#f
+Endorse an existing Fediverse user for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user that you wish to endorse.
+
+A [\<mastodon-relationship\>](#mastodon-relationship) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
@@ -455,7 +467,15 @@ A record object that can be returned by an API call.
 
 ## masto-endorsements-all
 #### Summary
-#f
+Retrieve all endorsements associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 40 is used.
+
+A [\<mastodon-pagination-object\>](#mastodon-pagination-object) is returned,
+consisting of the [\<mastodon-account\>](#mastodon-account)s that the user has
+endorsed.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/endorsements/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />

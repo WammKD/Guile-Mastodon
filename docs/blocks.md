@@ -441,6 +441,8 @@ Block an existing Fediverse account for the user tied to `mastoApp`.
 
 `accountID` refers to the ID of the user you wish to block.
 
+A [\<mastodon-relationship\>](#mastodon-relationship) is returned.
+
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
@@ -470,6 +472,8 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 Unblock an existing Fediverse account for the user tied to `mastoApp`.
 
 `accountID` refers to the ID of the user you wish to unblock.
+
+A [\<mastodon-relationship\>](#mastodon-relationship) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters

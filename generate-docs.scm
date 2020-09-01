@@ -28,143 +28,172 @@
 
   (closedir dir))
 
-(let ([dir (opendir "elefan")])
-  (do ([entry (readdir dir) (readdir dir)])
-      [(eof-object? entry)]
-    (let ([index (string-contains-ci entry ".scm")])
-      (when (and
-              index
-              (= index (- (string-length entry) 4))
-              (not (string-ci=? entry "utils.scm"))
-              (not (string-ci=? entry "enums.scm"))
-              (not (string-ci=? entry "entities.scm")))
-        (let ([moduleName (substring entry 0 index)])
-          (eval-string (string-append "(use-modules (elefan " moduleName "))"))
+(define modulesAndExports (let ([dir (opendir "elefan")])
+                            (let loop ([entry  (readdir dir)]
+                                       [result           '()])
+                              (if (eof-object? entry)
+                                  (begin
+                                    (closedir dir)
 
-          (call-with-output-file (string-append "docs/" moduleName ".md")
-            (lambda (outputPort)
-              (define (disp str) (display str outputPort))
-              (define (newln)    (newline     outputPort))
+                                    result)
+                                (let ([index (string-contains-ci entry ".scm")])
+                                  (loop
+                                    (readdir dir)
+                                    (if (and
+                                          index
+                                          (= index (- (string-length entry) 4))
+                                          (not (string-ci=? entry    "utils.scm"))
+                                          (not (string-ci=? entry    "enums.scm"))
+                                          (not (string-ci=? entry "entities.scm")))
+                                        (let ([moduleName (substring entry 0 index)])
+                                          (eval-string (string-append "(use-modules (elefan " moduleName "))"))
 
-              (disp "# ")
-              (disp moduleName)
-              (disp " Module")
+                                          (cons
+                                            (cons
+                                              moduleName
+                                              (sort-list
+                                                (module-map
+                                                  (lambda (sym var) (symbol->string sym))
+                                                  (resolve-interface `(elefan ,(string->symbol moduleName))))
+                                                (lambda (s1 s2)
+                                                  (let* ([singular (regexp-substitute/global #f "e?s$" moduleName 'pre "" 'post)]
+                                                         [match1       (string-match (string-append "^masto-(un)?" singular) s1)]
+                                                         [match2       (string-match (string-append "^masto-(un)?" singular) s2)])
+                                                    (cond
+                                                     [(and match1 (not match2)) #f]
+                                                     [(and (not match1) match2) #t]
+                                                     [(and match1 (not (eval-string (string-append "(record-type? " s1 ")")))
+                                                           match2 (not (eval-string (string-append "(record-type? " s2 ")"))))
+                                                                                (let ([fromRecord1 (char=?
+                                                                                                     (string-ref
+                                                                                                       (symbol->string
+                                                                                                         (eval-string
+                                                                                                           (string-append
+                                                                                                             "(procedure-name "
+                                                                                                             s1
+                                                                                                             ")")))
+                                                                                                       0)
+                                                                                                     #\%)]
+                                                                                      [fromRecord2 (char=?
+                                                                                                     (string-ref
+                                                                                                       (symbol->string
+                                                                                                         (eval-string
+                                                                                                           (string-append
+                                                                                                             "(procedure-name "
+                                                                                                             s2
+                                                                                                             ")")))
+                                                                                                       0)
+                                                                                                     #\%)])
+                                                                                  (cond
+                                                                                   [(and fromRecord1 (not fromRecord2)) #t]
+                                                                                   [(and (not fromRecord1) fromRecord2) #f]
+                                                                                   [else                                (string<?
+                                                                                                                          s1
+                                                                                                                          s2)]))]
+                                                     [else                      (string<? s1 s2)])))))
+                                            result))
+                                      result)))))))
+
+(for-each
+  (lambda (moduleNameAndExports)
+    (let ([moduleName (car moduleNameAndExports)]
+          [exports    (cdr moduleNameAndExports)])
+      (call-with-output-file (string-append "docs/" moduleName ".md")
+        (lambda (outputPort)
+          (define (disp str) (display str outputPort))
+          (define (newln)    (newline     outputPort))
+
+          (disp "# ")
+          (disp moduleName)
+          (disp " Module")
+          (newln)
+
+          (disp (file-commentary (string-append "elefan/" moduleName ".scm")))
+          (newln)
+          (newln)
+          (disp "<br />")
+          (newln)
+          (newln)
+
+          (for-each
+            (lambda (elem)
+              (disp "## ")
+              (disp (string-join
+                      (string-split
+                        (string-join (string-split elem #\<) "\\<")
+                        #\>)
+                      "\\>"))
               (newln)
 
-              (disp (file-commentary (string-append "elefan/" entry)))
+              (disp "#### Summary")
               (newln)
+
+              (if (eval-string (string-append "(record-type? " elem ")"))
+                  (begin
+                    (disp "A record object that can be returned by an API call.")
+                    (newln)
+
+                    (disp "#### Record Fields")
+                    (newln)
+
+                    (for-each
+                      (lambda (fieldAsSym)
+                        (disp "> `")
+                        (disp fieldAsSym)
+                        (disp "` <br />")
+                        (newln))
+                      (eval-string (string-append
+                                     "(record-type-fields "
+                                     elem
+                                     ")"))))
+                (begin
+                  (disp (eval-string (string-append
+                                       "(procedure-documentation "
+                                       elem
+                                       ")")))
+                  (newln)
+
+                  (disp "#### Parameters")
+                  (newln)
+
+                  (for-each
+                    (lambda (argAsSym)
+                      (disp "> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `")
+                      (disp argAsSym)
+                      (disp "` <br />")
+                      (newln))
+                    (assoc-ref (eval-string (string-append
+                                              "(procedure-arguments "
+                                              elem
+                                              ")")) 'required))
+
+                  (for-each
+                    (lambda (keywordPair)
+                      (disp "> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `")
+                      (disp (car keywordPair))
+                      (disp "` (argument position ")
+                      (disp (cdr keywordPair))
+                      (disp ") <br />")
+                      (newln))
+                    (assoc-ref (eval-string (string-append
+                                              "(procedure-arguments "
+                                              elem
+                                              ")")) 'keyword))
+
+                  (for-each
+                    (lambda (optAsSym)
+                      (disp "> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[")
+                      (disp optAsSym)
+                      (disp "]` <br />")
+                      (newln))
+                    (assoc-ref (eval-string (string-append
+                                              "(procedure-arguments "
+                                              elem
+                                              ")")) 'optional))))
+
               (newln)
               (disp "<br />")
               (newln)
-              (newln)
-
-              (for-each
-                (lambda (elem)
-                  (disp "## ")
-                  (disp (string-join
-                          (string-split
-                            (string-join (string-split elem #\<) "\\<")
-                            #\>)
-                          "\\>"))
-                  (newln)
-
-                  (disp "#### Summary")
-                  (newln)
-
-                  (if (eval-string (string-append "(record-type? " elem ")"))
-                      (begin
-                        (disp "A record object that can be returned by an API call.")
-                        (newln)
-
-                        (disp "#### Record Fields")
-                        (newln)
-
-                        (for-each
-                          (lambda (fieldAsSym)
-                            (disp "> `")
-                            (disp fieldAsSym)
-                            (disp "` <br />")
-                            (newln))
-                          (eval-string (string-append
-                                         "(record-type-fields "
-                                         elem
-                                         ")"))))
-                    (begin
-                      (disp (eval-string (string-append
-                                           "(procedure-documentation "
-                                           elem
-                                           ")")))
-                      (newln)
-
-                      (disp "#### Parameters")
-                      (newln)
-
-                      (for-each
-                        (lambda (argAsSym)
-                          (disp "> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `")
-                          (disp argAsSym)
-                          (disp "` <br />")
-                          (newln))
-                        (assoc-ref (eval-string (string-append
-                                                  "(procedure-arguments "
-                                                  elem
-                                                  ")")) 'required))
-
-                      (for-each
-                        (lambda (keywordPair)
-                          (disp "> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `")
-                          (disp (car keywordPair))
-                          (disp "` (argument position ")
-                          (disp (cdr keywordPair))
-                          (disp ") <br />")
-                          (newln))
-                        (assoc-ref (eval-string (string-append
-                                                  "(procedure-arguments "
-                                                  elem
-                                                  ")")) 'keyword))
-
-                      (for-each
-                        (lambda (optAsSym)
-                          (disp "> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[")
-                          (disp optAsSym)
-                          (disp "]` <br />")
-                          (newln))
-                        (assoc-ref (eval-string (string-append
-                                                  "(procedure-arguments "
-                                                  elem
-                                                  ")")) 'optional))))
-
-                  (newln)
-                  (disp "<br />")
-                  (newln)
-                  (newln))
-                (sort-list
-                  (module-map
-                    (lambda (sym var) (symbol->string sym))
-                    (resolve-interface `(elefan ,(string->symbol moduleName))))
-                  (lambda (s1 s2)
-                    (let* ([singular (regexp-substitute/global #f "e?s$" moduleName 'pre "" 'post)]
-                           [match1       (string-match (string-append "^masto-(un)?" singular) s1)]
-                           [match2       (string-match (string-append "^masto-(un)?" singular) s2)])
-                      (cond
-                       [(and match1 (not match2)) #f]
-                       [(and (not match1) match2) #t]
-                       [(and match1 (not (eval-string (string-append "(record-type? " s1 ")")))
-                             match2 (not (eval-string (string-append "(record-type? " s2 ")"))))
-                                                  (let ([fromRecord1 (char=?
-                                                                       (string-ref (symbol->string
-                                                                                     (eval-string
-                                                                                       (string-append "(procedure-name " s1 ")"))) 0)
-                                                                       #\%)]
-                                                        [fromRecord2 (char=?
-                                                                       (string-ref (symbol->string
-                                                                                     (eval-string
-                                                                                       (string-append "(procedure-name " s2 ")"))) 0)
-                                                                       #\%)])
-                                                    (cond
-                                                     [(and fromRecord1 (not fromRecord2)) #t]
-                                                     [(and (not fromRecord1) fromRecord2) #f]
-                                                     [else                                (string<? s1 s2)]))]
-                       [else                      (string<? s1 s2)])))))))))))
-
-  (closedir dir))
+              (newln))
+            exports)))))
+  modulesAndExports)

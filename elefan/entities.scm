@@ -115,6 +115,7 @@
                                             masto-filter-irreversible      masto-filter-whole-word
                                             masto-filter-irreversible-set! masto-filter-whole-word-set!
             generate-masto-filter
+            generate-masto-filter-array
             <mastodon-instance-urls> masto-instance-urls? masto-instance-urls-streaming-api
             generate-masto-instance-urls
             <mastodon-instance-stats> masto-instance-stats? masto-instance-stats-user-count
@@ -726,10 +727,20 @@
   (generate-masto-object make-masto-filter filter
     ["id"]
     ["phrase"]
-    ["context"      (cut enum-value-of <> FILTER_CONTEXT_ENUM)]
+    ["context"      (cut
+                      vector-fold
+                       (lambda (i finalContextList context)
+                         (if-let ([value (enum-value-of context FILTER_CONTEXT_ENUM)])
+                             (cons value finalContextList)
+                           finalContextList))
+                       '()
+                       <>)]
     ["expires_at"   masto-string->date]
     ["irreversible"]
     ["whole_word"]))
+
+(define (generate-masto-filter-array filters)
+  (generate-masto-object-array filters generate-masto-filter))
 
 
 

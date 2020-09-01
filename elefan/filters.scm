@@ -14,7 +14,7 @@
                                                masto-filter-whole-word))
 
 (define (masto-filters-all mastoApp)
-  (generate-masto-filter
+  (generate-masto-filter-array
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/filters")
       #:token (masto-app-token mastoApp))))

@@ -19,7 +19,13 @@ A record object that can be returned by an API call.
 
 ## masto-block-domain
 #### Summary
-#f
+Block an existing Fediverse instance for the user tied to `mastoApp`.
+
+`domain` refers to the domain of the instance that you wish to block.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/domain_blocks/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domain` <br />
@@ -62,7 +68,13 @@ A record object that can be returned by an API call.
 
 ## masto-unblock-domain
 #### Summary
-#f
+Unblock an existing Fediverse instance for the user tied to `mastoApp`.
+
+`domain` refers to the domain of the instance that you wish to unblock.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/domain_blocks/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domain` <br />
@@ -71,7 +83,14 @@ A record object that can be returned by an API call.
 
 ## masto-domain-blocks-all
 #### Summary
-#f
+Retrieve all domain blocks associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, 40 is used.
+
+A [\<mastodon-pagination-object\>](#mastodon-pagination-object) is returned,
+consisting of the domains that the user has blocked, as Strings.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/domain_blocks/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />

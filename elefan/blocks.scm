@@ -48,7 +48,7 @@
 (define* (masto-blocks-all mastoApp #:optional [limit 40])
   "Retrieve all blocks associated with the user tied to `mastoApp`.
 
-If no `limit` value is provided, 40 is used.
+If no `limit` value is provided, the value 40 is used.
 
 A [\\<mastodon-pagination-object\\>](#mastodon-pagination-object) is returned,
 consisting of the [\\<mastodon-account\\>](#mastodon-account)s that the user has

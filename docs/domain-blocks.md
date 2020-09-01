@@ -85,7 +85,7 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 #### Summary
 Retrieve all domain blocks associated with the user tied to `mastoApp`.
 
-If no `limit` value is provided, 40 is used.
+If no `limit` value is provided, the value 40 is used.
 
 A [\<mastodon-pagination-object\>](#mastodon-pagination-object) is returned,
 consisting of the domains that the user has blocked, as Strings.

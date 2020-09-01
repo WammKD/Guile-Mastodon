@@ -52,7 +52,9 @@ If no `limit` value is provided, 40 is used.
 
 A [\\<mastodon-pagination-object\\>](#mastodon-pagination-object) is returned,
 consisting of the [\\<mastodon-account\\>](#mastodon-account)s that the user has
-blocked."
+blocked.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/blocks/)."
   (generate-masto-page
     mastoApp
     'get
@@ -61,6 +63,11 @@ blocked."
     generate-masto-account-array))
 
 (define (masto-block-account mastoApp accountID)
+  "Block an existing Fediverse account for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user you wish to block.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"
@@ -68,6 +75,11 @@ blocked."
       #:token (masto-app-token mastoApp))))
 
 (define (masto-unblock-account mastoApp accountID)
+  "Unblock an existing Fediverse account for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user you wish to unblock.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"

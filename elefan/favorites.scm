@@ -117,8 +117,8 @@
 
 If no `limit` value is provided, the value 20 is used.
 
-A [`\\<mastodon-pagination-object\\>`](#mastodon-pagination-object) is returned,
-consisting of the [`\\<mastodon-account\\>`](#mastodon-account)s that the user
+A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned,
+consisting of the [`<mastodon-account>`](#mastodon-account)s that the user
 has endorsed.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/favourites/)."
@@ -134,7 +134,7 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 
 `statusID` refers to the ID of the status that you wish to favorite.
 
-A [`\\<mastodon-status\\>`](#mastodon-status) is returned.
+A [`<mastodon-status>`](#mastodon-status) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-status
@@ -148,7 +148,7 @@ Find the original documentation within [this page](https://docs.joinmastodon.org
 
 `statusID` refers to the ID of the status that you wish to unfavorite.
 
-A [`\\<mastodon-status\\>`](#mastodon-status) is returned.
+A [`<mastodon-status>`](#mastodon-status) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-status

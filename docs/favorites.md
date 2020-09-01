@@ -1212,7 +1212,7 @@ Favorite an existing Fediverse status for the user tied to `mastoApp`.
 
 `statusID` refers to the ID of the status that you wish to favorite.
 
-A [`\<mastodon-status\>`](#mastodon-status) is returned.
+A [`<mastodon-status>`](#mastodon-status) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
@@ -1227,8 +1227,8 @@ Retrieve all favorites associated with the user tied to `mastoApp`.
 
 If no `limit` value is provided, the value 20 is used.
 
-A [`\<mastodon-pagination-object\>`](#mastodon-pagination-object) is returned,
-consisting of the [`\<mastodon-account\>`](#mastodon-account)s that the user
+A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned,
+consisting of the [`<mastodon-account>`](#mastodon-account)s that the user
 has endorsed.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/favourites/).
@@ -1244,7 +1244,7 @@ Unfavorite an existing Fediverse status for the user tied to `mastoApp`.
 
 `statusID` refers to the ID of the status that you wish to unfavorite.
 
-A [`\<mastodon-status\>`](#mastodon-status) is returned.
+A [`<mastodon-status>`](#mastodon-status) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters

@@ -441,7 +441,7 @@ Block an existing Fediverse account for the user tied to `mastoApp`.
 
 `accountID` refers to the ID of the user you wish to block.
 
-A [`\<mastodon-relationship\>`](#mastodon-relationship) is returned.
+A [`<mastodon-relationship>`](#mastodon-relationship) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters
@@ -456,8 +456,8 @@ Retrieve all blocks associated with the user tied to `mastoApp`.
 
 If no `limit` value is provided, the value 40 is used.
 
-A [`\<mastodon-pagination-object\>`](#mastodon-pagination-object) is returned,
-consisting of the [`\<mastodon-account\>`](#mastodon-account)s that the user
+A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned,
+consisting of the [`<mastodon-account>`](#mastodon-account)s that the user
 has blocked.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/blocks/).
@@ -473,7 +473,7 @@ Unblock an existing Fediverse account for the user tied to `mastoApp`.
 
 `accountID` refers to the ID of the user you wish to unblock.
 
-A [`\<mastodon-relationship\>`](#mastodon-relationship) is returned.
+A [`<mastodon-relationship>`](#mastodon-relationship) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 #### Parameters

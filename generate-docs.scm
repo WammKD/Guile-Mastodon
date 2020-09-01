@@ -24,7 +24,9 @@
   (do ([entry (readdir dir) (readdir dir)])
       [(eof-object? entry)]
     (when (not (or (string=? entry ".") (string=? entry "..")))
-      (delete-file (string-append "docs/" entry)))))
+      (delete-file (string-append "docs/" entry))))
+
+  (closedir dir))
 
 (let ([dir (opendir "elefan")])
   (do ([entry (readdir dir) (readdir dir)])

@@ -74,6 +74,13 @@ Find the original documentation [here](https://docs.joinmastodon.org/entities/fi
                #:queryParams f))])))
 
 (define (masto-filter-get mastoApp filterID)
+  "Retrieve a particular filter created by the user tied to `mastoApp`.
+
+`filterID` refers to the ID of the filter that you wish to retrieve.
+
+This function will return a [\\<mastodon-filter\\>](#mastodon-filter).
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/)."
   (generate-masto-filter
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/filters/" filterID)

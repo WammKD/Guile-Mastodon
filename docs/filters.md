@@ -97,7 +97,13 @@ A record object that can be returned by an API call.
 
 ## masto-filter-get
 #### Summary
-#f
+Retrieve a particular filter created by the user tied to `mastoApp`.
+
+`filterID` refers to the ID of the filter that you wish to retrieve.
+
+This function will return a [\<mastodon-filter\>](#mastodon-filter).
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />

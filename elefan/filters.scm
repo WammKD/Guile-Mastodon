@@ -14,6 +14,11 @@
                                                masto-filter-whole-word))
 
 (define (masto-filters-all mastoApp)
+  "Retrieve all filters created by the user tied to `mastoApp`.
+
+This function will return a list of [\\<mastodon-filter\\>](#mastodon-filter)s.
+
+Find the original documentation [here](https://docs.joinmastodon.org/entities/filter/)."
   (generate-masto-filter-array
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/filters")

@@ -112,7 +112,30 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 
 ## masto-filter-update
 #### Summary
-#f
+Update a particular filter created by the user tied to `mastoApp`.
+
+[`masto-filter-update`](#masto-filter-update) allows you to pass a
+[\<mastodon-filter\>](#mastodon-filter) with `#:filter` or to provide the
+details of the filter with the other remaining keywords.
+
+if `filter` is provided, it will be used as a representation of the details of
+the filter you with to update and the remaining keywords will be ignored.
+
+`context` must be a valid filter context.
+
+Both `phrase` and `context`, if not using `filter`, are required; all other
+keyword arguments are optional.
+
+`expiresIn` must be a SRFI-19 [date](https://www.gnu.org/software/guile/manual/html_node/SRFI_002d19-Date.html)
+or [time](https://www.gnu.org/software/guile/manual/html_node/SRFI_002d19-Time.html)
+object or a number representing the number of seconds until expiry; if a date
+object is provided, the number of seconds from the current time will be
+calculated and used.
+
+This function will return a [\<mastodon-filter\>](#mastodon-filter) containing
+the updated details.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:filter` (argument position 2) <br />

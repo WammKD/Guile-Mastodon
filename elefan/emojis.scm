@@ -12,13 +12,13 @@
   "Retrieve all emojis belonging to a particular instance.
 
 `domainOrApp` can be the instance domain as a String or a
-[\\<mastodon-instance-application\\>](auth.md#mastodon-instance-application),
+[`\\<mastodon-instance-application\\>`](auth.md#mastodon-instance-application),
 whose associated `domain` will be used instead.
 
 Domains can include or lack the preceding \"https://\"; this function will add
 one, if needed.
 
-This function will return a list of [\\<mastodon-emoji\\>](#mastodon-emoji)s.
+This function will return a list of [`\\<mastodon-emoji\\>`](#mastodon-emoji)s.
 
 Documentation for this API call can be found [here](https://docs.joinmastodon.org/methods/instance/custom_emojis/)."
   (generate-masto-emoji-array

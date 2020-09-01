@@ -50,9 +50,9 @@
 
 If no `limit` value is provided, the value 40 is used.
 
-A [\\<mastodon-pagination-object\\>](#mastodon-pagination-object) is returned,
-consisting of the [\\<mastodon-account\\>](#mastodon-account)s that the user has
-blocked.
+A [`\\<mastodon-pagination-object\\>`](#mastodon-pagination-object) is returned,
+consisting of the [`\\<mastodon-account\\>`](#mastodon-account)s that the user
+has blocked.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/blocks/)."
   (generate-masto-page
@@ -67,7 +67,7 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 
 `accountID` refers to the ID of the user you wish to block.
 
-A [\\<mastodon-relationship\\>](#mastodon-relationship) is returned.
+A [`\\<mastodon-relationship\\>`](#mastodon-relationship) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship
@@ -81,7 +81,7 @@ Find the original documentation within [this page](https://docs.joinmastodon.org
 
 `accountID` refers to the ID of the user you wish to unblock.
 
-A [\\<mastodon-relationship\\>](#mastodon-relationship) is returned.
+A [`\\<mastodon-relationship\\>`](#mastodon-relationship) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship

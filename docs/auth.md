@@ -142,7 +142,7 @@ To learn more about scopes, visit [here](https://docs.joinmastodon.org/api/oauth
 ## masto-app-set-token-via-code!
 #### Summary
 Obtain a token (to store in your `mastoApp` record object) via a user
-authorization code, obtained via [masto-app-authorize-uri](#masto-app-authorize-uri).
+authorization code, obtained via [`masto-app-authorize-uri`](#masto-app-authorize-uri).
 
 If no redirect URI is specified (via the `redirect` argument), the first of the
 specified redirect URIs stored in the app. record (`mastoApp`) will be used.

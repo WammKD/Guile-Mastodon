@@ -116,7 +116,7 @@
           (newln)
           (newln)
 
-          (disp "# Table of Contents")
+          (disp "## Table of Contents")
           (newln)
           (for-each
             (lambda (exportName index)
@@ -138,10 +138,14 @@
             exports
             (iota (length exports) 1))
           (newln)
+          (newln)
+          (disp "<br />")
+          (newln)
+          (newln)
 
           (for-each
             (lambda (elem)
-              (disp "## ")
+              (disp "### ")
               (disp (string-join
                       (string-split
                         (string-join (string-split elem #\<) "\\<")
@@ -149,7 +153,7 @@
                       "\\>"))
               (newln)
 
-              (disp "#### Summary")
+              (disp "##### Summary")
               (newln)
 
               (if (eval-string (string-append "(record-type? " elem ")"))
@@ -157,7 +161,7 @@
                     (disp "A record object that can be returned by an API call.")
                     (newln)
 
-                    (disp "#### Record Fields")
+                    (disp "##### Record Fields")
                     (newln)
 
                     (for-each
@@ -270,7 +274,7 @@
                                 documentation)))))
                   (newln)
 
-                  (disp "#### Parameters")
+                  (disp "##### Parameters")
                   (newln)
 
                   (for-each

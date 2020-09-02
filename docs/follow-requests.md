@@ -332,7 +332,13 @@ A record object that can be returned by an API call.
 
 ## masto-follow-request-authorize
 #### Summary
-#f
+Approve an existing follow request for the user tied to `mastoApp`.
+
+`requestID` refers to the ID of the follow request you wish to approve.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/follow_requests/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `requestID` <br />
@@ -341,7 +347,13 @@ A record object that can be returned by an API call.
 
 ## masto-follow-request-reject
 #### Summary
-#f
+Deny an existing follow request for the user tied to `mastoApp`.
+
+`requestID` refers to the ID of the follow request you wish to deny.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/follow_requests/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `requestID` <br />
@@ -350,7 +362,14 @@ A record object that can be returned by an API call.
 
 ## masto-follow-requests-all
 #### Summary
-#f
+Retrieve all follow requests made to the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 40 is used.
+
+A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned, consisting of the
+[`<mastodon-account>`](#mastodon-account)s that have requested to follow the user.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/follow_requests/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />

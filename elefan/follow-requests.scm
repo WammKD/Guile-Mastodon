@@ -36,6 +36,14 @@
                                                  masto-account-bot))
 
 (define* (masto-follow-requests-all mastoApp #:optional [limit 40])
+  "Retrieve all follow requests made to the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 40 is used.
+
+A <mastodon-pagination-object> is returned, consisting of the
+<mastodon-account>s that have requested to follow the user.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/follow_requests/)."
   (generate-masto-page
     mastoApp
     'get
@@ -44,6 +52,13 @@
     generate-masto-account-array))
 
 (define (masto-follow-request-authorize mastoApp requestID)
+  "Approve an existing follow request for the user tied to `mastoApp`.
+
+`requestID` refers to the ID of the follow request you wish to approve.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/follow_requests/)."
   (http 'post
     (string-append (masto-app-domain mastoApp) "/api/v1/follow_requests/"
                    requestID                   "/authorize")
@@ -52,6 +67,13 @@
   #t)
 
 (define (masto-follow-request-reject mastoApp requestID)
+  "Deny an existing follow request for the user tied to `mastoApp`.
+
+`requestID` refers to the ID of the follow request you wish to deny.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/follow_requests/)."
   (http 'post
     (string-append (masto-app-domain mastoApp) "/api/v1/follow_requests/"
                    requestID                   "/reject")

@@ -16,7 +16,8 @@
 ;;;;
 (use-modules (ice-9 documentation)
              (ice-9 regex)
-             (ice-9 session))
+             (ice-9 session)
+             (srfi  srfi-1))
 
 (add-to-load-path ".")
 
@@ -147,10 +148,20 @@
                                      elem
                                      ")"))))
                 (begin
-                  (disp (eval-string (string-append
-                                       "(procedure-documentation "
-                                       elem
-                                       ")")))
+                  (let* ([documentation (eval-string (string-append
+                                                       "(procedure-documentation "
+                                                       elem
+                                                       ")"))]
+                         [modulesInDocs (if (string? documentation)
+                                            (filter
+                                              (lambda (moduleAndExports)
+                                                (any
+                                                  (lambda (exportName)
+                                                    (string-contains documentation exportName))
+                                                  (cdr moduleAndExports)))
+                                              modulesAndExports)
+                                          '())])
+                    (disp documentation))
                   (newln)
 
                   (disp "#### Parameters")

@@ -28,6 +28,8 @@
 17. [masto-instance-app?](#masto-instance-app?)
 
 
+<br />
+
 ### \<mastodon-instance-application\>
 ##### Summary
 A record object that can be returned by an API call.

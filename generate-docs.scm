@@ -206,6 +206,29 @@
                                                               (not (equal? module currentModule)))
                                                             modulesInDocs)
                                                           (cdr currentModule)))])
+                                (for-each
+                                  (lambda (module)
+                                    (let ([exportName (cdr module)])
+                                      (set! documentation (regexp-substitute/global
+                                                            #f
+                                                            exportName
+                                                            documentation
+                                                            'pre
+                                                            (string-append
+                                                              "[`"
+                                                              exportName
+                                                              "`]("
+                                                              (car module)
+                                                              ".md#"
+                                                              (if (eval-string
+                                                                    (string-append "(record-type? " exportName ")"))
+                                                                  (substring
+                                                                    exportName
+                                                                    1
+                                                                    (1- (string-length exportName)))
+                                                                exportName)
+                                                              ")")
+                                                            'post))))
                                   (fold
                                     (lambda (module result)
                                       (append
@@ -219,7 +242,7 @@
                                           '()
                                           (cdr module))))
                                     '()
-                                    remainingModules)
+                                    remainingModules))
 
                                 documentation)))))
                   (newln)

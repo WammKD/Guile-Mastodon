@@ -46,6 +46,17 @@
                                                                masto-instance-contact-account))
 
 (define (masto-instance-info domainOrApp)
+  "Retrieve information about a particular instance.
+
+`domainOrApp` can be the instance domain as a String or a
+<mastodon-instance-application>, whose associated `domain` will be used instead.
+
+Domains can include or lack the preceding \"https://\"; this function will add
+one, if needed.
+
+This function will return a <mastodon-instance> record.
+
+Documentation for this API call can be found [here](https://docs.joinmastodon.org/methods/instance/)."
   (generate-masto-instance
     (http 'get (string-append
                  (if (masto-instance-app? domainOrApp)

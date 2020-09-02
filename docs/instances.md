@@ -464,7 +464,17 @@ A record object that can be returned by an API call.
 
 ## masto-instance-info
 #### Summary
-#f
+Retrieve information about a particular instance.
+
+`domainOrApp` can be the instance domain as a String or a
+[`<mastodon-instance-application>`](auth.md#mastodon-instance-application), whose associated `domain` will be used instead.
+
+Domains can include or lack the preceding "https://"; this function will add
+one, if needed.
+
+This function will return a [`<mastodon-instance>`](#mastodon-instance) record.
+
+Documentation for this API call can be found [here](https://docs.joinmastodon.org/methods/instance/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 

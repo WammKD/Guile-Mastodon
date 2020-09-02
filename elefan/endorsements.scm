@@ -50,8 +50,8 @@
 
 If no `limit` value is provided, the value 40 is used.
 
-A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned,
-consisting of the [`<mastodon-account>`](#mastodon-account)s that the user has
+A <mastodon-pagination-object> is returned,
+consisting of the <mastodon-account>s that the user has
 endorsed.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/endorsements/)."
@@ -67,7 +67,7 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 
 `accountID` refers to the ID of the user that you wish to endorse.
 
-A [`<mastodon-relationship>`](#mastodon-relationship) is returned.
+A <mastodon-relationship> is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship
@@ -81,7 +81,7 @@ Find the original documentation within [this page](https://docs.joinmastodon.org
 
 `accountID` refers to the ID of the user that you wish to endorse.
 
-A [`<mastodon-relationship>`](#mastodon-relationship) is returned.
+A <mastodon-relationship> is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship

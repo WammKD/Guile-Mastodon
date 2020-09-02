@@ -161,7 +161,30 @@
                                                   (cdr moduleAndExports)))
                                               modulesAndExports)
                                           '())])
-                    (disp documentation))
+                    (disp (if (null? modulesInDocs)
+                              documentation
+                            (let ([currentModule (assoc moduleName modulesInDocs)])
+                              (let ([remainingModules (if (not currentModule)
+                                                          modulesInDocs
+                                                        (fold
+                                                          (lambda (currentModuleExportName result)
+                                                            (map
+                                                              (lambda (module)
+                                                                (cons
+                                                                  (car module)
+                                                                  (filter
+                                                                    (lambda (otherModuleExportName)
+                                                                      (not (string=?
+                                                                               otherModuleExportName
+                                                                             currentModuleExportName)))
+                                                                    (cdr module))))
+                                                              result))
+                                                          (filter
+                                                            (lambda (module)
+                                                              (not (equal? module currentModule)))
+                                                            modulesInDocs)
+                                                          (cdr currentModule)))])
+                                documentation)))))
                   (newln)
 
                   (disp "#### Parameters")

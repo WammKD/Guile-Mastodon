@@ -7,7 +7,6 @@
 
 
 <br />
-
 ## Table of Contents
 1. [\<mastodon-instance-application\>](#mastodon-instance-application)
 2. [masto-app-authorize-uri](#masto-app-authorize-uri)
@@ -26,6 +25,7 @@
 15. [masto-app-verify-cred](#masto-app-verify-cred)
 16. [masto-app-website](#masto-app-website)
 17. [masto-instance-app?](#masto-instance-app?)
+
 
 ### \<mastodon-instance-application\>
 ##### Summary

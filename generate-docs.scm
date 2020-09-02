@@ -206,6 +206,21 @@
                                                               (not (equal? module currentModule)))
                                                             modulesInDocs)
                                                           (cdr currentModule)))])
+                                  (fold
+                                    (lambda (module result)
+                                      (append
+                                        result
+                                        (fold
+                                          (lambda (exportName r2)
+                                            (if (any (lambda (mod)
+                                                       (string=? exportName (cdr mod))) result)
+                                                r2
+                                              (cons (cons (car module) exportName) r2)))
+                                          '()
+                                          (cdr module))))
+                                    '()
+                                    remainingModules)
+
                                 documentation)))))
                   (newln)
 

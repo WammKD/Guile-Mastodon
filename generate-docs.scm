@@ -116,6 +116,29 @@
           (newln)
           (newln)
 
+          (disp "# Table of Contents")
+          (newln)
+          (for-each
+            (lambda (exportName index)
+              (disp index)
+              (disp ". [")
+              (disp (string-join
+                      (string-split
+                        (string-join (string-split exportName #\<) "\\<")
+                        #\>)
+                      "\\>"))
+              (disp "](#")
+              (disp (string-join
+                      (string-split
+                        (string-join (string-split exportName #\<) "")
+                        #\>)
+                      ""))
+              (disp ")")
+              (newln))
+            exports
+            (iota (length exports) 1))
+          (newln)
+
           (for-each
             (lambda (elem)
               (disp "## ")

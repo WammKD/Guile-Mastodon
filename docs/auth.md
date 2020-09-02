@@ -7,6 +7,7 @@
 
 
 <br />
+
 ## Table of Contents
 1. [\<mastodon-instance-application\>](#mastodon-instance-application)
 2. [masto-app-authorize-uri](#masto-app-authorize-uri)

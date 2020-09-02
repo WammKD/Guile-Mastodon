@@ -16,7 +16,7 @@
 (define (masto-filters-all mastoApp)
   "Retrieve all filters created by the user tied to `mastoApp`.
 
-This function will return a list of [`<mastodon-filter>`](#mastodon-filter)s.
+This function will return a list of <mastodon-filter>s.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/)."
   (generate-masto-filter-array
@@ -78,7 +78,7 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 
 `filterID` refers to the ID of the filter that you wish to retrieve.
 
-This function will return a [`<mastodon-filter>`](#mastodon-filter).
+This function will return a <mastodon-filter>.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/)."
   (generate-masto-filter
@@ -90,8 +90,8 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
                                              context expiresIn irreversible wholeWord)
   "Update a particular filter created by the user tied to `mastoApp`.
 
-[`masto-filter-update`](#masto-filter-update) allows you to pass a
-[`<mastodon-filter>`](#mastodon-filter) with `#:filter` or to provide the
+masto-filter-update allows you to pass a
+<mastodon-filter> with `#:filter` or to provide the
 details of the filter with the other remaining keywords.
 
 if `filter` is provided, it will be used as a representation of the details of
@@ -108,7 +108,7 @@ object or a number representing the number of seconds until expiry; if a date
 object is provided, the number of seconds from the current time will be
 calculated and used.
 
-This function will return a [`<mastodon-filter>`](#mastodon-filter)
+This function will return a <mastodon-filter>
 containing the updated details.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/)."

@@ -3,7 +3,7 @@
 
 <br />
 
-# Table of Contents
+## Table of Contents
 1. [\<mastodon-account\>](#mastodon-account)
 2. [\<mastodon-application\>](#mastodon-application)
 3. [\<mastodon-attachment\>](#mastodon-attachment)
@@ -146,10 +146,13 @@
 140. [masto-favorites-all](#masto-favorites-all)
 141. [masto-unfavorite-status](#masto-unfavorite-status)
 
-## \<mastodon-account\>
-#### Summary
+
+<br />
+
+### \<mastodon-account\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `username` <br />
 > `acct` <br />
@@ -172,19 +175,19 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-application\>
-#### Summary
+### \<mastodon-application\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `name` <br />
 > `website` <br />
 
 <br />
 
-## \<mastodon-attachment\>
-#### Summary
+### \<mastodon-attachment\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `type` <br />
 > `url` <br />
@@ -197,10 +200,10 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-card\>
-#### Summary
+### \<mastodon-card\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `url` <br />
 > `title` <br />
 > `description` <br />
@@ -216,10 +219,10 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-emoji\>
-#### Summary
+### \<mastodon-emoji\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `shortcode` <br />
 > `staticURL` <br />
 > `url` <br />
@@ -227,30 +230,30 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-field\>
-#### Summary
+### \<mastodon-field\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `name` <br />
 > `value` <br />
 > `verifiedAt` <br />
 
 <br />
 
-## \<mastodon-history\>
-#### Summary
+### \<mastodon-history\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `day` <br />
 > `uses` <br />
 > `accounts` <br />
 
 <br />
 
-## \<mastodon-mention\>
-#### Summary
+### \<mastodon-mention\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `url` <br />
 > `username` <br />
 > `acct` <br />
@@ -258,19 +261,19 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-meta-focus\>
-#### Summary
+### \<mastodon-meta-focus\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `x` <br />
 > `y` <br />
 
 <br />
 
-## \<mastodon-meta-subtree\>
-#### Summary
+### \<mastodon-meta-subtree\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `width` <br />
 > `height` <br />
 > `size` <br />
@@ -281,20 +284,20 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-meta\>
-#### Summary
+### \<mastodon-meta\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `small` <br />
 > `original` <br />
 > `focus` <br />
 
 <br />
 
-## \<mastodon-pagination-object\>
-#### Summary
+### \<mastodon-pagination-object\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `objectCollection` <br />
 > `prevURL` <br />
 > `prevPage` <br />
@@ -305,10 +308,10 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-poll\>
-#### Summary
+### \<mastodon-poll\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `expiresAt` <br />
 > `expired` <br />
@@ -319,10 +322,10 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-status\>
-#### Summary
+### \<mastodon-status\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `uri` <br />
 > `url` <br />
@@ -353,1004 +356,1004 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-tag\>
-#### Summary
+### \<mastodon-tag\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `name` <br />
 > `url` <br />
 > `history` <br />
 
 <br />
 
-## masto-account-acct
-#### Summary
+### masto-account-acct
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-avatar
-#### Summary
+### masto-account-avatar
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-avatar-static
-#### Summary
+### masto-account-avatar-static
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-bot
-#### Summary
+### masto-account-bot
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-created-at
-#### Summary
+### masto-account-created-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-display-name
-#### Summary
+### masto-account-display-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-emojis
-#### Summary
+### masto-account-emojis
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-fields
-#### Summary
+### masto-account-fields
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-followers-count
-#### Summary
+### masto-account-followers-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-following-count
-#### Summary
+### masto-account-following-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-header
-#### Summary
+### masto-account-header
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-header-static
-#### Summary
+### masto-account-header-static
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-id
-#### Summary
+### masto-account-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-locked
-#### Summary
+### masto-account-locked
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-moved
-#### Summary
+### masto-account-moved
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-note
-#### Summary
+### masto-account-note
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-statuses-count
-#### Summary
+### masto-account-statuses-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-url
-#### Summary
+### masto-account-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-username
-#### Summary
+### masto-account-username
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account?
-#### Summary
+### masto-account?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-application-name
-#### Summary
+### masto-application-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-application-website
-#### Summary
+### masto-application-website
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-application?
-#### Summary
+### masto-application?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-attachment-blurhash
-#### Summary
+### masto-attachment-blurhash
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-description
-#### Summary
+### masto-attachment-description
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-id
-#### Summary
+### masto-attachment-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-meta
-#### Summary
+### masto-attachment-meta
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-preview-url
-#### Summary
+### masto-attachment-preview-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-remote-url
-#### Summary
+### masto-attachment-remote-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-text-url
-#### Summary
+### masto-attachment-text-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-type
-#### Summary
+### masto-attachment-type
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-url
-#### Summary
+### masto-attachment-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment?
-#### Summary
+### masto-attachment?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-card-author-name
-#### Summary
+### masto-card-author-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-author-url
-#### Summary
+### masto-card-author-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-description
-#### Summary
+### masto-card-description
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-height
-#### Summary
+### masto-card-height
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-html
-#### Summary
+### masto-card-html
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-image
-#### Summary
+### masto-card-image
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-provider-name
-#### Summary
+### masto-card-provider-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-provider-url
-#### Summary
+### masto-card-provider-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-title
-#### Summary
+### masto-card-title
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-type
-#### Summary
+### masto-card-type
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-url
-#### Summary
+### masto-card-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card-width
-#### Summary
+### masto-card-width
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-card?
-#### Summary
+### masto-card?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-emoji-shortcode
-#### Summary
+### masto-emoji-shortcode
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-static-url
-#### Summary
+### masto-emoji-static-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-url
-#### Summary
+### masto-emoji-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-visible-in-picker
-#### Summary
+### masto-emoji-visible-in-picker
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji?
-#### Summary
+### masto-emoji?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-field-name
-#### Summary
+### masto-field-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-field-value
-#### Summary
+### masto-field-value
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-field-verified-at
-#### Summary
+### masto-field-verified-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-field?
-#### Summary
+### masto-field?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-history-accounts
-#### Summary
+### masto-history-accounts
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-history-day
-#### Summary
+### masto-history-day
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-history-uses
-#### Summary
+### masto-history-uses
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-history?
-#### Summary
+### masto-history?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-mention-acct
-#### Summary
+### masto-mention-acct
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-mention-id
-#### Summary
+### masto-mention-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-mention-url
-#### Summary
+### masto-mention-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-mention-username
-#### Summary
+### masto-mention-username
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-mention?
-#### Summary
+### masto-mention?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-meta-focus
-#### Summary
+### masto-meta-focus
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-focus-x
-#### Summary
+### masto-meta-focus-x
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-focus-y
-#### Summary
+### masto-meta-focus-y
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-focus?
-#### Summary
+### masto-meta-focus?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-meta-original
-#### Summary
+### masto-meta-original
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-small
-#### Summary
+### masto-meta-small
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-aspect
-#### Summary
+### masto-meta-subtree-aspect
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-bitrate
-#### Summary
+### masto-meta-subtree-bitrate
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-duration
-#### Summary
+### masto-meta-subtree-duration
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-frame-rate
-#### Summary
+### masto-meta-subtree-frame-rate
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-height
-#### Summary
+### masto-meta-subtree-height
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-size
-#### Summary
+### masto-meta-subtree-size
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-width
-#### Summary
+### masto-meta-subtree-width
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree?
-#### Summary
+### masto-meta-subtree?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-meta?
-#### Summary
+### masto-meta?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-page-next
-#### Summary
+### masto-page-next
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `page` <br />
 
 <br />
 
-## masto-page-objects
-#### Summary
+### masto-page-objects
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-page-prev
-#### Summary
+### masto-page-prev
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `page` <br />
 
 <br />
 
-## masto-page?
-#### Summary
+### masto-page?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-poll-expired
-#### Summary
+### masto-poll-expired
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll-expires-at
-#### Summary
+### masto-poll-expires-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll-id
-#### Summary
+### masto-poll-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll-multiple
-#### Summary
+### masto-poll-multiple
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll-options
-#### Summary
+### masto-poll-options
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll-voted
-#### Summary
+### masto-poll-voted
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll-votes-count
-#### Summary
+### masto-poll-votes-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-poll?
-#### Summary
+### masto-poll?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-status-account
-#### Summary
+### masto-status-account
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-application
-#### Summary
+### masto-status-application
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-card
-#### Summary
+### masto-status-card
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-content
-#### Summary
+### masto-status-content
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-created-at
-#### Summary
+### masto-status-created-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-emojis
-#### Summary
+### masto-status-emojis
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-favorited
-#### Summary
+### masto-status-favorited
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-favorites-count
-#### Summary
+### masto-status-favorites-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-id
-#### Summary
+### masto-status-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-in-reply-to-account-id
-#### Summary
+### masto-status-in-reply-to-account-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-in-reply-to-id
-#### Summary
+### masto-status-in-reply-to-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-language
-#### Summary
+### masto-status-language
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-media-attachments
-#### Summary
+### masto-status-media-attachments
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-mentions
-#### Summary
+### masto-status-mentions
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-muted
-#### Summary
+### masto-status-muted
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-pinned
-#### Summary
+### masto-status-pinned
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-poll
-#### Summary
+### masto-status-poll
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-reblog-status
-#### Summary
+### masto-status-reblog-status
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-reblogged
-#### Summary
+### masto-status-reblogged
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-reblogs-count
-#### Summary
+### masto-status-reblogs-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-replies-count
-#### Summary
+### masto-status-replies-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-sensitive
-#### Summary
+### masto-status-sensitive
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-spoiler-text
-#### Summary
+### masto-status-spoiler-text
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-tags
-#### Summary
+### masto-status-tags
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-uri
-#### Summary
+### masto-status-uri
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-url
-#### Summary
+### masto-status-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status-visibility
-#### Summary
+### masto-status-visibility
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-status?
-#### Summary
+### masto-status?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-tag-history
-#### Summary
+### masto-tag-history
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-tag-name
-#### Summary
+### masto-tag-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-tag-url
-#### Summary
+### masto-tag-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-tag?
-#### Summary
+### masto-tag?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-favorite-status
-#### Summary
+### masto-favorite-status
+##### Summary
 Favorite an existing Fediverse status for the user tied to `mastoApp`.
 
 `statusID` refers to the ID of the status that you wish to favorite.
@@ -1358,14 +1361,14 @@ Favorite an existing Fediverse status for the user tied to `mastoApp`.
 A [`<mastodon-status>`](#mastodon-status) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
 
 <br />
 
-## masto-favorites-all
-#### Summary
+### masto-favorites-all
+##### Summary
 Retrieve all favorites associated with the user tied to `mastoApp`.
 
 If no `limit` value is provided, the value 20 is used.
@@ -1375,14 +1378,14 @@ consisting of the [`<mastodon-account>`](#mastodon-account)s that the user
 has endorsed.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/favourites/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
 
 <br />
 
-## masto-unfavorite-status
-#### Summary
+### masto-unfavorite-status
+##### Summary
 Unfavorite an existing Fediverse status for the user tied to `mastoApp`.
 
 `statusID` refers to the ID of the status that you wish to unfavorite.
@@ -1390,7 +1393,7 @@ Unfavorite an existing Fediverse status for the user tied to `mastoApp`.
 A [`<mastodon-status>`](#mastodon-status) is returned.
 
 Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
 

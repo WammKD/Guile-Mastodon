@@ -3,7 +3,7 @@
 
 <br />
 
-# Table of Contents
+## Table of Contents
 1. [\<mastodon-filter\>](#mastodon-filter)
 2. [masto-filter-context](#masto-filter-context)
 3. [masto-filter-expires-at](#masto-filter-expires-at)
@@ -18,10 +18,13 @@
 12. [masto-filter-update](#masto-filter-update)
 13. [masto-filters-all](#masto-filters-all)
 
-## \<mastodon-filter\>
-#### Summary
+
+<br />
+
+### \<mastodon-filter\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `phrase` <br />
 > `context` <br />
@@ -31,66 +34,66 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-filter-context
-#### Summary
+### masto-filter-context
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-filter-expires-at
-#### Summary
+### masto-filter-expires-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-filter-id
-#### Summary
+### masto-filter-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-filter-irreversible
-#### Summary
+### masto-filter-irreversible
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-filter-phrase
-#### Summary
+### masto-filter-phrase
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-filter-whole-word
-#### Summary
+### masto-filter-whole-word
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-filter?
-#### Summary
+### masto-filter?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-filter-create
-#### Summary
+### masto-filter-create
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:filter` (argument position 2) <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:phrase` (argument position 3) <br />
@@ -101,8 +104,8 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-filter-delete
-#### Summary
+### masto-filter-delete
+##### Summary
 Delete a particular filter that'd been created by the user tied to `mastoApp`.
 
 `filterID` refers to the ID of the filter that you wish to delete.
@@ -110,14 +113,14 @@ Delete a particular filter that'd been created by the user tied to `mastoApp`.
 If successful, this function will return `#t`.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />
 
 <br />
 
-## masto-filter-get
-#### Summary
+### masto-filter-get
+##### Summary
 Retrieve a particular filter created by the user tied to `mastoApp`.
 
 `filterID` refers to the ID of the filter that you wish to retrieve.
@@ -125,14 +128,14 @@ Retrieve a particular filter created by the user tied to `mastoApp`.
 This function will return a [`<mastodon-filter>`](#mastodon-filter).
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />
 
 <br />
 
-## masto-filter-update
-#### Summary
+### masto-filter-update
+##### Summary
 Update a particular filter created by the user tied to `mastoApp`.
 
 [`masto-filter-update`](#masto-filter-update) allows you to pass a
@@ -157,7 +160,7 @@ This function will return a [`<mastodon-filter>`](#mastodon-filter)
 containing the updated details.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:filter` (argument position 2) <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:id` (argument position 3) <br />
@@ -169,14 +172,14 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
 
 <br />
 
-## masto-filters-all
-#### Summary
+### masto-filters-all
+##### Summary
 Retrieve all filters created by the user tied to `mastoApp`.
 
 This function will return a list of [`<mastodon-filter>`](#mastodon-filter)s.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 
 <br />

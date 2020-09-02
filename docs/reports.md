@@ -3,13 +3,16 @@
 
 <br />
 
-# Table of Contents
+## Table of Contents
 1. [masto-report-account](#masto-report-account)
 
-## masto-report-account
-#### Summary
+
+<br />
+
+### masto-report-account
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:statusIDs` (argument position 3) <br />

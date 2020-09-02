@@ -3,7 +3,7 @@
 
 <br />
 
-# Table of Contents
+## Table of Contents
 1. [\<mastodon-emoji\>](#mastodon-emoji)
 2. [masto-emoji-shortcode](#masto-emoji-shortcode)
 3. [masto-emoji-static-url](#masto-emoji-static-url)
@@ -12,10 +12,13 @@
 6. [masto-emoji?](#masto-emoji?)
 7. [masto-emojis-on-instance](#masto-emojis-on-instance)
 
-## \<mastodon-emoji\>
-#### Summary
+
+<br />
+
+### \<mastodon-emoji\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `shortcode` <br />
 > `staticURL` <br />
 > `url` <br />
@@ -23,48 +26,48 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-emoji-shortcode
-#### Summary
+### masto-emoji-shortcode
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-static-url
-#### Summary
+### masto-emoji-static-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-url
-#### Summary
+### masto-emoji-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-visible-in-picker
-#### Summary
+### masto-emoji-visible-in-picker
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji?
-#### Summary
+### masto-emoji?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-emojis-on-instance
-#### Summary
+### masto-emojis-on-instance
+##### Summary
 Retrieve all emojis belonging to a particular instance.
 
 `domainOrApp` can be the instance domain as a String or a
@@ -77,7 +80,7 @@ one, if needed.
 This function will return a list of [`<mastodon-emoji>`](#mastodon-emoji)s.
 
 Documentation for this API call can be found [here](https://docs.joinmastodon.org/methods/instance/custom_emojis/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 
 <br />

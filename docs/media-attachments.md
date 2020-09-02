@@ -3,7 +3,7 @@
 
 <br />
 
-# Table of Contents
+## Table of Contents
 1. [\<mastodon-attachment\>](#mastodon-attachment)
 2. [\<mastodon-meta-focus\>](#mastodon-meta-focus)
 3. [\<mastodon-meta-subtree\>](#mastodon-meta-subtree)
@@ -35,10 +35,13 @@
 29. [masto-meta-subtree?](#masto-meta-subtree?)
 30. [masto-meta?](#masto-meta?)
 
-## \<mastodon-attachment\>
-#### Summary
+
+<br />
+
+### \<mastodon-attachment\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `type` <br />
 > `url` <br />
@@ -51,19 +54,19 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-meta-focus\>
-#### Summary
+### \<mastodon-meta-focus\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `x` <br />
 > `y` <br />
 
 <br />
 
-## \<mastodon-meta-subtree\>
-#### Summary
+### \<mastodon-meta-subtree\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `width` <br />
 > `height` <br />
 > `size` <br />
@@ -74,100 +77,100 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-meta\>
-#### Summary
+### \<mastodon-meta\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `small` <br />
 > `original` <br />
 > `focus` <br />
 
 <br />
 
-## masto-attachment-blurhash
-#### Summary
+### masto-attachment-blurhash
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-description
-#### Summary
+### masto-attachment-description
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-id
-#### Summary
+### masto-attachment-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-meta
-#### Summary
+### masto-attachment-meta
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-preview-url
-#### Summary
+### masto-attachment-preview-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-remote-url
-#### Summary
+### masto-attachment-remote-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-text-url
-#### Summary
+### masto-attachment-text-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-type
-#### Summary
+### masto-attachment-type
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment-url
-#### Summary
+### masto-attachment-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-attachment?
-#### Summary
+### masto-attachment?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-media-upload
-#### Summary
+### masto-media-upload
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filePath` <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:description` (argument position 3) <br />
@@ -176,122 +179,122 @@ A record object that can be returned by an API call.
 
 <br />
 
-## masto-meta-focus
-#### Summary
+### masto-meta-focus
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-focus-x
-#### Summary
+### masto-meta-focus-x
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-focus-y
-#### Summary
+### masto-meta-focus-y
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-focus?
-#### Summary
+### masto-meta-focus?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-meta-original
-#### Summary
+### masto-meta-original
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-small
-#### Summary
+### masto-meta-small
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-aspect
-#### Summary
+### masto-meta-subtree-aspect
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-bitrate
-#### Summary
+### masto-meta-subtree-bitrate
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-duration
-#### Summary
+### masto-meta-subtree-duration
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-frame-rate
-#### Summary
+### masto-meta-subtree-frame-rate
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-height
-#### Summary
+### masto-meta-subtree-height
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-size
-#### Summary
+### masto-meta-subtree-size
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree-width
-#### Summary
+### masto-meta-subtree-width
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-meta-subtree?
-#### Summary
+### masto-meta-subtree?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-meta?
-#### Summary
+### masto-meta?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />

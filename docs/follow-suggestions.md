@@ -3,7 +3,7 @@
 
 <br />
 
-# Table of Contents
+## Table of Contents
 1. [\<mastodon-account\>](#mastodon-account)
 2. [\<mastodon-emoji\>](#mastodon-emoji)
 3. [\<mastodon-field\>](#mastodon-field)
@@ -39,10 +39,13 @@
 33. [masto-follow-suggestion-delete](#masto-follow-suggestion-delete)
 34. [masto-follow-suggestions-all](#masto-follow-suggestions-all)
 
-## \<mastodon-account\>
-#### Summary
+
+<br />
+
+### \<mastodon-account\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `id` <br />
 > `username` <br />
 > `acct` <br />
@@ -65,10 +68,10 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-emoji\>
-#### Summary
+### \<mastodon-emoji\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `shortcode` <br />
 > `staticURL` <br />
 > `url` <br />
@@ -76,250 +79,250 @@ A record object that can be returned by an API call.
 
 <br />
 
-## \<mastodon-field\>
-#### Summary
+### \<mastodon-field\>
+##### Summary
 A record object that can be returned by an API call.
-#### Record Fields
+##### Record Fields
 > `name` <br />
 > `value` <br />
 > `verifiedAt` <br />
 
 <br />
 
-## masto-account-acct
-#### Summary
+### masto-account-acct
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-avatar
-#### Summary
+### masto-account-avatar
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-avatar-static
-#### Summary
+### masto-account-avatar-static
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-bot
-#### Summary
+### masto-account-bot
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-created-at
-#### Summary
+### masto-account-created-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-display-name
-#### Summary
+### masto-account-display-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-emojis
-#### Summary
+### masto-account-emojis
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-fields
-#### Summary
+### masto-account-fields
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-followers-count
-#### Summary
+### masto-account-followers-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-following-count
-#### Summary
+### masto-account-following-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-header
-#### Summary
+### masto-account-header
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-header-static
-#### Summary
+### masto-account-header-static
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-id
-#### Summary
+### masto-account-id
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-locked
-#### Summary
+### masto-account-locked
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-moved
-#### Summary
+### masto-account-moved
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-note
-#### Summary
+### masto-account-note
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-statuses-count
-#### Summary
+### masto-account-statuses-count
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-url
-#### Summary
+### masto-account-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account-username
-#### Summary
+### masto-account-username
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-account?
-#### Summary
+### masto-account?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-emoji-shortcode
-#### Summary
+### masto-emoji-shortcode
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-static-url
-#### Summary
+### masto-emoji-static-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-url
-#### Summary
+### masto-emoji-url
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji-visible-in-picker
-#### Summary
+### masto-emoji-visible-in-picker
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-emoji?
-#### Summary
+### masto-emoji?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-field-name
-#### Summary
+### masto-field-name
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-field-value
-#### Summary
+### masto-field-value
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-field-verified-at
-#### Summary
+### masto-field-verified-at
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
 
 <br />
 
-## masto-field?
-#### Summary
+### masto-field?
+##### Summary
 #f
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
 
 <br />
 
-## masto-follow-suggestion-delete
-#### Summary
+### masto-follow-suggestion-delete
+##### Summary
 Remove a follow suggestion for the user tied to `mastoApp`.
 
 `accountID` refers to the ID of the account you wish to no longer suggest.
@@ -327,21 +330,21 @@ Remove a follow suggestion for the user tied to `mastoApp`.
 If successful, this function will return `#t`.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/suggestions/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
 
 <br />
 
-## masto-follow-suggestions-all
-#### Summary
+### masto-follow-suggestions-all
+##### Summary
 Retrieve all follow suggestions for the user tied to `mastoApp`.
 
 This function returns a list of [`<mastodon-account>`](#mastodon-account)s that the user has had past,
 positive interactions with but is, not yet, following.
 
 Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/suggestions/).
-#### Parameters
+##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 
 <br />

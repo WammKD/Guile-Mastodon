@@ -168,6 +168,28 @@
                                                           modulesInDocs
                                                         (fold
                                                           (lambda (currentModuleExportName result)
+                                                            (set! documentation (regexp-substitute/global
+                                                                                  #f
+                                                                                  currentModuleExportName
+                                                                                  documentation
+                                                                                  'pre
+                                                                                  (string-append
+                                                                                    "[`"
+                                                                                    currentModuleExportName
+                                                                                    "`](#"
+                                                                                    (if (eval-string (string-append
+                                                                                                       "(record-type? "
+                                                                                                       currentModuleExportName
+                                                                                                       ")"))
+                                                                                        (substring
+                                                                                          currentModuleExportName
+                                                                                          1
+                                                                                          (1- (string-length
+                                                                                                currentModuleExportName)))
+                                                                                      currentModuleExportName)
+                                                                                    ")")
+                                                                                  'post))
+
                                                             (map
                                                               (lambda (module)
                                                                 (cons

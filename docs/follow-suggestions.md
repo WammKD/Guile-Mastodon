@@ -284,7 +284,13 @@ A record object that can be returned by an API call.
 
 ## masto-follow-suggestion-delete
 #### Summary
-#f
+Remove a follow suggestion for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the account you wish to no longer suggest.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/suggestions/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
@@ -293,7 +299,12 @@ A record object that can be returned by an API call.
 
 ## masto-follow-suggestions-all
 #### Summary
-#f
+Retrieve all follow suggestions for the user tied to `mastoApp`.
+
+This function returns a list of [`<mastodon-account>`](#mastodon-account)s that the user has had past,
+positive interactions with but is, not yet, following.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/suggestions/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 

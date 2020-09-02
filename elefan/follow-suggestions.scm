@@ -32,12 +32,25 @@
                                                  masto-account-bot))
 
 (define (masto-follow-suggestions-all mastoApp)
+  "Retrieve all follow suggestions for the user tied to `mastoApp`.
+
+This function returns a list of <mastodon-account>s that the user has had past,
+positive interactions with but is, not yet, following.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/suggestions/)."
   (generate-masto-account-array
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/suggestions")
       #:token (masto-app-token mastoApp))))
 
 (define (masto-follow-suggestion-delete mastoApp accountID)
+  "Remove a follow suggestion for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the account you wish to no longer suggest.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/suggestions/)."
   (http 'delete
     (string-append (masto-app-domain mastoApp) "/api/v1/suggestions/" accountID)
     #:token (masto-app-token mastoApp))

@@ -170,7 +170,7 @@
                                                           (lambda (currentModuleExportName result)
                                                             (set! documentation (regexp-substitute/global
                                                                                   #f
-                                                                                  currentModuleExportName
+                                                                                  (regexp-quote currentModuleExportName)
                                                                                   documentation
                                                                                   'pre
                                                                                   (string-append
@@ -211,7 +211,7 @@
                                     (let ([exportName (cdr module)])
                                       (set! documentation (regexp-substitute/global
                                                             #f
-                                                            exportName
+                                                            (regexp-quote exportName)
                                                             documentation
                                                             'pre
                                                             (string-append

@@ -8,6 +8,25 @@
 
 <br />
 
+# Table of Contents
+1. [\<mastodon-instance-application\>](#mastodon-instance-application)
+2. [masto-app-authorize-uri](#masto-app-authorize-uri)
+3. [masto-app-domain](#masto-app-domain)
+4. [masto-app-id](#masto-app-id)
+5. [masto-app-instantiate](#masto-app-instantiate)
+6. [masto-app-key](#masto-app-key)
+7. [masto-app-name](#masto-app-name)
+8. [masto-app-redirects](#masto-app-redirects)
+9. [masto-app-scopes](#masto-app-scopes)
+10. [masto-app-secret](#masto-app-secret)
+11. [masto-app-set-token-via-client-cred!](#masto-app-set-token-via-client-cred!)
+12. [masto-app-set-token-via-code!](#masto-app-set-token-via-code!)
+13. [masto-app-set-token-via-user-cred!](#masto-app-set-token-via-user-cred!)
+14. [masto-app-token](#masto-app-token)
+15. [masto-app-verify-cred](#masto-app-verify-cred)
+16. [masto-app-website](#masto-app-website)
+17. [masto-instance-app?](#masto-instance-app?)
+
 ## \<mastodon-instance-application\>
 #### Summary
 A record object that can be returned by an API call.

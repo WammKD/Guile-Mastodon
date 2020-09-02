@@ -3,6 +3,38 @@
 
 <br />
 
+# Table of Contents
+1. [\<mastodon-attachment\>](#mastodon-attachment)
+2. [\<mastodon-meta-focus\>](#mastodon-meta-focus)
+3. [\<mastodon-meta-subtree\>](#mastodon-meta-subtree)
+4. [\<mastodon-meta\>](#mastodon-meta)
+5. [masto-attachment-blurhash](#masto-attachment-blurhash)
+6. [masto-attachment-description](#masto-attachment-description)
+7. [masto-attachment-id](#masto-attachment-id)
+8. [masto-attachment-meta](#masto-attachment-meta)
+9. [masto-attachment-preview-url](#masto-attachment-preview-url)
+10. [masto-attachment-remote-url](#masto-attachment-remote-url)
+11. [masto-attachment-text-url](#masto-attachment-text-url)
+12. [masto-attachment-type](#masto-attachment-type)
+13. [masto-attachment-url](#masto-attachment-url)
+14. [masto-attachment?](#masto-attachment?)
+15. [masto-media-upload](#masto-media-upload)
+16. [masto-meta-focus](#masto-meta-focus)
+17. [masto-meta-focus-x](#masto-meta-focus-x)
+18. [masto-meta-focus-y](#masto-meta-focus-y)
+19. [masto-meta-focus?](#masto-meta-focus?)
+20. [masto-meta-original](#masto-meta-original)
+21. [masto-meta-small](#masto-meta-small)
+22. [masto-meta-subtree-aspect](#masto-meta-subtree-aspect)
+23. [masto-meta-subtree-bitrate](#masto-meta-subtree-bitrate)
+24. [masto-meta-subtree-duration](#masto-meta-subtree-duration)
+25. [masto-meta-subtree-frame-rate](#masto-meta-subtree-frame-rate)
+26. [masto-meta-subtree-height](#masto-meta-subtree-height)
+27. [masto-meta-subtree-size](#masto-meta-subtree-size)
+28. [masto-meta-subtree-width](#masto-meta-subtree-width)
+29. [masto-meta-subtree?](#masto-meta-subtree?)
+30. [masto-meta?](#masto-meta?)
+
 ## \<mastodon-attachment\>
 #### Summary
 A record object that can be returned by an API call.

@@ -3,6 +3,21 @@
 
 <br />
 
+# Table of Contents
+1. [\<mastodon-filter\>](#mastodon-filter)
+2. [masto-filter-context](#masto-filter-context)
+3. [masto-filter-expires-at](#masto-filter-expires-at)
+4. [masto-filter-id](#masto-filter-id)
+5. [masto-filter-irreversible](#masto-filter-irreversible)
+6. [masto-filter-phrase](#masto-filter-phrase)
+7. [masto-filter-whole-word](#masto-filter-whole-word)
+8. [masto-filter?](#masto-filter?)
+9. [masto-filter-create](#masto-filter-create)
+10. [masto-filter-delete](#masto-filter-delete)
+11. [masto-filter-get](#masto-filter-get)
+12. [masto-filter-update](#masto-filter-update)
+13. [masto-filters-all](#masto-filters-all)
+
 ## \<mastodon-filter\>
 #### Summary
 A record object that can be returned by an API call.

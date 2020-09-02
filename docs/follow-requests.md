@@ -3,6 +3,48 @@
 
 <br />
 
+# Table of Contents
+1. [\<mastodon-account\>](#mastodon-account)
+2. [\<mastodon-emoji\>](#mastodon-emoji)
+3. [\<mastodon-field\>](#mastodon-field)
+4. [\<mastodon-pagination-object\>](#mastodon-pagination-object)
+5. [masto-account-acct](#masto-account-acct)
+6. [masto-account-avatar](#masto-account-avatar)
+7. [masto-account-avatar-static](#masto-account-avatar-static)
+8. [masto-account-bot](#masto-account-bot)
+9. [masto-account-created-at](#masto-account-created-at)
+10. [masto-account-display-name](#masto-account-display-name)
+11. [masto-account-emojis](#masto-account-emojis)
+12. [masto-account-fields](#masto-account-fields)
+13. [masto-account-followers-count](#masto-account-followers-count)
+14. [masto-account-following-count](#masto-account-following-count)
+15. [masto-account-header](#masto-account-header)
+16. [masto-account-header-static](#masto-account-header-static)
+17. [masto-account-id](#masto-account-id)
+18. [masto-account-locked](#masto-account-locked)
+19. [masto-account-moved](#masto-account-moved)
+20. [masto-account-note](#masto-account-note)
+21. [masto-account-statuses-count](#masto-account-statuses-count)
+22. [masto-account-url](#masto-account-url)
+23. [masto-account-username](#masto-account-username)
+24. [masto-account?](#masto-account?)
+25. [masto-emoji-shortcode](#masto-emoji-shortcode)
+26. [masto-emoji-static-url](#masto-emoji-static-url)
+27. [masto-emoji-url](#masto-emoji-url)
+28. [masto-emoji-visible-in-picker](#masto-emoji-visible-in-picker)
+29. [masto-emoji?](#masto-emoji?)
+30. [masto-field-name](#masto-field-name)
+31. [masto-field-value](#masto-field-value)
+32. [masto-field-verified-at](#masto-field-verified-at)
+33. [masto-field?](#masto-field?)
+34. [masto-page-next](#masto-page-next)
+35. [masto-page-objects](#masto-page-objects)
+36. [masto-page-prev](#masto-page-prev)
+37. [masto-page?](#masto-page?)
+38. [masto-follow-request-authorize](#masto-follow-request-authorize)
+39. [masto-follow-request-reject](#masto-follow-request-reject)
+40. [masto-follow-requests-all](#masto-follow-requests-all)
+
 ## \<mastodon-account\>
 #### Summary
 A record object that can be returned by an API call.

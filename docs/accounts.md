@@ -3,6 +3,9 @@
 
 <br />
 
+# Table of Contents
+1. [masto-accounts-token](#masto-accounts-token)
+
 ## masto-accounts-token
 #### Summary
 #f

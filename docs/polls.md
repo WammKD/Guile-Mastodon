@@ -3,6 +3,23 @@
 
 <br />
 
+# Table of Contents
+1. [\<mastodon-poll-option\>](#mastodon-poll-option)
+2. [\<mastodon-poll\>](#mastodon-poll)
+3. [masto-poll-expired](#masto-poll-expired)
+4. [masto-poll-expires-at](#masto-poll-expires-at)
+5. [masto-poll-id](#masto-poll-id)
+6. [masto-poll-multiple](#masto-poll-multiple)
+7. [masto-poll-option-title](#masto-poll-option-title)
+8. [masto-poll-option-votes-count](#masto-poll-option-votes-count)
+9. [masto-poll-option?](#masto-poll-option?)
+10. [masto-poll-options](#masto-poll-options)
+11. [masto-poll-voted](#masto-poll-voted)
+12. [masto-poll-votes-count](#masto-poll-votes-count)
+13. [masto-poll?](#masto-poll?)
+14. [masto-poll-get](#masto-poll-get)
+15. [masto-poll-send-vote](#masto-poll-send-vote)
+
 ## \<mastodon-poll-option\>
 #### Summary
 A record object that can be returned by an API call.

@@ -167,6 +167,13 @@ Find the original documentation [here](https://docs.joinmastodon.org/methods/acc
                                                                     "or number of seconds"))])))))))])))
 
 (define (masto-filter-delete mastoApp filterID)
+  "Delete a particular filter that'd been created by the user tied to `mastoApp`.
+
+`filterID` refers to the ID of the filter that you wish to delete.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/)."
   (http 'delete
     (string-append (masto-app-domain mastoApp) "/api/v1/filters/" filterID)
     #:token (masto-app-token mastoApp))

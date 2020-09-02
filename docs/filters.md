@@ -88,7 +88,13 @@ A record object that can be returned by an API call.
 
 ## masto-filter-delete
 #### Summary
-#f
+Delete a particular filter that'd been created by the user tied to `mastoApp`.
+
+`filterID` refers to the ID of the filter that you wish to delete.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/filters/).
 #### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filterID` <br />

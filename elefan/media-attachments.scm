@@ -5,7 +5,7 @@
   #:use-module (ice-9 binary-ports)
   #:use-module (rnrs bytevectors)
   #:use-module (web uri)
-  #:export (masto-media-upload)
+  #:export (masto-media-upload masto-media-update)
   #:re-export (<mastodon-meta-subtree> masto-meta-subtree? masto-meta-subtree-width
                                                            masto-meta-subtree-height
                                                            masto-meta-subtree-size

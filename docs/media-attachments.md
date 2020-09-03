@@ -18,22 +18,23 @@
 12. [masto-attachment-type](#masto-attachment-type)
 13. [masto-attachment-url](#masto-attachment-url)
 14. [masto-attachment?](#masto-attachment?)
-15. [masto-media-upload](#masto-media-upload)
-16. [masto-meta-focus](#masto-meta-focus)
-17. [masto-meta-focus-x](#masto-meta-focus-x)
-18. [masto-meta-focus-y](#masto-meta-focus-y)
-19. [masto-meta-focus?](#masto-meta-focus?)
-20. [masto-meta-original](#masto-meta-original)
-21. [masto-meta-small](#masto-meta-small)
-22. [masto-meta-subtree-aspect](#masto-meta-subtree-aspect)
-23. [masto-meta-subtree-bitrate](#masto-meta-subtree-bitrate)
-24. [masto-meta-subtree-duration](#masto-meta-subtree-duration)
-25. [masto-meta-subtree-frame-rate](#masto-meta-subtree-frame-rate)
-26. [masto-meta-subtree-height](#masto-meta-subtree-height)
-27. [masto-meta-subtree-size](#masto-meta-subtree-size)
-28. [masto-meta-subtree-width](#masto-meta-subtree-width)
-29. [masto-meta-subtree?](#masto-meta-subtree?)
-30. [masto-meta?](#masto-meta?)
+15. [masto-media-update](#masto-media-update)
+16. [masto-media-upload](#masto-media-upload)
+17. [masto-meta-focus](#masto-meta-focus)
+18. [masto-meta-focus-x](#masto-meta-focus-x)
+19. [masto-meta-focus-y](#masto-meta-focus-y)
+20. [masto-meta-focus?](#masto-meta-focus?)
+21. [masto-meta-original](#masto-meta-original)
+22. [masto-meta-small](#masto-meta-small)
+23. [masto-meta-subtree-aspect](#masto-meta-subtree-aspect)
+24. [masto-meta-subtree-bitrate](#masto-meta-subtree-bitrate)
+25. [masto-meta-subtree-duration](#masto-meta-subtree-duration)
+26. [masto-meta-subtree-frame-rate](#masto-meta-subtree-frame-rate)
+27. [masto-meta-subtree-height](#masto-meta-subtree-height)
+28. [masto-meta-subtree-size](#masto-meta-subtree-size)
+29. [masto-meta-subtree-width](#masto-meta-subtree-width)
+30. [masto-meta-subtree?](#masto-meta-subtree?)
+31. [masto-meta?](#masto-meta?)
 
 
 <br />
@@ -164,6 +165,28 @@ A record object that can be returned by an API call.
 #f
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `obj` <br />
+
+<br />
+
+### masto-media-update
+##### Summary
+Update media, with ID of `mediaID`, at the instance tied to `mastoApp`.
+
+Keyword arguments `#:description`, `#:x`, and `#:y` are all optional but `#:x`
+and `#:y` must both be provided, if one or the other is provided at all.
+`#:description` has a character limit of 420 characters.
+
+The media can only be updated before it is attached to a status and posted.
+
+This function returns a [`<mastodon-attachment>`](#mastodon-attachment) of the media that was updated.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/media/).
+##### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mediaID` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:description` (argument position 3) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:x` (argument position 4) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:y` (argument position 5) <br />
 
 <br />
 

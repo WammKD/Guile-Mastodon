@@ -290,7 +290,18 @@ A record object that can be returned by an API call.
 
 ### masto-accounts-by-list
 ##### Summary
-#f
+Retrieve all user accounts that are in a list created by the user tied to
+`mastoApp`.
+
+If no `limit` value is provided, the value 40 is used.
+
+`listID` refers to the list, created by the user, that you want to get accounts
+from.
+
+A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned, consisting of the
+[`<mastodon-account>`](#mastodon-account)s that are in the specified list.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
@@ -430,7 +441,14 @@ A record object that can be returned by an API call.
 
 ### masto-list-add-account
 ##### Summary
-#f
+Add an account(s) to the list which has the ID `listID` for the user tied to
+`mastoApp`.
+
+`accountIDs` should be a list of Fediverse account IDs.
+
+This function, if successful, returns `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
@@ -440,7 +458,11 @@ A record object that can be returned by an API call.
 
 ### masto-list-create
 ##### Summary
-#f
+Create a list for the user tied to `mastoApp` with the title `title`.
+
+This function returns the [`<mastodon-list>`](#mastodon-list) you just created.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `title` <br />
@@ -449,7 +471,11 @@ A record object that can be returned by an API call.
 
 ### masto-list-delete
 ##### Summary
-#f
+Delete the list for the user tied to `mastoApp` which has the ID `listID`.
+
+This function, if successful, returns `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
@@ -458,7 +484,14 @@ A record object that can be returned by an API call.
 
 ### masto-list-delete-account
 ##### Summary
-#f
+Delete an account(s) from the list which has the ID `listID` for the user
+tied to `mastoApp`.
+
+`accountIDs` should be a list of Fediverse account IDs.
+
+This function, if successful, returns `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
@@ -468,7 +501,12 @@ A record object that can be returned by an API call.
 
 ### masto-list-get
 ##### Summary
-#f
+Retrieve the list, created by the user tied to `mastoApp`, that has the list
+ ID `listID`.
+
+This function returns a [`<mastodon-list>`](#mastodon-list), corresponding to the `listID`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
@@ -477,7 +515,12 @@ A record object that can be returned by an API call.
 
 ### masto-list-update
 ##### Summary
-#f
+Update the title, of a list for the user tied to `mastoApp` and which has the
+ID `listID`, to `title`.
+
+This function returns the [`<mastodon-list>`](#mastodon-list) you just updated, with the updates.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `listID` <br />
@@ -487,7 +530,12 @@ A record object that can be returned by an API call.
 
 ### masto-lists-all
 ##### Summary
-#f
+Retrieve all lists for the user tied to `mastoApp`.
+
+This function returns a (Scheme) list of [`<mastodon-list>`](#mastodon-list)s that the user has
+created.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/timelines/lists/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 
@@ -495,7 +543,12 @@ A record object that can be returned by an API call.
 
 ### masto-lists-by-account
 ##### Summary
-#f
+Retrieve all lists created by the user tied to `mastoApp` that contain
+Fediverse users that have the account ID `accountID`.
+
+This function returns a (Scheme) list of [`<mastodon-list>`](#mastodon-list)s.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />

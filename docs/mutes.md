@@ -1473,7 +1473,16 @@ A record object that can be returned by an API call.
 
 ### masto-mute-account
 ##### Summary
-#f
+Mute an existing Fediverse account for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user you wish to mute.
+
+`notifications` determines if notifications, in addition to statuses, ought to
+be muted.
+
+A [`<mastodon-relationship>`](#mastodon-relationship) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
@@ -1483,7 +1492,13 @@ A record object that can be returned by an API call.
 
 ### masto-mute-status
 ##### Summary
-#f
+Mute an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status you wish to mute.
+
+A [`<mastodon-status>`](#mastodon-status) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/statuses/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />
@@ -1492,7 +1507,14 @@ A record object that can be returned by an API call.
 
 ### masto-mutes-all
 ##### Summary
-#f
+Retrieve all mutes associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 40 is used.
+
+A [`<mastodon-pagination-object>`](#mastodon-pagination-object) is returned, consisting of the
+[`<mastodon-account>`](#mastodon-account)s that the user has muted.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/mutes/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[limit]` <br />
@@ -1501,17 +1523,28 @@ A record object that can be returned by an API call.
 
 ### masto-unmute-account
 ##### Summary
-#f
+Unmute an existing Fediverse account for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user you wish to unmute.
+
+A [`<mastodon-relationship>`](#mastodon-relationship) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `accountID` <br />
-> ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) `[notifications]` <br />
 
 <br />
 
 ### masto-unmute-status
 ##### Summary
-#f
+Unmute an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status you wish to unmute.
+
+A [`<mastodon-status>`](#mastodon-status) is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/statuses/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `statusID` <br />

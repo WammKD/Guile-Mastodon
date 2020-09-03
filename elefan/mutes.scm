@@ -124,6 +124,14 @@
                                                masto-status-pinned))
 
 (define* (masto-mutes-all mastoApp #:optional [limit 40])
+  "Retrieve all mutes associated with the user tied to `mastoApp`.
+
+If no `limit` value is provided, the value 40 is used.
+
+A <mastodon-pagination-object> is returned, consisting of the
+<mastodon-account>s that the user has muted.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/accounts/mutes/)."
   (generate-masto-page
     mastoApp
     'get
@@ -132,6 +140,16 @@
     generate-masto-account-array))
 
 (define* (masto-mute-account mastoApp accountID #:optional [notifications #t])
+  "Mute an existing Fediverse account for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user you wish to mute.
+
+`notifications` determines if notifications, in addition to statuses, ought to
+be muted.
+
+A <mastodon-relationship> is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"
@@ -140,6 +158,13 @@
       #:queryParams `(("notifications" ,(boolean->string notifications))))))
 
 (define* (masto-unmute-account mastoApp accountID)
+  "Unmute an existing Fediverse account for the user tied to `mastoApp`.
+
+`accountID` refers to the ID of the user you wish to unmute.
+
+A <mastodon-relationship> is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/accounts/)."
   (generate-masto-relationship
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"
@@ -147,6 +172,13 @@
       #:token       (masto-app-token mastoApp))))
 
 (define (masto-mute-status mastoApp statusID)
+  "Mute an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status you wish to mute.
+
+A <mastodon-status> is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/statuses/)."
   (generate-masto-status
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"
@@ -154,6 +186,13 @@
       #:token (masto-app-token mastoApp))))
 
 (define (masto-unmute-status mastoApp statusID)
+  "Unmute an existing Fediverse status for the user tied to `mastoApp`.
+
+`statusID` refers to the ID of the status you wish to unmute.
+
+A <mastodon-status> is returned.
+
+Find the original documentation within [this page](https://docs.joinmastodon.org/methods/statuses/)."
   (generate-masto-status
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/statuses/"

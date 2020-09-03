@@ -169,7 +169,16 @@ A record object that can be returned by an API call.
 
 ### masto-media-upload
 ##### Summary
-#f
+Upload media, locally stored at `filePath`, to the instance tied to
+`mastoApp`.
+
+Keyword arguments `#:description`, `#:x`, and `#:y` are all optional but `#:x`
+and `#:y` must both be provided, if one or the other is provided at all.
+`#:description` has a character limit of 420 characters.
+
+This function returns a [`<mastodon-attachment>`](#mastodon-attachment) of the media that was uploaded.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/media/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `filePath` <br />

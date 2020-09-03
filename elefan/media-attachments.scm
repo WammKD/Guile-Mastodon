@@ -29,6 +29,16 @@
                                                            masto-attachment-blurhash))
 
 (define* (masto-media-upload mastoApp filePath #:key description x y)
+  "Upload media, locally stored at `filePath`, to the instance tied to
+`mastoApp`.
+
+Keyword arguments `#:description`, `#:x`, and `#:y` are all optional but `#:x`
+and `#:y` must both be provided, if one or the other is provided at all.
+`#:description` has a character limit of 420 characters.
+
+This function returns a <mastodon-attachment> of the media that was uploaded.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/media/)."
   (cond
    [(and (or x y) (not (and x y)))
          (error (string-append
@@ -84,6 +94,17 @@
                                                #f)))))]))
 
 (define* (masto-media-update mastoApp mediaID #:key description x y)
+  "Update media, with ID of `mediaID`, at the instance tied to `mastoApp`.
+
+Keyword arguments `#:description`, `#:x`, and `#:y` are all optional but `#:x`
+and `#:y` must both be provided, if one or the other is provided at all.
+`#:description` has a character limit of 420 characters.
+
+The media can only be updated before it is attached to a status and posted.
+
+This function returns a <mastodon-attachment> of the media that was updated.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/media/)."
   (cond
    [(and (or x y) (not (and x y)))
          (error (string-append

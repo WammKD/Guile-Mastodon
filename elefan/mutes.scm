@@ -139,13 +139,12 @@
       #:token       (masto-app-token mastoApp)
       #:queryParams `(("notifications" ,(boolean->string notifications))))))
 
-(define* (masto-unmute-account mastoApp accountID #:optional [notifications #t])
+(define* (masto-unmute-account mastoApp accountID)
   (generate-masto-relationship
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/accounts/"
                      accountID                   "/unmute")
-      #:token       (masto-app-token mastoApp)
-      #:queryParams `(("notifications" ,(boolean->string notifications))))))
+      #:token       (masto-app-token mastoApp))))
 
 (define (masto-mute-status mastoApp statusID)
   (generate-masto-status

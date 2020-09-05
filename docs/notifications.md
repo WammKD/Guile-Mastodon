@@ -145,30 +145,31 @@
 139. [masto-tag-name](#masto-tag-name)
 140. [masto-tag-url](#masto-tag-url)
 141. [masto-tag?](#masto-tag?)
-142. [masto-web-push-delete-subscription](#masto-web-push-delete-subscription)
-143. [masto-web-push-get-subscription](#masto-web-push-get-subscription)
-144. [masto-web-push-subscription-alerts](#masto-web-push-subscription-alerts)
-145. [masto-web-push-subscription-alerts-favorite](#masto-web-push-subscription-alerts-favorite)
-146. [masto-web-push-subscription-alerts-follow](#masto-web-push-subscription-alerts-follow)
-147. [masto-web-push-subscription-alerts-mention](#masto-web-push-subscription-alerts-mention)
-148. [masto-web-push-subscription-alerts-poll](#masto-web-push-subscription-alerts-poll)
-149. [masto-web-push-subscription-alerts-reblog](#masto-web-push-subscription-alerts-reblog)
-150. [masto-web-push-subscription-alerts?](#masto-web-push-subscription-alerts?)
-151. [masto-web-push-subscription-endpoint](#masto-web-push-subscription-endpoint)
-152. [masto-web-push-subscription-id](#masto-web-push-subscription-id)
-153. [masto-web-push-subscription-server-key](#masto-web-push-subscription-server-key)
-154. [masto-web-push-subscription?](#masto-web-push-subscription?)
-155. [masto-web-push-update-subscription](#masto-web-push-update-subscription)
-156. [masto-notification-account](#masto-notification-account)
-157. [masto-notification-create-at](#masto-notification-create-at)
-158. [masto-notification-id](#masto-notification-id)
-159. [masto-notification-status](#masto-notification-status)
-160. [masto-notification-type](#masto-notification-type)
-161. [masto-notification?](#masto-notification?)
-162. [masto-notification-delete](#masto-notification-delete)
-163. [masto-notification-get](#masto-notification-get)
-164. [masto-notifications-all](#masto-notifications-all)
-165. [masto-notifications-all-clear](#masto-notifications-all-clear)
+142. [masto-web-push-create-subscription](#masto-web-push-create-subscription)
+143. [masto-web-push-delete-subscription](#masto-web-push-delete-subscription)
+144. [masto-web-push-get-subscription](#masto-web-push-get-subscription)
+145. [masto-web-push-subscription-alerts](#masto-web-push-subscription-alerts)
+146. [masto-web-push-subscription-alerts-favorite](#masto-web-push-subscription-alerts-favorite)
+147. [masto-web-push-subscription-alerts-follow](#masto-web-push-subscription-alerts-follow)
+148. [masto-web-push-subscription-alerts-mention](#masto-web-push-subscription-alerts-mention)
+149. [masto-web-push-subscription-alerts-poll](#masto-web-push-subscription-alerts-poll)
+150. [masto-web-push-subscription-alerts-reblog](#masto-web-push-subscription-alerts-reblog)
+151. [masto-web-push-subscription-alerts?](#masto-web-push-subscription-alerts?)
+152. [masto-web-push-subscription-endpoint](#masto-web-push-subscription-endpoint)
+153. [masto-web-push-subscription-id](#masto-web-push-subscription-id)
+154. [masto-web-push-subscription-server-key](#masto-web-push-subscription-server-key)
+155. [masto-web-push-subscription?](#masto-web-push-subscription?)
+156. [masto-web-push-update-subscription](#masto-web-push-update-subscription)
+157. [masto-notification-account](#masto-notification-account)
+158. [masto-notification-create-at](#masto-notification-create-at)
+159. [masto-notification-id](#masto-notification-id)
+160. [masto-notification-status](#masto-notification-status)
+161. [masto-notification-type](#masto-notification-type)
+162. [masto-notification?](#masto-notification?)
+163. [masto-notification-dismiss](#masto-notification-dismiss)
+164. [masto-notification-get](#masto-notification-get)
+165. [masto-notifications-all](#masto-notifications-all)
+166. [masto-notifications-all-clear](#masto-notifications-all-clear)
 
 
 <br />
@@ -1411,6 +1412,22 @@ A record object that can be returned by an API call.
 
 <br />
 
+### masto-web-push-create-subscription
+##### Summary
+#f
+##### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `subscriptionEndpoint` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `subscriptionKeysP256dh` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `subscriptionKeysAuth` <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:dataAlertsFollow` (argument position 5) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:dataAlertsFavorite` (argument position 6) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:dataAlertsReblog` (argument position 7) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:dataAlertsMention` (argument position 8) <br />
+> ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:dataAlertsPoll` (argument position 9) <br />
+
+<br />
+
 ### masto-web-push-delete-subscription
 ##### Summary
 #f
@@ -1576,7 +1593,7 @@ A record object that can be returned by an API call.
 
 <br />
 
-### masto-notification-delete
+### masto-notification-dismiss
 ##### Summary
 #f
 ##### Parameters

@@ -8,8 +8,8 @@
   #:use-module (web uri)
   #:export (masto-notifications-all            masto-notification-get
             masto-notifications-all-clear      masto-notification-dismiss
-            masto-web-push-get-subscription    masto-web-push-update-subscription
-            masto-web-push-delete-subscription)
+            masto-web-push-create-subscription masto-web-push-get-subscription
+            masto-web-push-update-subscription masto-web-push-delete-subscription)
   #:re-export (<mastodon-pagination-object> masto-page? masto-page-objects
                                                         masto-page-prev
                                                         masto-page-next

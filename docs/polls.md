@@ -136,7 +136,18 @@ A record object that can be returned by an API call.
 
 ### masto-poll-get
 ##### Summary
-#f
+View a a poll with the ID `pollID`.
+
+`domainOrApp` can be the instance domain as a String or a
+[`<mastodon-instance-application>`](auth.md#mastodon-instance-application), whose associated `domain` will be used instead.
+
+If the parent status of the poll in question is private, you will need to use a
+[`<mastodon-instance-application>`](auth.md#mastodon-instance-application) for `domainOrApp` in order to determine if the
+user has permission to view the poll.
+
+A [`<mastodon-poll>`](#mastodon-poll) is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/polls/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />
@@ -145,7 +156,14 @@ A record object that can be returned by an API call.
 
 ### masto-poll-send-vote
 ##### Summary
-#f
+Vote in a pole with the ID `pollID` for the user tied to `mastoApp`.
+
+`choices` are a list of integers containing the index of each poll option you
+wish to vote for.
+
+A [`<mastodon-poll>`](#mastodon-poll) is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/polls/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />

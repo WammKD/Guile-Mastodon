@@ -136,6 +136,22 @@
 (define* (masto-notifications-all mastoApp #:key maxID              sinceID
                                                  minID              [limit 20]
                                                  [excludeTypes '()] accountID)
+  "Retrieve all notifications associated with the user tied to `mastoApp`.
+
+`maxID` will result in returning results older than this ID.
+
+`sinceID` will result in returning results newer than this ID.
+
+`minID` will result in returning results immediately newer than this ID.
+
+If no `limit` value is provided, the value 20 is used.
+
+Specifying `accountID` will only return notifications from the said account.
+
+A <mastodon-pagination-object> is returned, consisting of the
+<mastodon-notification>s that the user has blocked.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (if (every (cut enum-member? <> NOTIFICATION_TYPE_ENUM) excludeTypes)
       (generate-masto-page
         mastoApp
@@ -159,6 +175,12 @@
              "reblog, or favourite"))))
 
 (define (masto-notification-get mastoApp notificationID)
+  "Get a notification with the ID `notificationID` for the user tied to
+`mastoApp`.
+
+A <mastodon-notification> is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (generate-masto-notification
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/notifications/"
@@ -166,6 +188,11 @@
       #:token (masto-app-token mastoApp))))
 
 (define (masto-notifications-all-clear mastoApp)
+  "Dismiss all notifications from the server for the user tied to `mastoApp`.
+
+This function, if successful, returns `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (http 'post
     (string-append (masto-app-domain mastoApp) "/api/v1/notifications/clear")
     #:token (masto-app-token mastoApp))
@@ -173,6 +200,12 @@
   #t)
 
 (define (masto-notification-dismiss mastoApp notificationID)
+  "Dismiss a specific notification from the server for the user tied to
+`mastoApp`.
+
+This function, if successful, returns `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (http 'post
     (string-append (masto-app-domain mastoApp) "/api/v1/notifications/"
                    notificationID              "/dismiss")
@@ -187,6 +220,28 @@
                                                                     dataAlertsReblog
                                                                     dataAlertsMention
                                                                     dataAlertsPoll)
+  "Add a Web Push API subscription to receive notifications for the user tied to
+`mastoApp`. Each access token can have one push subscription. If you create a
+new subscription, the old subscription is deleted.
+
+`subscriptionEndpoint` is the endpoint URL that's called when a notification
+event occurs. `subscriptionEndpoint` can be a string or a uri object.
+
+`subscriptionKeysP256dh` is the user agent public key. Base64 encoded string of
+public key of ECDH key using `prime256v1` curve.
+
+`subscriptionKeysAuth` is the auth secret. Base64 encoded string of 16 bytes of
+random data.
+
+`dataAlertsFollow`   is a boolean of whether to receive follow    notifications.
+`dataAlertsFavorite` is a boolean of whether to receive favourite notifications.
+`dataAlertsReblog`   is a boolean of whether to receive reblog    notifications.
+`dataAlertsMention`  is a boolean of whether to receive mention   notifications.
+`dataAlertsPoll`     is a boolean of whether to receive poll      notifications.
+
+This function returns a <mastodon-web-push-subscription>.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (generate-masto-web-push-subscription
     (http 'post
       (string-append (masto-app-domain mastoApp) "/api/v1/push/subscription")
@@ -204,6 +259,12 @@
                       ("data[alerts][poll]"         ,(boolean->string dataAlertsPoll))))))
 
 (define (masto-web-push-get-subscription mastoApp)
+  "Get the current subscription associated with the access token tied to
+`mastoApp`.
+
+A <mastodon-web-push-subscription> is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (generate-masto-web-push-subscription
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/push/subscription")
@@ -214,6 +275,18 @@
                                                             dataAlertsReblog
                                                             dataAlertsMention
                                                             dataAlertsPoll)
+  "Update the current subscription associated with the access token tied to
+`mastoApp`.
+
+`dataAlertsFollow`   is a boolean of whether to receive follow    notifications.
+`dataAlertsFavorite` is a boolean of whether to receive favourite notifications.
+`dataAlertsReblog`   is a boolean of whether to receive reblog    notifications.
+`dataAlertsMention`  is a boolean of whether to receive mention   notifications.
+`dataAlertsPoll`     is a boolean of whether to receive poll      notifications.
+
+A <mastodon-web-push-subscription> is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (generate-masto-web-push-subscription
     (http 'put
       (string-append (masto-app-domain mastoApp) "/api/v1/push/subscription")
@@ -225,6 +298,12 @@
                       ("data[alerts][poll]"      ,(boolean->string dataAlertsPoll))))))
 
 (define (masto-web-push-delete-subscription mastoApp)
+  "Delete the current subscription associated with the access token tied to
+`mastoApp`.
+
+This function, if successful, returns `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/notifications/)."
   (http 'delete
     (string-append (masto-app-domain mastoApp) "/api/v1/push/subscription")
     #:token (masto-app-token mastoApp))

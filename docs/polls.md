@@ -138,7 +138,7 @@ A record object that can be returned by an API call.
 ##### Summary
 #f
 ##### Parameters
-> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `domainOrApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `pollID` <br />
 
 <br />

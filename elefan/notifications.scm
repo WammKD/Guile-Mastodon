@@ -7,7 +7,7 @@
   #:use-module (srfi srfi-26)
   #:use-module (web uri)
   #:export (masto-notifications-all            masto-notification-get
-            masto-notifications-all-clear      masto-notification-delete
+            masto-notifications-all-clear      masto-notification-dismiss
             masto-web-push-get-subscription    masto-web-push-update-subscription
             masto-web-push-delete-subscription)
   #:re-export (<mastodon-pagination-object> masto-page? masto-page-objects
@@ -172,11 +172,11 @@
 
   #t)
 
-(define (masto-notification-delete mastoApp notificationID)
+(define (masto-notification-dismiss mastoApp notificationID)
   (http 'post
-    (string-append (masto-app-domain mastoApp) "/api/v1/notifications/dismiss")
-    #:token       (masto-app-token mastoApp)
-    #:queryParams `(("id" ,notificationID)))
+    (string-append (masto-app-domain mastoApp) "/api/v1/notifications/"
+                   notificationID              "/dismiss")
+    #:token (masto-app-token mastoApp))
 
   #t)
 

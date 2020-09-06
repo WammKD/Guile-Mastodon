@@ -48,11 +48,12 @@
 42. [masto-scheduled-status-params-visibility](#masto-scheduled-status-params-visibility)
 43. [masto-scheduled-status-params?](#masto-scheduled-status-params?)
 44. [masto-scheduled-status-scheduled-at](#masto-scheduled-status-scheduled-at)
-45. [masto-scheduled-status?](#masto-scheduled-status?)
-46. [masto-scheduled-status-delete](#masto-scheduled-status-delete)
-47. [masto-scheduled-status-get](#masto-scheduled-status-get)
-48. [masto-scheduled-status-update](#masto-scheduled-status-update)
-49. [masto-scheduled-statuses-all](#masto-scheduled-statuses-all)
+45. [masto-scheduled-status-scheduled-at-set!](#masto-scheduled-status-scheduled-at-set!)
+46. [masto-scheduled-status?](#masto-scheduled-status?)
+47. [masto-scheduled-status-delete](#masto-scheduled-status-delete)
+48. [masto-scheduled-status-get](#masto-scheduled-status-get)
+49. [masto-scheduled-status-update](#masto-scheduled-status-update)
+50. [masto-scheduled-statuses-all](#masto-scheduled-statuses-all)
 
 
 <br />
@@ -433,6 +434,15 @@ A record object that can be returned by an API call.
 #f
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+
+<br />
+
+### masto-scheduled-status-scheduled-at-set!
+##### Summary
+#f
+##### Parameters
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `s` <br />
+> ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `val` <br />
 
 <br />
 

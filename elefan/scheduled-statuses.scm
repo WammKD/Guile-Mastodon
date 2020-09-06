@@ -36,6 +36,7 @@
                                                                                  masto-scheduled-status-params-application-id
                <mastodon-scheduled-status> masto-scheduled-status? masto-scheduled-status-id
                                                                    masto-scheduled-status-scheduled-at
+                                                                   masto-scheduled-status-scheduled-at-set!
                                                                    masto-scheduled-status-params
                                                                    masto-scheduled-status-media-attachments))
 

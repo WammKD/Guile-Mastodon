@@ -159,6 +159,7 @@
             generate-masto-scheduled-status-params
             <mastodon-scheduled-status> masto-scheduled-status? masto-scheduled-status-id
                                                                 masto-scheduled-status-scheduled-at
+                                                                masto-scheduled-status-scheduled-at-set!
                                                                 masto-scheduled-status-params
                                                                 masto-scheduled-status-media-attachments
             generate-masto-scheduled-status

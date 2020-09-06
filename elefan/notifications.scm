@@ -138,11 +138,9 @@
                                                  [excludeTypes '()] accountID)
   "Retrieve all notifications associated with the user tied to `mastoApp`.
 
-`maxID` will result in returning results older than this ID.
-
-`sinceID` will result in returning results newer than this ID.
-
-`minID` will result in returning results immediately newer than this ID.
+`maxID`   will result in returning results older than this ID.<br />
+`sinceID` will result in returning results newer than this ID.<br />
+`minID`   will result in returning results immediately newer than this ID.
 
 If no `limit` value is provided, the value 20 is used.
 

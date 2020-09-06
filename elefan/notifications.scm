@@ -231,10 +231,10 @@ public key of ECDH key using `prime256v1` curve.
 `subscriptionKeysAuth` is the auth secret. Base64 encoded string of 16 bytes of
 random data.
 
-`dataAlertsFollow`   is a boolean of whether to receive follow    notifications.
-`dataAlertsFavorite` is a boolean of whether to receive favourite notifications.
-`dataAlertsReblog`   is a boolean of whether to receive reblog    notifications.
-`dataAlertsMention`  is a boolean of whether to receive mention   notifications.
+`dataAlertsFollow`   is a boolean of whether to receive follow    notifications.<br />
+`dataAlertsFavorite` is a boolean of whether to receive favourite notifications.<br />
+`dataAlertsReblog`   is a boolean of whether to receive reblog    notifications.<br />
+`dataAlertsMention`  is a boolean of whether to receive mention   notifications.<br />
 `dataAlertsPoll`     is a boolean of whether to receive poll      notifications.
 
 This function returns a <mastodon-web-push-subscription>.

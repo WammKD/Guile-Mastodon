@@ -456,7 +456,12 @@ A record object that can be returned by an API call.
 
 ### masto-scheduled-status-delete
 ##### Summary
-#f
+Delete a scheduled status with the ID `scheduledStatusID` for the user tied
+to `mastoApp`.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `scheduledStatusID` <br />
@@ -465,7 +470,12 @@ A record object that can be returned by an API call.
 
 ### masto-scheduled-status-get
 ##### Summary
-#f
+Get a scheduled status with the ID `scheduledStatusID` for the user tied to
+`mastoApp`.
+
+A [`<mastodon-scheduled-status>`](#mastodon-scheduled-status) is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `scheduledStatusID` <br />
@@ -474,7 +484,25 @@ A record object that can be returned by an API call.
 
 ### masto-scheduled-status-update
 ##### Summary
-#f
+Get a scheduled status for the user tied to `mastoApp`.
+
+A [`<mastodon-scheduled-status>`](#mastodon-scheduled-status) object can be used, for `scheduledStatus`, or the
+ID of a scheduled status and the scheduled time to update to, for
+`scheduledStatusID` and `scheduledAt` respectively.
+
+If using a [`<mastodon-scheduled-status>`](#mastodon-scheduled-status) object, you can update the `scheduledAt`
+attribute of the record with [`masto-scheduled-status-scheduled-at-set!`](#masto-scheduled-status-scheduled-at-set!).
+
+If `scheduledStatus` is provided, it will be used, regardless of the values, if
+any, of `scheduledStatusID` or `scheduledAt`.
+
+`scheduledAt` can be a SRFI-19 [date](https://www.gnu.org/software/guile/manual/html_node/SRFI_002d19-Date.html)
+object or a ISO 8601 Datetime string; if using a SRFI-19 date, the appropriately
+formatted string will be generated, for you.
+
+A [`<mastodon-scheduled-status>`](#mastodon-scheduled-status) is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 > ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#:scheduledStatus` (argument position 2) <br />
@@ -485,7 +513,11 @@ A record object that can be returned by an API call.
 
 ### masto-scheduled-statuses-all
 ##### Summary
-#f
+Retrieve all scheduled statuses associated with the user tied to `mastoApp`.
+
+A list of [`<mastodon-scheduled-status>`](#mastodon-scheduled-status)es is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/).
 ##### Parameters
 > ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `mastoApp` <br />
 

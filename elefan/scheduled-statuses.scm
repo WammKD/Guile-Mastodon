@@ -41,12 +41,23 @@
                                                                    masto-scheduled-status-media-attachments))
 
 (define (masto-scheduled-statuses-all mastoApp)
+  "Retrieve all scheduled statuses associated with the user tied to `mastoApp`.
+
+A list of <mastodon-scheduled-status>es is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/)."
   (generate-masto-scheduled-status-array
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/scheduled_statuses")
       #:token (masto-app-token mastoApp))))
 
 (define (masto-scheduled-status-get mastoApp scheduledStatusID)
+  "Get a scheduled status with the ID `scheduledStatusID` for the user tied to
+`mastoApp`.
+
+A <mastodon-scheduled-status> is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/)."
   (generate-masto-scheduled-status
     (http 'get
       (string-append (masto-app-domain mastoApp) "/api/v1/scheduled_statuses/"
@@ -55,6 +66,25 @@
 
 (define* (masto-scheduled-status-update mastoApp #:key scheduledStatus
                                                        scheduledStatusID scheduledAt)
+  "Get a scheduled status for the user tied to `mastoApp`.
+
+A <mastodon-scheduled-status> object can be used, for `scheduledStatus`, or the
+ID of a scheduled status and the scheduled time to update to, for
+`scheduledStatusID` and `scheduledAt` respectively.
+
+If using a <mastodon-scheduled-status> object, you can update the `scheduledAt`
+attribute of the record with masto-scheduled-status-scheduled-at-set!.
+
+If `scheduledStatus` is provided, it will be used, regardless of the values, if
+any, of `scheduledStatusID` or `scheduledAt`.
+
+`scheduledAt` can be a SRFI-19 [date](https://www.gnu.org/software/guile/manual/html_node/SRFI_002d19-Date.html)
+object or a ISO 8601 Datetime string; if using a SRFI-19 date, the appropriately
+formatted string will be generated, for you.
+
+A <mastodon-scheduled-status> is returned.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/)."
   (if (and (not scheduledStatus) (not (and scheduledStatusID scheduledAt)))
       (error (string-append
                "ERROR: In procedure masto-scheduled-status-update:\n"
@@ -81,6 +111,12 @@
                                                "~Y-~m-~dT~H:~M:~S.~N~z")))))))))
 
 (define (masto-scheduled-status-delete mastoApp scheduledStatusID)
+  "Delete a scheduled status with the ID `scheduledStatusID` for the user tied
+to `mastoApp`.
+
+If successful, this function will return `#t`.
+
+Find the original documentation [here](https://docs.joinmastodon.org/methods/statuses/scheduled_statuses/)."
   (http 'delete
     (string-append (masto-app-domain mastoApp) "/api/v1/scheduled_statuses/"
                    scheduledStatusID)

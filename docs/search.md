@@ -336,6 +336,7 @@ A record object that can be returned by an API call.
 > `reblogged` <br />
 > `favorited` <br />
 > `muted` <br />
+> `bookmarked` <br />
 > `sensitive` <br />
 > `spoilerText` <br />
 > `visibility` <br />

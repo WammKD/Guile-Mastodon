@@ -646,10 +646,10 @@
                      reblogStatus   content          createdAt
                      emojis         repliesCount     reblogsCount
                      favoritesCount reblogged        favorited
-                     muted          sensitive        spoilerText
-                     visibility     mediaAttachments mentions
-                     tags           card             poll
-                     application    language         pinned)
+                     muted          bookmarked       sensitive
+                     spoilerText    visibility       mediaAttachments
+                     mentions       tags             card
+                     poll           application      language           pinned)
   masto-status?
   (id                 masto-status-id                     masto-status-id-set!)
   (uri                masto-status-uri                    masto-status-uri-set!)
@@ -667,6 +667,7 @@
   (reblogged          masto-status-reblogged              masto-status-reblogged-set!)
   (favorited          masto-status-favorited              masto-status-favorited-set!)
   (muted              masto-status-muted                  masto-status-muted-set!)
+  (bookmarked         masto-status-bookmarked             masto-status-bookmarked-set!)
   (sensitive          masto-status-sensitive              masto-status-sensitive-set!)
   (spoilerText        masto-status-spoiler-text           masto-status-spoiler-text-set!)
   (visibility         masto-status-visibility             masto-status-visibility-set!)
@@ -697,6 +698,7 @@
     ["reblogged"]
     ["favourited"]
     ["muted"]
+    ["bookmarked"]
     ["sensitive"]
     ["spoiler_text"]
     ["visibility"             (cut enum-value-of <> STATUS_VISIBILITY_ENUM)]
